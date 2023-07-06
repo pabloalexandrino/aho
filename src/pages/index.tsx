@@ -77,7 +77,6 @@ export default function Home() {
         setLoading(true)
 
         try {
-            // Validação dos dados do formulário
             await schema.validate(
                 { nameLead, emailLead, whatsappLead },
                 { abortEarly: false },
