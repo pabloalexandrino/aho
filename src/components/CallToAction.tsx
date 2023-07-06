@@ -1,0 +1,66 @@
+import { useContext, useEffect, useState } from 'react'
+import { OfferContext } from '../providers/Offer'
+
+export default function CallToAction(props: { text?: string }) {
+    const { text } = props
+    const [isReady, setIsReady] = useState(false)
+    const { expired, chance } = useContext(OfferContext)
+
+    useEffect(() => {
+        setIsReady(true)
+    }, [])
+
+    if (!isReady) {
+        return null
+    }
+
+    return (
+        <>
+            {expired && (
+                <span className="badge badge-error mx-auto block mb-3">
+                    Oferta expirada
+                </span>
+            )}
+            {!expired && chance && (
+                <span className="badge badge-ghost mx-auto block mb-3">
+                    Você tem mais uma chance de fazer um segundo salário
+                </span>
+            )}
+            <label
+                htmlFor={`${
+                    !expired ? 'checkout' : !chance ? 'modalChance' : 'lead'
+                }`}
+                className={`btn md:btn-lg ${
+                    expired ? 'btn-warning' : 'btn-primary'
+                } w-fit flex mx-auto relative`}
+            >
+                {text ||
+                    (expired
+                        ? 'RECUPERAR OFERTA'
+                        : 'QUERO FAZER UM SEGUNDO SALÁRIO')}
+                <div className="-rotate-90 ml-4 hidden md:block">
+                    <div className="animate-bounce bg-lime-600 p-2 w-10 h-10 ring-1 ring-green-900/5 shadow-lg rounded-xl flex items-center justify-center">
+                        <svg
+                            className="w-6 h-6 text-black"
+                            fill="none"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                        </svg>
+                    </div>
+                </div>
+            </label>
+            <span className="badge badge-ghost uppercase text-white mx-auto block mt-3">
+                Garantia de 1 ano risco ZERO!
+            </span>
+            <span className="text-center text-sm block mt-3 max-w-md mx-auto text-zinc-500">
+                1% do valor das vendas será convertido em doação para famílias
+                em situação de vulnerabilidade social.
+            </span>
+        </>
+    )
+}

@@ -1,0 +1,33 @@
+{
+    "theme_color": "#000E00",
+    "background_color": "#000E00",
+    "display": "standalone",
+    "scope": "/",
+    "start_url": "/",
+    "name": "Renda com Milhas",
+    "short_name": "RCM",
+    "description": "Aprenda uma estrat\u00e9gia simples de compra e venda de milhas no programa completo Renda com Milhas, que te ajudar\u00e1 a cobrir o valor do curso e ainda gerar mais de R$500,00 de lucro em at\u00e9 6 meses, com apenas 15 minutos de aplica\u00e7\u00e3o.",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-384x384.png",
+            "sizes": "384x384",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}
