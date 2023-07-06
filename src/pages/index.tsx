@@ -91,7 +91,7 @@ export default function Home() {
                     email: emailLead,
                     whatsapp: whatsappLead,
                     pagina: 'aho-launch',
-                    list: 51,
+                    list: 53,
                 }),
             }).then(async () => {
                 setLoading(false)
