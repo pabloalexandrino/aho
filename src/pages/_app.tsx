@@ -6,7 +6,6 @@ import TagManager from 'react-gtm-module'
 import { OfferProvider } from '../providers/Offer'
 import '../styles/globals.css'
 import { setCookies } from '../utils/useCookies'
-import Navbar from '../components/Navbar'
 import Lead from '../components/Modals/Lead'
 
 function MyApp({ Component, pageProps }: AppProps) {
