@@ -118,7 +118,7 @@ export default function Home() {
             <ToastContainer />
             <div
                 className='grid md:grid-cols-2 h-full bg-black mx-auto bg-contain w-full bg-[url(/../luiz.webp)] bg-no-repeat bg-right-top'>
-                <div className='text-white px-6 md:px-24 mt-40 md:max-w-3xl lg:max-w-5xl sm:col-span-2 col-span-1'>
+                <div className='text-white px-6 md:px-24 mt-40 md:max-w-3xl xl:max-w-4xl sm:col-span-2 col-span-1'>
                     <BlurImage src={'/logo.webp'} width={348} height={138} />
                     <h1 className='uppercase mb-4 md:mb-8 rounded-md text-2xl md:text-3xl md:leading-snug text-justify inline-block my-8'
                     >
