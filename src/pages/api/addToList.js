@@ -13,16 +13,16 @@ export default async function handler(req, res) {
 
         try {
             const data = await apiInstance.getContactInfo(identifier)
-            console.log('API called successfully. Returned data: ' + JSON.stringify(data))
+            // console.log('API called successfully. Returned data: ' + JSON.stringify(data))
             contact.emails = [data.email]
 
             try {
                 await apiInstance.addContactToList(list, contact)
-                console.log('API called successfully. Returned data: ' + JSON.stringify(data))
+                // console.log('API called successfully. Returned data: ' + JSON.stringify(data))
                 res.status(200).json({ message: 'Contato confirmado com sucesso!' })
             } catch (error) {
-                console.log('erro 11')
-                console.error(error)
+                // console.log('erro 11')
+                // console.error(error)
                 if (error.status === 400) {
                     res.status(200).json({ message: 'Contato já cadastrado!' })
                 } else {
@@ -30,8 +30,8 @@ export default async function handler(req, res) {
                 }
             }
         } catch (error) {
-            console.log('erro 33')
-            console.error(error)
+            // console.log('erro 33')
+            // console.error(error)
             if (error.status === 404) {
                 try {
                     const utm = req.cookies['@AHO:UTM'] || ''
@@ -86,10 +86,10 @@ export default async function handler(req, res) {
                         UTM_CONTENT: utm_content,
                     }
                     const data = await apiInstance.createContact(createContact)
-                    console.log('API called successfully. Returned data: ' + JSON.stringify(data))
+                    // console.log('API called successfully. Returned data: ' + JSON.stringify(data))
                     res.status(200).json({ message: 'Contato adicionado com sucesso!' })
                 } catch (error) {
-                    console.error(error)
+                    // console.error(error)
                     if (error.status === 400) {
                         res.status(200).json({ message: 'Contato já cadastrado!' })
                     } else {

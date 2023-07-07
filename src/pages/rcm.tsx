@@ -17,11 +17,11 @@ export default function Home() {
         pagina,
         setPagina,
         value,
-        setValue
+        setValue,
     } = useContext(OfferContext)
 
     useEffect(() => {
-        setPagina('aho-trafego')
+        setPagina('aho-alunos')
         setValue(3500)
     }, [setPagina, setValue])
 
@@ -91,28 +91,24 @@ export default function Home() {
                 { abortEarly: false },
             )
 
+            const data = {
+                name: nameLead,
+                email: emailLead,
+                whatsapp: whatsappLead,
+                pagina,
+                valor: value.toString(),
+                list: '53',
+            }
+
             await fetch('/api/addToList', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: nameLead,
-                    email: emailLead,
-                    whatsapp: whatsappLead,
-                    pagina,
-                    list: 53,
-                }),
+                body: JSON.stringify(data),
             })
 
-            if (process.env.NEXT_PUBLIC_CLINT_TRAFEGO) {
-                const data = {
-                    name: nameLead,
-                    email: emailLead,
-                    whatsapp: whatsappLead,
-                    pagina,
-                    valor: value.toString()
-                }
+            if (process.env.NEXT_PUBLIC_CLINT_ALUNOS) {
                 await fetch(
-                    process.env.NEXT_PUBLIC_CLINT_TRAFEGO + '?' +
+                    process.env.NEXT_PUBLIC_CLINT_ALUNOS + '?' +
                     new URLSearchParams(data),
                 )
             }

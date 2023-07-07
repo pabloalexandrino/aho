@@ -23,3 +23,16 @@ a {
 .font-termina {
     font-family: 'Termina', sans-serif;
 }
+
+.animate-cube {
+    animation: cube 2s linear infinite alternate;
+}
+
+@keyframes cube {
+    from {
+        margin: 0;
+    }
+    to {
+        margin-top: 10px;
+    }
+}

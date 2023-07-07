@@ -1,9 +1,9 @@
 export default function FloatBlocks() {
     return (
         <>
-            <div className="hidden lg:block absolute -right-2 bottom-40 pointer-events-none">
+            <div className="hidden md:block absolute -right-2 top-0 pointer-events-none">
                 <svg
-                    className="text-primary animate-cube"
+                    className="text-error animate-cube"
                     width="46"
                     height="53"
                     viewBox="0 0 46 53"
@@ -46,9 +46,9 @@ export default function FloatBlocks() {
                 </svg>
             </div>
 
-            <div className="hidden lg:block absolute right-32 top-40 pointer-events-none">
+            <div className="hidden md:block absolute right-32 top-40 pointer-events-none">
                 <svg
-                    className="text-primary animate-cube"
+                    className="text-error animate-cube"
                     width="46"
                     height="53"
                     viewBox="0 0 46 53"
@@ -91,9 +91,9 @@ export default function FloatBlocks() {
                 </svg>
             </div>
 
-            <div className="hidden lg:block absolute left-2 top-48 pointer-events-none">
+            <div className="hidden md:block absolute left-2 top-48 pointer-events-none">
                 <svg
-                    className="text-primary animate-cube"
+                    className="text-error animate-cube"
                     width="46"
                     height="53"
                     viewBox="0 0 46 53"
@@ -136,9 +136,9 @@ export default function FloatBlocks() {
                 </svg>
             </div>
 
-            <div className="hidden lg:block absolute left-64 top-96 pointer-events-none">
+            <div className="hidden md:block absolute right-0 top-96 pointer-events-none">
                 <svg
-                    className="text-primary animate-cube"
+                    className="text-error animate-cube"
                     width="64"
                     height="80"
                     viewBox="0 0 46 53"

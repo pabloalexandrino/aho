@@ -48,12 +48,6 @@ export default function Lead({ redirectTo }: ILead) {
         if (process.env.NODE_ENV === 'production') {
             fb('Lead', 'Lead' + eventId, nameLead, emailLead, whatsappLead)
         }
-
-        if (redirectTo) {
-            window.location.href = redirectTo
-        } else {
-            window.location.href = process.env.NEXT_PUBLIC_WHATSAPP!
-        }
     }
 
     const handleSubmitLead = async (event: { preventDefault: () => void }) => {
@@ -66,50 +60,30 @@ export default function Lead({ redirectTo }: ILead) {
             await schema.validate(
                 { nameLead, emailLead, whatsappLead },
                 { abortEarly: false },
-            ).then(async () => {
-                //CLINT
-                if (process.env.NEXT_PUBLIC_CLINT_LEAD) {
-                    const data = {
-                        name: nameLead,
-                        email: emailLead,
-                        whatsapp: whatsappLead,
-                        pagina,
-                        valor: value.toString()
-                    }
-                    await fetch(
-                        process.env.NEXT_PUBLIC_CLINT_LEAD + '?' +
-                        new URLSearchParams(data),
-                    )
-                }
+            )
 
-                //DEVZAP
-                if (process.env.NEXT_PUBLIC_DEVZAPP_LEAD) {
-                    await fetch(
-                        process.env.NEXT_PUBLIC_DEVZAPP_LEAD + '?' +
-                        new URLSearchParams({ whatsapp: whatsappLead }),
-                    )
-                }
+            const data = {
+                name: nameLead,
+                email: emailLead,
+                whatsapp: whatsappLead,
+                pagina,
+                valor: value.toString(),
+                list: '53'
+            }
 
-                //DISCORD
-                // if (process.env.NEXT_PUBLIC_TELEGRAND_LEAD) {
-                //     await fetch(
-                //         process.env.NEXT_PUBLIC_TELEGRAND_LEAD + '?' +
-                //         new URLSearchParams({ name: nameLead, email: emailLead, whatsapp: whatsappLead, pagina }),
-                //     )
-                // }
-            })
-
-            //BREVO
-            await fetch('/api/mailingList', {
+            await fetch('/api/addToList', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: nameLead,
-                    email: emailLead,
-                    whatsapp: whatsappLead,
-                    pagina,
-                }),
+                body: JSON.stringify(data),
             })
+
+            //CLINT
+            const clint_api = pagina === 'aho-alunos' ? process.env.NEXT_PUBLIC_CLINT_ALUNOS : process.env.NEXT_PUBLIC_CLINT_TRAFEGO
+            await fetch(
+                clint_api + '?' +
+                new URLSearchParams(data),
+            )
+
             setLoading(false)
             redirectToCheckout()
         } catch (error) {
@@ -132,16 +106,18 @@ export default function Lead({ redirectTo }: ILead) {
                 htmlFor='lead'
                 className='modal modal-bottom sm:modal-middle'
             >
-                <label htmlFor='' className='modal-box relative box-glow'>
+                <label htmlFor='' className='modal-box relative box-red-glow'>
                     <label
                         htmlFor='lead'
                         className='btn btn-ghost btn-circle absolute right-3 top-3'
                     >
                         ✕
                     </label>
-                    <h3 className='font-bold text-2xl text-primary'>
-                        Fale com nossos especialistas
+                    <h3 className='font-bold text-2xl text-error'>
+                        Inscrição
                     </h3>
+                    <p className={'text-xs'}>Após o cadastro, você será redirecionado para o nosso grupo do WhatsApp.
+                        Não fique de fora!</p>
                     <form
                         id='formLead'
                         className='py-4 grid gap-2'
@@ -151,7 +127,7 @@ export default function Lead({ redirectTo }: ILead) {
                             type='text'
                             name='name_lead'
                             placeholder='Nome Completo'
-                            className='input input-bordered input-primary w-full bg-white text-black'
+                            className='input input-bordered input-error w-full bg-white text-black'
                             value={nameLead}
                             onChange={(event) =>
                                 setNameLead(event.target.value)
@@ -161,7 +137,7 @@ export default function Lead({ redirectTo }: ILead) {
                             type='email'
                             name='email_lead'
                             placeholder='E-mail'
-                            className='input input-bordered input-primary w-full bg-white text-black'
+                            className='input input-bordered input-error w-full bg-white text-black'
                             value={emailLead}
                             onChange={(event) =>
                                 setEmailLead(event.target.value)
@@ -174,7 +150,7 @@ export default function Lead({ redirectTo }: ILead) {
                             value={whatsappLead}
                             name='whatsapp_lead'
                             onChange={handleInputChangeLead}
-                            className='input input-bordered input-primary w-full bg-white text-black'
+                            className='input input-bordered input-error w-full bg-white text-black'
                             placeholder='(XX) 9XXXX-XXXX'
                         />
 

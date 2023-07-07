@@ -51,7 +51,7 @@ class MyDocument extends Document {
                     />
                     <meta
                         property='og:image'
-                        content={`${process.env.NEXT_PUBLIC_URL}/mockup2.webp`}
+                        content={`${process.env.NEXT_PUBLIC_URL}/icon-512x512.webp`}
                     />
 
                     <Script

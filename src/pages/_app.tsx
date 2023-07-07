@@ -3,10 +3,11 @@ import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import TagManager from 'react-gtm-module'
-import { ParallaxProvider } from 'react-scroll-parallax'
 import { OfferProvider } from '../providers/Offer'
 import '../styles/globals.css'
 import { setCookies } from '../utils/useCookies'
+import Navbar from '../components/Navbar'
+import Lead from '../components/Modals/Lead'
 
 function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter()
@@ -57,11 +58,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     return (
         <>
-            <ThemeProvider defaultTheme="system">
+            <ThemeProvider defaultTheme='system'>
                 <OfferProvider>
-                    <ParallaxProvider>
-                        <Component {...pageProps} />
-                    </ParallaxProvider>
+                    <Lead />
+                    <Component {...pageProps} />
                 </OfferProvider>
             </ThemeProvider>
         </>
