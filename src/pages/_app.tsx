@@ -7,6 +7,8 @@ import { OfferProvider } from '../providers/Offer'
 import '../styles/globals.css'
 import { setCookies } from '../utils/useCookies'
 import Lead from '../components/Modals/Lead'
+import { ToastContainer } from 'react-toastify'
+import FloatBlocks from '../components/FloatBlocks'
 
 function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter()
@@ -59,7 +61,8 @@ function MyApp({ Component, pageProps }: AppProps) {
         <>
             <ThemeProvider defaultTheme='system'>
                 <OfferProvider>
-                    <Lead />
+                    <ToastContainer />
+                    <FloatBlocks />
                     <Component {...pageProps} />
                 </OfferProvider>
             </ThemeProvider>

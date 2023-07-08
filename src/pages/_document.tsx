@@ -13,11 +13,11 @@ class MyDocument extends Document {
             <Html lang='en'>
                 <Head>
                     <link rel='manifest' href='/manifest.json' />
-                    <link rel='apple-touch-icon' href='/icon-192x192.png' />
+                    <link rel='apple-touch-icon' href='/icon-512x512.webp' />
                     {/* favicon */}
-                    <link rel='icon' href='/icon-192x192.png' />
+                    <link rel='icon' href='/icon-512x512.webp' />
                     <meta name='theme-color' content='#000000' />
-
+                    <title>Agência Home Office - Sua Agência de Viagens Online</title>
                     <link rel='preconnect' href='https://fonts.googleapis.com' />
                     <link rel='preconnect' href='https://fonts.gstatic.com' />
                     <link
@@ -38,7 +38,7 @@ class MyDocument extends Document {
                     />
                     <meta
                         property='og:title'
-                        content='Agência Home Office - Sua Agência de Viagens Home Office'
+                        content='Agência Home Office - Sua Agência de Viagens Online'
                     />
                     <meta
                         property='og:url'
