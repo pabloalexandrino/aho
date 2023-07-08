@@ -21,10 +21,10 @@ export default function Home() {
             <Script id='facebook-pixel-page' strategy='afterInteractive'>
                 {`
                     fbq('init', '${process.env.NEXT_PUBLIC_FB_PIXEL_ID}');
-                    fbq('track', 'Lead', {}, {eventID: '${'PageView' + eventId}'});
+                    fbq('track', 'PageView', {}, {eventID: '${'PageView' + eventId}'});
 
                     fbq('init', '${process.env.NEXT_PUBLIC_FB_PIXEL_ID2}');
-                    fbq('track', 'Lead', {}, {eventID: '${'PageView' + eventId}'});
+                    fbq('track', 'PageView', {}, {eventID: '${'PageView' + eventId}'});
                 `}
             </Script>
 
