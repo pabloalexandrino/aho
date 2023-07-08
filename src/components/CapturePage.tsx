@@ -53,7 +53,7 @@ export default function CapturePage({ form }: CapturePageProps) {
                             <div className='relative w-[380px] h-[200px] bg-base-300'>
                                 <BlurImage
                                     layout={'fill'}
-                                    src='/luiz.webp'
+                                    src='/1.png'
                                     alt='Luiz'
                                     className='object-contain'
                                 />
@@ -69,7 +69,7 @@ export default function CapturePage({ form }: CapturePageProps) {
                             <div className='relative w-[380px] h-[200px] bg-base-300'>
                                 <BlurImage
                                     layout={'fill'}
-                                    src='/luiz.webp'
+                                    src='/2.png'
                                     alt='Luiz'
                                     className='object-contain'
                                 />
