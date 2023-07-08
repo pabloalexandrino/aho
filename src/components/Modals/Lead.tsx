@@ -43,13 +43,10 @@ export default function Lead({ redirectTo = process.env.NEXT_PUBLIC_WHATSAPP_LIN
         setWhatsappLead(event.target.value)
     }
 
-    async function sendPixel() {
+    function sendPixel() {
         // if (process.env.NODE_ENV === 'production') {
-            await fb('Lead', 'Lead' + eventId, nameLead, emailLead, whatsappLead)
-                .then(() => {
-                    window.location.href = `${redirectTo}`
-                    console.log('Lead enviado com sucesso!')
-                })
+            fb('Lead', 'Lead' + eventId, nameLead, emailLead, whatsappLead)
+                .then((r) => r)
         // }
         window.location.href = `${redirectTo}`
     }

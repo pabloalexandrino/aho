@@ -6,7 +6,6 @@ import TagManager from 'react-gtm-module'
 import { OfferProvider } from '../providers/Offer'
 import '../styles/globals.css'
 import { setCookies } from '../utils/useCookies'
-import Lead from '../components/Modals/Lead'
 import { ToastContainer } from 'react-toastify'
 import FloatBlocks from '../components/FloatBlocks'
 
