@@ -1,4 +1,4 @@
-export default function fb(
+export default async function fb(
     event_name: string,
     event_id?: string | null,
     name?: string | null,
@@ -12,8 +12,8 @@ export default function fb(
     city?: string | null,
     cep?: string | null,
     order_id?: string | null
-): void {
-    fetch('/api/fb', {
+): Promise<void> {
+    await fetch('/api/fb', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

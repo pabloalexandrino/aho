@@ -38,11 +38,15 @@ export default function LeadForm() {
         setWhatsappLead(event.target.value)
     }
 
-    function redirectTo(link: string) {
+    async function redirectTo(link: string) {
         // if (process.env.NODE_ENV === 'production') {
-            fb('Lead', 'Lead' + eventId, nameLead, emailLead, whatsappLead)
+        await fb('Lead', 'Lead' + eventId, nameLead, emailLead, whatsappLead)
+            .then(() => {
+                window.location.href = `${link}`
+                console.log('Lead enviado com sucesso!')
+            })
         // }
-        window.location.href = `${link}`
+        window.location.href = `${redirectTo}`
     }
 
     const handleSubmitLead = async (event: { preventDefault: () => void }) => {

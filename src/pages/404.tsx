@@ -11,9 +11,9 @@ export default function Custom404() {
     } = useContext(OfferContext)
 
     useEffect(() => {
-        if (process.env.NODE_ENV === 'production') {
+        // if (process.env.NODE_ENV === 'production') {
             fb('PageView', 'PageView' + eventId)
-        }
+        // }
     }, [eventId])
 
     useEffect(() => {
