@@ -39,9 +39,9 @@ export default function LeadForm() {
     }
 
     function redirectTo(link: string) {
-        // if (process.env.NODE_ENV === 'production') {
-        fb('Lead', 'Lead' + eventId, nameLead, emailLead, whatsappLead)
-        // }
+        if (process.env.NODE_ENV === 'production') {
+            fb('Lead', 'Lead' + eventId, nameLead, emailLead, whatsappLead)
+        }
         window.location.href = `${link}`
     }
 
