@@ -22,9 +22,6 @@ export default function Home() {
                 {`
                     fbq('init', '${process.env.NEXT_PUBLIC_FB_PIXEL_ID}');
                     fbq('track', 'PageView', {}, {eventID: '${'PageView' + eventId}'});
-
-                    fbq('init', '${process.env.NEXT_PUBLIC_FB_PIXEL_ID2}');
-                    fbq('track', 'PageView', {}, {eventID: '${'PageView' + eventId}'});
                 `}
             </Script>
             <CapturePage form={false} />

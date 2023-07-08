@@ -38,11 +38,11 @@ export default function LeadForm() {
         setWhatsappLead(event.target.value)
     }
 
-    function redirectTo(link: string) {
+    function redirectTo() {
         // if (process.env.NODE_ENV === 'production') {
         fb('Lead', 'Lead' + eventId, nameLead, emailLead, whatsappLead).then(r => r)
         // }
-        window.location.href = `${redirectTo}`
+        window.location.href = `${process.env.NEXT_PUBLIC_WHATSAPP_LINK}`
     }
 
     const handleSubmitLead = async (event: { preventDefault: () => void }) => {
@@ -75,7 +75,7 @@ export default function LeadForm() {
             await fetch(clint + '?' + new URLSearchParams(data))
 
             setLoading(false)
-            redirectTo(process.env.NEXT_PUBLIC_WHATSAPP_LINK!)
+            redirectTo()
         } catch (error) {
             console.log(error)
             if (error instanceof yup.ValidationError) {
@@ -89,7 +89,7 @@ export default function LeadForm() {
             } else {
                 console.error(error)
                 setLoading(false)
-                redirectTo(process.env.NEXT_PUBLIC_WHATSAPP_LINK!)
+                redirectTo()
             }
         }
     }

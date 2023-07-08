@@ -10,7 +10,7 @@ interface ILead {
     redirectTo?: string | undefined
 }
 
-export default function Lead({ redirectTo = process.env.NEXT_PUBLIC_WHATSAPP_LINK! }: ILead) {
+export default function Lead({ redirectTo }: ILead) {
     const [nameLead, setNameLead] = useState('')
     const [emailLead, setEmailLead] = useState('')
     const [whatsappLead, setWhatsappLead] = useState('')
@@ -48,7 +48,7 @@ export default function Lead({ redirectTo = process.env.NEXT_PUBLIC_WHATSAPP_LIN
             fb('Lead', 'Lead' + eventId, nameLead, emailLead, whatsappLead)
                 .then((r) => r)
         // }
-        window.location.href = `${redirectTo}`
+        window.location.href = `${process.env.NEXT_PUBLIC_WHATSAPP_LINK}`
     }
 
     const handleSubmitLead = async (event: { preventDefault: () => void }) => {
