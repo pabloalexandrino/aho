@@ -20,7 +20,7 @@ export default function fb(
         },
         body: JSON.stringify({
             event_name: event_name,
-            event_id: `${event_id ?? 'rcm'}`,
+            event_id: `${event_id ?? 'aho'}`,
             event_source_url: window.location.href,
             name,
             email,
