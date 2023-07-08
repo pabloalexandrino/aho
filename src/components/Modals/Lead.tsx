@@ -44,9 +44,9 @@ export default function Lead({ redirectTo = process.env.NEXT_PUBLIC_WHATSAPP_LIN
     }
 
     function sendPixel() {
-        if (process.env.NODE_ENV === 'production') {
+        // if (process.env.NODE_ENV === 'production') {
             fb('Lead', 'Lead' + eventId, nameLead, emailLead, whatsappLead)
-        }
+        // }
         window.location.href = `${redirectTo}`
     }
 
