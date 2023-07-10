@@ -42,7 +42,7 @@ export default function LeadForm() {
         // if (process.env.NODE_ENV === 'production') {
         fb('Lead', 'Lead' + eventId, nameLead, emailLead, whatsappLead).then(r => r)
         // }
-        window.location.href = `${process.env.NEXT_PUBLIC_WHATSAPP_LINK}`
+        window.location.href = pagina === 'aho-trafego' ? process.env.NEXT_PUBLIC_WHATSAPP_TRAFEGO! : process.env.NEXT_PUBLIC_WHATSAPP_ALUNOS!
     }
 
     const handleSubmitLead = async (event: { preventDefault: () => void }) => {
