@@ -7,7 +7,7 @@ import fb from '../utils/fb'
 
 export default function LeadForm() {
     const [nameLead, setNameLead] = useState('')
-    const [emailLead, setEmailLead] = useState('')
+    // const [emailLead, setEmailLead] = useState('')
     const [whatsappLead, setWhatsappLead] = useState('')
     const [loading, setLoading] = useState(false)
 
@@ -19,10 +19,10 @@ export default function LeadForm() {
 
     const schema = yup.object().shape({
         nameLead: yup.string().required('Por favor, informe o seu nome.'),
-        emailLead: yup
-            .string()
-            .email('Por favor, informe um e-mail válido.')
-            .required('Por favor, informe o seu e-mail.'),
+        // emailLead: yup
+        //     .string()
+        //     .email('Por favor, informe um e-mail válido.')
+        //     .required('Por favor, informe o seu e-mail.'),
         whatsappLead: yup
             .string()
             .required('Por favor, informe o seu número de telefone.')
@@ -40,7 +40,7 @@ export default function LeadForm() {
 
     function redirectTo() {
         // if (process.env.NODE_ENV === 'production') {
-        fb('Lead', 'Lead' + eventId, nameLead, emailLead, whatsappLead).then(r => r)
+        fb('Lead', 'Lead' + eventId, nameLead, '', whatsappLead).then(r => r)
         // }
         window.location.href = pagina === 'aho-trafego' ? process.env.NEXT_PUBLIC_WHATSAPP_TRAFEGO! : process.env.NEXT_PUBLIC_WHATSAPP_ALUNOS!
     }
@@ -51,13 +51,12 @@ export default function LeadForm() {
 
         try {
             await schema.validate(
-                { nameLead, emailLead, whatsappLead },
+                { nameLead, whatsappLead },
                 { abortEarly: false },
             )
 
             const data = {
                 name: nameLead,
-                email: emailLead,
                 whatsapp: whatsappLead,
                 pagina,
                 valor: value.toString(),
@@ -110,16 +109,16 @@ export default function LeadForm() {
                     setNameLead(event.target.value)
                 }
             />
-            <input
-                type='email'
-                name='email_lead'
-                placeholder='E-mail'
-                className='input input-bordered input-primary w-full bg-white text-black'
-                value={emailLead}
-                onChange={(event) =>
-                    setEmailLead(event.target.value)
-                }
-            />
+            {/*<input*/}
+            {/*    type='email'*/}
+            {/*    name='email_lead'*/}
+            {/*    placeholder='E-mail'*/}
+            {/*    className='input input-bordered input-primary w-full bg-white text-black'*/}
+            {/*    value={emailLead}*/}
+            {/*    onChange={(event) =>*/}
+            {/*        setEmailLead(event.target.value)*/}
+            {/*    }*/}
+            {/*/>*/}
 
             <InputMask
                 mask='(__) _____-____'
