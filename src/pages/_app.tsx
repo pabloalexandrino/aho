@@ -8,6 +8,7 @@ import '../styles/globals.css'
 import { setCookies } from '../utils/useCookies'
 import { ToastContainer } from 'react-toastify'
 import FloatBlocks from '../components/FloatBlocks'
+import { ParallaxProvider } from 'react-scroll-parallax'
 
 function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter()
@@ -58,11 +59,13 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     return (
         <>
-            <ThemeProvider defaultTheme='system'>
+            <ThemeProvider defaultTheme='light'>
                 <OfferProvider>
-                    <ToastContainer />
-                    <FloatBlocks />
-                    <Component {...pageProps} />
+                    <ParallaxProvider>
+                        <ToastContainer />
+                        <FloatBlocks />
+                        <Component {...pageProps} />
+                    </ParallaxProvider>
                 </OfferProvider>
             </ThemeProvider>
         </>

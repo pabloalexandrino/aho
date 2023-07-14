@@ -11,18 +11,14 @@ module.exports = {
     daisyui: {
         themes: [
             {
-                dark: {
+                light: {
                     ...require('daisyui/src/colors/themes')[
-                        '[data-theme=dark]'
-                    ],
-                    'base-100': '#000100',
+                        '[data-theme=light]'
+                        ],
                     primary: '#6AD70E',
-                    'primary-focus': '#74C367',
-                    'primary-content': '#000000',
+                    'primary-content': '#000100',
                     success: '#2DCD46',
-                    secondary: '#6516DD',
-                    'secondary-focus': '#7C3BFF',
-                    'secondary-content': '#FFFFFF',
+                    'secondary-content': '#000100',
                     // error: '#EF4444',
                     error: '#B30000',
                     '.text-glow': {
@@ -38,7 +34,11 @@ module.exports = {
                         'box-shadow': '0 0 40px #B30000, 0 0 20px #B30000',
                     },
                     '.bg-gradient': {
-                        'background-image': 'linear-gradient(90deg,#560911 0%, #9A2C3B 100%)'
+                        'background-image': 'linear-gradient(90deg,#560911 0%, #9A2C3B 100%)',
+                    },
+                    '.bg-gold-gradient': { 'background': 'linear-gradient(90deg, #AA821D 3.29%, rgba(248, 249, 194, 0.874851) 53.01%, rgba(223, 189, 105, 0.65) 98.63%);' },
+                    '.bg-radial-gradient': {
+                        'background-image': 'radial-gradient(50% 50% at 50% 50%,#B30000 0%, rgba(255, 255, 255, 0) 100%);'
                     }
                 },
             },

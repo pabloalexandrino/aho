@@ -8,11 +8,11 @@ export default function Home() {
     const {
         setPagina,
         setValue,
-        eventId,
+        eventId
     } = useContext(OfferContext)
 
     useEffect(() => {
-        setPagina('aho-alunos')
+        setPagina('aho-trafego')
         setValue(3500)
     }, [setPagina, setValue])
 
@@ -25,7 +25,7 @@ export default function Home() {
                 `}
             </Script>
 
-            <CapturePage form={false} />
+            <CapturePage form={true} />
         </>
     )
 }

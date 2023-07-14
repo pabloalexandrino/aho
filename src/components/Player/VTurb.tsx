@@ -7,10 +7,20 @@ interface IVturb {
     player: string | undefined
     video: string | undefined
     vertical?: boolean
+    iframe?: boolean
 }
 
-export default function VTurb({ player, video, vertical = false }: IVturb) {
+export default function VTurb({ player, video, vertical = false, iframe = false }: IVturb) {
     return (
+        iframe ? (
+            <div className={`${vertical ? 'pb-[176.6%]' : 'pb-[56.25%]'} relative`}>
+                <iframe src={`https://scripts.converteai.net/${video}/players/${player}/embed.html`}
+                        id={`ifr_${player}`}
+                        className='absolute top-0 left-0 w-full h-full rounded-xl'
+                        referrerPolicy="origin">
+                </iframe>
+            </div>
+        ) : (
         <div className='w-full h-auto relative flex rounded-xl'>
             <div
                 id={`vid_${player}`}
@@ -32,14 +42,14 @@ export default function VTurb({ player, video, vertical = false }: IVturb) {
                     src={`https://scripts.converteai.net/${video}/players/${player}/player.js`}>
             </Script>
         </div>
-    )
+    ))
 }
 
 // @ts-ignore
 export const HiddenElements = ({ children, seconds }) => {
     const { showElements, setShowElements } = useContext(OfferContext)
     useEffect(() => {
-        const alreadyDisplayedKey = `@AHOalreadyElsDisplayed${seconds}`
+        const alreadyDisplayedKey = `@RCMalreadyElsDisplayed${seconds}`
 
         let attempts = 0
 
@@ -79,7 +89,7 @@ export const HiddenElements = ({ children, seconds }) => {
                 startWatchVideoProgress()
             }
         }
-    }, [seconds, showElements])
+    }, [seconds, setShowElements, showElements])
 
     return (
         showElements && children
