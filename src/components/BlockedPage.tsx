@@ -344,11 +344,11 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                             </figure>
                             <div className='card-body'>
                                 <h2 className='card-title'>
-                                    SEJA BEM VINDO | INTRODUÇÃO
+                                    MÓDULO 1
                                 </h2>
                                 <p className=''>
-                                    Introdução e “hacks” de como absorver o
-                                    máximo de conteúdo do Programa completo
+                                    Introdução à sua jornada de sucesso, aqui você vai ver os primeiros passos para
+                                    começar seu negocio altamente lucrativo;
                                 </p>
                             </div>
                         </div>
@@ -365,11 +365,11 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                             </figure>
                             <div className='card-body'>
                                 <h2 className='card-title'>
-                                    CONHECENDO O MERCADO | BÁSICO
+                                    MÓDULO 2
                                 </h2>
                                 <p className=''>
-                                    Mais de 13 aulas explicando o básico, porém
-                                    necessário do mundo das milhas.
+                                    A gestão do seu tempo é muito importante, pensando nisso te trago aqui um guia
+                                    prático de produtividade, otimização de recursos e organização;
                                 </p>
                             </div>
                         </div>
@@ -386,11 +386,12 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                             </figure>
                             <div className='card-body'>
                                 <h2 className='card-title'>
-                                    OS 3 PASSOS DA METODOLOGIA A.M.V
+                                    MÓDULO 3
                                 </h2>
                                 <p className=''>
-                                    A clareza dos 3 passos da nossa metodologia:
-                                    Compra, Multiplicação e Venda.
+                                    O módulo &quot;Formação em Turismo 1.0&quot; é uma base sólida para adquirir
+                                    conhecimentos fundamentais sobre a indústria do turismo. Ele abrange os conceitos e
+                                    princípios essenciais que os profissionais precisam dominar para ingressar no setor.
                                 </p>
                             </div>
                         </div>
@@ -407,11 +408,12 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                             </figure>
                             <div className='card-body'>
                                 <h2 className='card-title'>
-                                    PROGRAMAS DE FIDELIDADE NACIONAIS
+                                    MÓDULO 4
                                 </h2>
                                 <p className=''>
-                                    Todos os detalhes dos 9 programas de
-                                    fidelidade que mais utilizamos no Brasil.
+                                    O módulo &quot;Formação em Turismo 2.0&quot; é uma continuação do módulo anterior,
+                                    &quot;Formação em Turismo 1.0&quot;. Ele se concentra em aspectos mais avançados e
+                                    atualizados da indústria do turismo;
                                 </p>
                             </div>
                         </div>
@@ -428,12 +430,11 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                             </figure>
                             <div className='card-body'>
                                 <h2 className='card-title'>
-                                    PROGRAMAS DE FIDELIDADE INTERNACIONAL
+                                    MÓDULO 5
                                 </h2>
                                 <p className=''>
-                                    Os programas de fidelidade Internacionais,
-                                    ótimos para voar muito barato ou até de
-                                    graça.
+                                    Aqui você irá formar toda a base necessária para dominar o universo das milhas,
+                                    desde a matemática do milheiro até as principais formas de acúmulo;
                                 </p>
                             </div>
                         </div>
@@ -450,12 +451,11 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                             </figure>
                             <div className='card-body'>
                                 <h2 className='card-title'>
-                                    PROGRAMAS DE FIDELIDADE | BANCOS
+                                    MÓDULO 6
                                 </h2>
                                 <p className=''>
-                                    Os melhores programas de fidelidade dos
-                                    bancos, como pontuar e ter acesso às
-                                    melhores estratégias.
+                                    Nesse módulo você irá dominar todo a parte de emissões de passagens com milhas,
+                                    desde programas nacionais aos internacionais e as famosas tabelas fixas de resgate;
                                 </p>
                             </div>
                         </div>
@@ -472,12 +472,11 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                             </figure>
                             <div className='card-body'>
                                 <h2 className='card-title'>
-                                    HOTEIS COM ATÉ 50% DE DESCONTO
+                                    MÓDULO 7
                                 </h2>
                                 <p className=''>
-                                    Como ter acesso aos melhores programas,
-                                    resgatar pontos e ter descontos na sua
-                                    hospedagem.
+                                    Aqui você irá mergulhar no Viaja Flux, o sistema de gestão que organiza tudo para
+                                    você, desde o controle de clientes até o fluxo de caixa;
                                 </p>
                             </div>
                         </div>
@@ -493,10 +492,11 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                                 />
                             </figure>
                             <div className='card-body'>
-                                <h2 className='card-title'>TODOS OS APPS</h2>
+                                <h2 className='card-title'>MÓDULO 8</h2>
                                 <p className=''>
-                                    Os aplicativos que você tem que ter para
-                                    pontuar e ter mais lucro com milhas.
+                                    Trago com exclusividade no Brasil o conceito de programa de fidelidade próprio, com
+                                    o conhecimento das milhas aéreas você vai aprender a vender o serviço de gestão
+                                    desse ativo aumentando consideravelmente a sua margem de lucro;
                                 </p>
                             </div>
                         </div>
@@ -513,12 +513,12 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                             </figure>
                             <div className='card-body'>
                                 <h2 className='card-title'>
-                                    CARTÃO DE CRÉDITO | O MAIOR ATIVO DO MUNDO
+                                    MÓDULO 9
                                 </h2>
                                 <p className=''>
-                                    Tudo o que você precisa saber sobre cartões
-                                    e como escolher o que melhor se encaixa na
-                                    sua realidade.
+                                    Dominar as estratégias de marketing digital com certeza irão fazer a diferença no
+                                    seu negócio, pensando nisso desenvolvemos esse módulo para te levar a escala de
+                                    resultados;
                                 </p>
                             </div>
                         </div>
@@ -535,11 +535,12 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                             </figure>
                             <div className='card-body'>
                                 <h2 className='card-title'>
-                                    SAQUES AUTOMÁTICOS VITALÍCIOS
+                                    MÓDULO 10
                                 </h2>
                                 <p className=''>
-                                    Acumulando milhas de graça. Como ter de
-                                    volta um dinheiro que já é seu.
+                                    Vendas é o coração de qualquer empresa, é o que traz o lucro e aumenta o
+                                    faturamento, você vai entender que vendas é um processo totalmente treinável e
+                                    qualquer pessoa tem capacidade de ser um vendedor de sucesso;
                                 </p>
                             </div>
                         </div>
@@ -556,10 +557,12 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                             </figure>
                             <div className='card-body'>
                                 <h2 className='card-title'>
-                                    RENDA COM MILHAS NA PRÁTICA
+                                    MÓDULO 11
                                 </h2>
                                 <p className=''>
-                                    Como criar seu segundo salário mensal
+                                    Aqui prosseguimos adquirindo toda base técnica necessária para vender qualquer
+                                    produto, quando você sair desse módulo estará preparado(a) não só para vender
+                                    viagens mas também qualquer outro tipo de produto;
                                 </p>
                             </div>
                         </div>
@@ -576,11 +579,12 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                             </figure>
                             <div className='card-body'>
                                 <h2 className='card-title'>
-                                    VENDENDO MILHAS DE FORMA LUCRATIVA
+                                    MÓDULO 12
                                 </h2>
                                 <p className=''>
-                                    As 5 formas de você vender milhas com o
-                                    máximo de lucro .
+                                    Esse módulo tem fundamental importância para o empresário que você irá se tornar,
+                                    crescer requer organização e uma boa administração, aprender e dominar isso desde o
+                                    ínicio do seu negócio é fundamental;
                                 </p>
                             </div>
                         </div>
@@ -597,11 +601,12 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                             </figure>
                             <div className='card-body'>
                                 <h2 className='card-title'>
-                                    VIAJANDO PRATICAMENTE DE GRAÇA
+                                    MÓDULO 13
                                 </h2>
                                 <p className=''>
-                                    O método que somente donos de agências de
-                                    viagens tinham acesso, liberados para você.
+                                    A contabilidade é algo primordial para a maximização de resultado da sua empresa,
+                                    entender qual o melhor segmento para o seu CNPJ vai fazer toda a diferença, aqui
+                                    você terá todos os conceitos para crescer de forma saudável;
                                 </p>
                             </div>
                         </div>
@@ -618,11 +623,12 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                             </figure>
                             <div className='card-body'>
                                 <h2 className='card-title'>
-                                    VIAJANDO PRATICAMENTE DE GRAÇA
+                                    MÓDULO 14
                                 </h2>
                                 <p className=''>
-                                    O método que somente donos de agências de
-                                    viagens tinham acesso, liberados para você.
+                                    Um Agente de viagens deve com certeza entender da parte jurídica para uma melhor
+                                    absorção de possíveis percalços pelo meio do caminho, protegendo assim o patrimônio
+                                    de sua empresa;
                                 </p>
                             </div>
                         </div>
@@ -639,11 +645,11 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                             </figure>
                             <div className='card-body'>
                                 <h2 className='card-title'>
-                                    VIAJANDO PRATICAMENTE DE GRAÇA
+                                    MÓDULO 15
                                 </h2>
                                 <p className=''>
-                                    O método que somente donos de agências de
-                                    viagens tinham acesso, liberados para você.
+                                    O guia completo do que você vai fazer nos próximos 6 meses para decolar sua Agência
+                                    Home Office;
                                 </p>
                             </div>
                         </div>
@@ -660,11 +666,12 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                             </figure>
                             <div className='card-body'>
                                 <h2 className='card-title'>
-                                    VIAJANDO PRATICAMENTE DE GRAÇA
+                                    MÓDULO 16
                                 </h2>
                                 <p className=''>
-                                    O método que somente donos de agências de
-                                    viagens tinham acesso, liberados para você.
+                                    Se prepare para uma imersão completa, aulas ao vivo com diversos tutores fazem parte
+                                    do arcabouço da Agência Home Office, tire suas dúvidas diretamente com
+                                    especialistas;
                                 </p>
                             </div>
                         </div>
@@ -681,11 +688,12 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                             </figure>
                             <div className='card-body'>
                                 <h2 className='card-title'>
-                                    VIAJANDO PRATICAMENTE DE GRAÇA
+                                    MÓDULO 17
                                 </h2>
                                 <p className=''>
-                                    O método que somente donos de agências de
-                                    viagens tinham acesso, liberados para você.
+                                    Aqui você entenderá a quantidade de dinheiro que você ou seu cliente pode estar
+                                    sentado ao se deparar por exemplo com um cancelamento de voo, dominar os direitos
+                                    dos passageiros é algo imprescindível para o sucesso da sua Agência Home Office;
                                 </p>
                             </div>
                         </div>
