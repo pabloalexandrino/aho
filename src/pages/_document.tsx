@@ -17,7 +17,7 @@ class MyDocument extends Document {
                     {/* favicon */}
                     <link rel='icon' href='/icon-512x512.webp' />
                     <meta name='theme-color' content='#000000' />
-                    <title>Agência Home Office - Sua Agência de Viagens Online</title>
+                    
                     <link rel='preconnect' href='https://fonts.googleapis.com' />
                     <link rel='preconnect' href='https://fonts.gstatic.com' />
                     <link

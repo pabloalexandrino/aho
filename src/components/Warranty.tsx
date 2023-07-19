@@ -1,6 +1,6 @@
 import { LegacyRef, useRef } from 'react'
 import { useParallax } from 'react-scroll-parallax'
-import BlurImage from '../BlurImage'
+import BlurImage from './BlurImage'
 
 interface IWarranty {
     penSpeed?: number
@@ -20,27 +20,27 @@ export default function Warranty({ penSpeed }: IWarranty) {
     })
 
     return (
-        <div ref={target} className="h-96 md:h-screen">
+        <div ref={target}>
             <div
                 ref={warranty.ref as LegacyRef<HTMLDivElement>}
-                className="relative w-full h-96 md:h-screen"
+                className='relative w-full h-96 md:h-screen'
             >
                 <BlurImage
-                    src="/warranty.webp"
-                    layout="fill"
-                    alt="Garantia"
-                    classname="object-contain"
+                    src='/warranty.webp'
+                    layout='fill'
+                    alt='Garantia'
+                    className='object-contain'
                 />
             </div>
             <div
                 ref={pen.ref as LegacyRef<HTMLDivElement>}
-                className="relative z-0 ml-auto w-[60px] h-[30vh] md:h-[70vh] hidden lg:flex -mt-[40vh] md:-mt-[80vh]"
+                className='relative z-0 ml-auto w-[60px] h-[30vh] md:h-[70vh] hidden lg:flex -mt-[40vh] md:-mt-[80vh]'
             >
                 <BlurImage
-                    src="/pen.webp"
-                    layout="fill"
-                    alt="Caneta"
-                    classname="object-contain"
+                    src='/pen.webp'
+                    layout='fill'
+                    alt='Caneta'
+                    className='object-contain'
                 />
             </div>
         </div>
