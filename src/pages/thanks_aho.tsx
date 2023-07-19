@@ -141,7 +141,7 @@ export default function Home(): JSX.Element {
                 </div>
 
                 <Link
-                    href='#'
+                    href='https://go.rendacommilhas.com.br/pay/game-change-empreenda-out-2023-397'
                     rel={'noreferrer'}
                     target={'_blank'}
                 >
