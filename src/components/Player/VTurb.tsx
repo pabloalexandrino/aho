@@ -17,39 +17,39 @@ export default function VTurb({ player, video, vertical = false, iframe = false 
                 <iframe src={`https://scripts.converteai.net/${video}/players/${player}/embed.html`}
                         id={`ifr_${player}`}
                         className='absolute top-0 left-0 w-full h-full rounded-xl'
-                        referrerPolicy="origin">
+                        referrerPolicy='origin'>
                 </iframe>
             </div>
         ) : (
-        <div className='w-full h-auto relative flex rounded-xl'>
-            <div
-                id={`vid_${player}`}
-                className={`relative ${
-                    vertical ? 'pb-[182.6%]' : 'pb-[56.25%]'
-                } w-full h-0 rounded-xl overflow-hidden box-glow grid place-items-center`}
-            >
-                <Image id={`thumb_${player}`} layout='fill'
-                       src={`https://images.converteai.net/${video}/players/${player}/thumbnail.jpg`}
-                       className='absolute rounded-xl top-0 left-0 w-full h-full object-cover block'
-                       alt='Video Thumbnail' />
+            <div className='w-full h-auto relative flex rounded-xl'>
+                <div
+                    id={`vid_${player}`}
+                    className={`relative ${
+                        vertical ? 'pb-[182.6%]' : 'pb-[56.25%]'
+                    } w-full h-0 rounded-xl overflow-hidden box-glow grid place-items-center`}
+                >
+                    <Image id={`thumb_${player}`} layout='fill'
+                           src={`https://images.converteai.net/${video}/players/${player}/thumbnail.jpg`}
+                           className='absolute rounded-xl top-0 left-0 w-full h-full object-cover block'
+                           alt='Video Thumbnail' />
 
-                <div id={`backdrop_${player}`}
-                     className='absolute rounded-xl top-0 left-0 w-full h-full bg-black opacity-50 blackdrop-blur-sm'
-                     style={{ WebkitBackdropFilter: 'blur(5px)' }}></div>
+                    <div id={`backdrop_${player}`}
+                         className='absolute rounded-xl top-0 left-0 w-full h-full bg-black opacity-50 blackdrop-blur-sm'
+                         style={{ WebkitBackdropFilter: 'blur(5px)' }}></div>
+                </div>
+                <Script id={`src_${player}`}
+                        strategy='afterInteractive'
+                        src={`https://scripts.converteai.net/${video}/players/${player}/player.js`}>
+                </Script>
             </div>
-            <Script id={`src_${player}`}
-                    strategy='afterInteractive'
-                    src={`https://scripts.converteai.net/${video}/players/${player}/player.js`}>
-            </Script>
-        </div>
-    ))
+        ))
 }
 
 // @ts-ignore
 export const HiddenElements = ({ children, seconds }) => {
     const { showElements, setShowElements } = useContext(OfferContext)
     useEffect(() => {
-        const alreadyDisplayedKey = `@RCMalreadyElsDisplayed${seconds}`
+        const alreadyDisplayedKey = `@AHOalreadyElsDisplayed${seconds}`
 
         let attempts = 0
 

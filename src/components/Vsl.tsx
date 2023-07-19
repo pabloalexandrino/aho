@@ -1,8 +1,6 @@
-import Head from 'next/head'
 import { useContext, useEffect, useState } from 'react'
 import Blur from './Blur'
 import CallToAction from './CallToAction'
-import Panda from './Player/Panda'
 import Countdown from './CountDown'
 import { OfferContext } from '../providers/Offer'
 import { parseCookies } from 'nookies'
@@ -32,7 +30,7 @@ export default function Vsl({
     const [counter, setCounter] = useState(initialValue)
     const [display, setDisplay] = useState(false)
     const { setTargetDate, expired } = useContext(OfferContext)
-    const { '@RCM:Countdown': CountdownCookies } = parseCookies(undefined)
+    const { '@AHO:Countdown': CountdownCookies } = parseCookies(undefined)
 
 
     useEffect(() => {
@@ -45,7 +43,7 @@ export default function Vsl({
                 )
                 if (!CountdownCookies) {
                     setTargetDate(target.toString())
-                    setCookies('@RCM:Countdown', target, 60 * 60 * 24 * 7)
+                    setCookies('@AHO:Countdown', target, 60 * 60 * 24 * 7)
                 }
 
             }, 770 * 1000) // 12 minutos e 50 segundos (770 segundos)

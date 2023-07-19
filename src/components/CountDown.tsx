@@ -30,7 +30,7 @@ export default function Countdown({ style = 'blocks' }: ICountdown) {
 
     return (
         style === 'blocks' ? (
-            <div className='grid grid-flow-col gap-5 text-center auto-cols-max'>
+            <div className='grid grid-flow-col gap-5 text-center auto-cols-max text-white'>
                 <div
                     className={`flex flex-col p-2 rounded-box ${
                         minutes <= 0 && seconds <= 0

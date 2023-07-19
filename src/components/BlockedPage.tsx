@@ -4,27 +4,18 @@ import { OfferContext } from '../providers/Offer'
 import { setCookies } from '../utils/useCookies'
 import Blur from './Blur'
 import BlurImage from './BlurImage'
-import CallToAction from './CallToAction'
-import Countdown from './CountDown'
-import Divider from './Divider'
+import CallToAction2 from './CallToAction2'
 import FloatBlocks from './FloatBlocks'
 import Footer from './Footer'
-import MockupIphone from './MockupIphone'
-import Money from './Money'
-import Panda from './Player/Panda'
 import Warranty from './Warranty'
 import VTurb from './Player/VTurb'
+import Countdown from './CountDown'
 
 interface BlockedProps {
     show?: boolean
-    offer?: {
-        price: string
-        installment: string
-        discount: string
-    }
 }
 
-export default function BlockedPage({ show = true, offer }: BlockedProps) {
+export default function BlockedPage({ show = true }: BlockedProps) {
     const [clientWindowHeight, setClientWindowHeight] = useState(0)
     const [isCountdownVisible, setIsCountdownVisible] = useState(false)
     const { targetDate, setTargetDate, expired } = useContext(OfferContext)
@@ -42,7 +33,7 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
     }, [])
 
     useEffect(() => {
-        if (clientWindowHeight > 15500 && !isCountdownVisible) {
+        if (clientWindowHeight > 17500 && !isCountdownVisible) {
             const target = new Date().setMinutes(
                 new Date().getMinutes() +
                 parseInt(process.env.NEXT_PUBLIC_TIME_1 ?? '0'),
@@ -72,17 +63,6 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
     }
     return show ? (
         <>
-            <label
-                htmlFor='lead'
-                className='animate-bounce fixed h-16 w-16 bottom-6 left-6 z-50 cursor-pointer'
-            >
-                <BlurImage
-                    layout='fill'
-                    src='/whatsapp.webp'
-                    alt='Whatsapp'
-                    className='rounded-xl w-full h-full object-contain'
-                />
-            </label>
             <section
                 className='relative mx-auto py-12 px-6 bg-gradient-to-tl from-gray-700 via-gray-900 to-black text-white'>
                 <Blur direction='right' />
@@ -95,7 +75,7 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                 </h3>
 
                 <div className='aspect-video box-red-glow container max-w-3xl mx-auto'>
-                    <VTurb player={'64a407bb2e6fd10009827d12'} video={'99583553-0c7c-40d5-b819-534dcd7867b9'} iframe />
+                    <VTurb player={'64b7565fe891af000a1d8ac9'} video={'99583553-0c7c-40d5-b819-534dcd7867b9'} iframe />
                 </div>
 
                 <h3 className='text-center container mx-auto max-w-2xl my-12 font-semibold'>
@@ -112,7 +92,7 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                     lucro!
                 </h3>
 
-                <div className='mt-8'>{offer && <CallToAction />}</div>
+                <div className='mt-8'>{<CallToAction2 />}</div>
             </section>
 
             <section
@@ -129,17 +109,17 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
                     </div>
                     <div className='grid gap-8 sm:grid-cols-3'>
-                        <VTurb player='64a4147a01f8d3000957d175'
+                        <VTurb player='64b751480373240009920668'
                                video='99583553-0c7c-40d5-b819-534dcd7867b9'
                                vertical
                                iframe
                         />
-                        <VTurb player='64a4141c898cc800097ae2f5'
+                        <VTurb player='64b75144e891af000a1d8a7b'
                                video='99583553-0c7c-40d5-b819-534dcd7867b9'
                                vertical
                                iframe
                         />
-                        <VTurb player='64a4142ff6efcf00093d26a6'
+                        <VTurb player='64b7513fd66489000873f167'
                                video='99583553-0c7c-40d5-b819-534dcd7867b9'
                                vertical
                                iframe
@@ -150,16 +130,16 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         mudando de realidade com a <span className='font-bold'>missão 20k!</span>
                     </p>
 
-                    <div className='mt-8'>{offer && <CallToAction />}</div>
+                    <div className='mt-8'>{<CallToAction2 />}</div>
 
                     <p className='max-w-xl text-lg mx-auto mt-12 mb-6 text-center font-bold'>
-                        Pessoas mudando de<span className='font-black'> realidade com a AHO.</span>
+                        Pessoas mudando de realidade com a AHO.
                     </p>
 
                     <div className='grid gap-4 md:grid-cols-3'>
                         <div className='relative hover:z-10 h-[490px] box-red-glow rounded-xl'>
                             <BlurImage
-                                src='/depoimentos/1.webp'
+                                src='/testimonials/1.webp'
                                 alt='Depoimento 1'
                                 layout='fill'
                                 className='object-cover rounded-xl shadow-lg'
@@ -167,7 +147,7 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
                         <div className='relative hover:z-10 h-[490px] box-red-glow rounded-xl'>
                             <BlurImage
-                                src='/depoimentos/2.webp'
+                                src='/testimonials/2.webp'
                                 alt='Depoimento 2'
                                 layout='fill'
                                 className='object-cover rounded-xl shadow-lg'
@@ -175,7 +155,7 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
                         <div className='relative hover:z-10 h-[490px] box-red-glow rounded-xl'>
                             <BlurImage
-                                src='/depoimentos/3.webp'
+                                src='/testimonials/3.webp'
                                 alt='Depoimento 3'
                                 layout='fill'
                                 className='object-cover rounded-xl shadow-lg'
@@ -183,7 +163,7 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
                         <div className='relative hover:z-10 h-[490px] box-red-glow rounded-xl'>
                             <BlurImage
-                                src='/depoimentos/4.webp'
+                                src='/testimonials/4.webp'
                                 alt='Depoimento 4'
                                 layout='fill'
                                 className='object-cover rounded-xl shadow-lg'
@@ -191,7 +171,7 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
                         <div className='relative hover:z-10 h-[490px] box-red-glow rounded-xl'>
                             <BlurImage
-                                src='/depoimentos/5.webp'
+                                src='/testimonials/5.webp'
                                 alt='Depoimento 5'
                                 layout='fill'
                                 className='object-cover rounded-xl shadow-lg'
@@ -199,7 +179,7 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
                         <div className='relative hover:z-10 h-[490px] box-red-glow rounded-xl'>
                             <BlurImage
-                                src='/depoimentos/6.webp'
+                                src='/testimonials/6.webp'
                                 alt='Depoimento 6'
                                 layout='fill'
                                 className='object-cover rounded-xl shadow-lg'
@@ -207,104 +187,120 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
                     </div>
                 </div>
-                {offer && <CallToAction />}
+                {<CallToAction2 />}
             </section>
 
 
-            <section className='relative mx-auto py-12 sm:py-24 px-6 bg-[url(/bg-2.webp)] bg-cover bg-fixed'>
+            <section className='relative mx-auto py-12 px-6 bg-[url(/bg-2.webp)] bg-cover bg-fixed'>
                 <h2 className='font-bold text-black text-center text-2xl md:text-3xl max-w-5xl mx-auto'>
-                    <span className='bg-primary'>
-                        SOMOS OS ÚNICOS NO BRASIL!
-                    </span>
-                    <br />
-                    <span>GARANTIA CONDICIONAL DE 1 ANO.</span>
+                    SOMOS OS ÚNICOS NO BRASIL!
                 </h2>
-                <h3 className=' text-center font-bold animate-pulse bg-warning w-fit text-black mx-auto text-sm sm:text-md md:text-xl leading-normal mb-16'>
+                <span className='block text-center mb-4 font-bold text-lg'>365 DIAS PARA TESTAR</span>
+                <h3 className=' text-center font-semibold animate-pulse bg-warning w-fit text-black mx-auto text-sm sm:text-md md:text-lg leading-normal mb-16'>
                     <span className='mr-2'>⚠️</span>
                     Registrada em cartório [RISCO ZERO]
+                    <span className='ml-2'>⚠️</span>
                 </h3>
 
                 <Warranty />
 
                 <div className='grid text-center gap-8 max-w-xl mx-auto mt-12 mb-8 md:mt-32'>
                     <div
-                        className='text-xl md:text-2xl w-fit mx-auto p-4 border-error border rounded-xl text-white bg-error animate-pulse'>
+                        className='text-xl md:text-2xl w-fit mx-auto p-4 border-warning border rounded-xl bg-warning animate-pulse'>
                         <span className='text-5xl'>😱</span>
                         <br />
                         Você não entendeu errado. <br />
                         <strong>SEU RISCO AQUI É ZERO</strong>
                     </div>
                 </div>
-                {offer && <CallToAction />}
+                {<CallToAction2 />}
+
+                <div className='w-full border-b-4 my-10 border-dashed border-black'></div>
+
+                <h1 className='md:text-center uppercase my-6 rounded-md text-xl md:text-3xl md:leading-snug font-bold text-center w-full inline-grid sm:block'
+                >
+                    Para quem é a <span
+                    className='text-white bg-gradient font-bold rounded-lg px-4'>AGÊNCIA HOME OFFICE?</span>
+                </h1>
+
+                <h3 className='font-semibold text-center mt-6'>⚠️ A AHO não é um cursinho de agência, é um modelo de
+                    negócio validado. ⚠️</h3>
+
+                <div className='grid gap-3 mt-4 max-w-3xl mx-auto'>
+                    <div className='relative hover:z-10 bg-gradient rounded-3xl text-white p-4'>
+                        <div className='font-bold'>A A.H.O funciona para mim que já tenho um emprego?</div>
+                        <span className='text-sm leading-tight flex'>Sim, 90% das pessoas que entram na AHO, tem emprego formal ou outro negócio. Começam em paralelo e quando a agência toma forma e faturamento você decide sobre a transição de carreira ou tocar os 2 juntos.</span>
+                    </div>
+
+                    <div className='relative hover:z-10 bg-gradient rounded-3xl text-white p-4'>
+                        <div className='font-bold'>Posso começar na A.H.O mesmo sem ter CNPJ?</div>
+                        <span className='text-sm leading-tight flex'>Sim, boa parte de quem entra na AHO, cria o CNPJ depois de entender os conceitos e criar os primeiros resultados ainda sendo CPF. Temos um time contábil parceiro para te ajudar na abertura da sua Empresa.</span>
+                    </div>
+
+                    <div className='relative hover:z-10 bg-gradient rounded-3xl text-white p-4'>
+                        <div className='font-bold'>Preciso ter muito fluxo de caixa? Quanto mais ou menos preciso para
+                            começar?
+                        </div>
+                        <span className='text-sm leading-tight flex'>Na verdade a proposta que temos é bem diferente. Nas primeiras semanas o nosso intuito é fazer você gerar lucro nas suas primeiras vendas. Lucro esse de 1, 2, 3 mil reais, isso é equivalente a 3, 5, 10x mais o valor que você paga por mês (caso opte em entrar no formato parcelado) para entrar na AHO.</span>
+                    </div>
+                </div>
+
+                <div className='font-semibold text-center my-8'>Costumamos dizer que os seus primeiros clientes são
+                    quem <span
+                        className='font-bold'>&quot;financiam&quot;</span> o seu
+                    negócio
+                </div>
+
+                {<CallToAction2 />}
             </section>
             <section className='relative w-full bg-zinc-900 px-6 py-12'>
                 <Blur direction='right' />
                 <FloatBlocks />
-                <div className='container mx-auto max-w-5xl'>
-                    <div className='grid gap-8 md:grid-cols-2 mb-8'>
-                        <div>
-                            <h2 className='font-bold text-white text-2xl md:text-4xl max-w-2xl mx-auto mb-8'>
-                                <span className='text-primary'>
-                                    LUIZ GREGATTI
-                                </span>{' '}
-                                NOS PRINCIPAIS SITES DO PAÍS!
-                            </h2>
+                <div className='container mx-auto max-w-3xl'>
 
-                            <p className='text-white/80 lg:text-xl leading-normal mb-8 text-justify'>
-                                Empresário, palestrante e viajante profissional,
-                                já conheceu mais de 40 países, possuiu mais de
-                                20 mil alunos em diversos programas de
-                                acompanhamento que juntos (os alunos) faturaram
-                                mais de R$41.000.000,00 (milhões de reais).{' '}
-                                <br />
-                                <br />
-                                Nos últimos anos Luiz acumulou mais de 60
-                                milhões de milhas e montou o ÚNICO PROGRAMA DE
-                                ACOMPANHAMENTO DO BRASIL COM FORMAÇÃO EM RENDA
-                                COM MILHAS, CARTÕES E PASSAGENS AÉREAS. <br />
-                                <br />
-                                Palestrou dividindo palcos com grandes nomes do
-                                empreendedorismo Brasileiro, como Flávio
-                                Augusto, Pablo Marçal entre outros nomes
-                                renomados.
-                            </p>
-                        </div>
+                    <h1 className=' text-white md:text-center uppercase my-6 rounded-md text-xl md:text-3xl md:leading-snug font-bold text-center w-full'
+                    >
+                        Perdeu as aulas da semana <br /><span
+                        className='text-white bg-gradient font-bold rounded-lg px-4 w-fit'>&quot;A SUA AGÊNCIA HOME OFFICE&quot;</span>?
+                    </h1>
 
-                        <MockupIphone>
-                            <div className='h-full bg-black relative w-full'>
-                                <div className='relative h-full mb-1'>
-                                    <BlurImage
-                                        layout='fill'
-                                        src='/instagram.webp'
-                                        alt='Luiz Gregatti - Instagram'
-                                    />
-                                </div>
-                                <div className='relative h-full mb-1'>
-                                    <BlurImage
-                                        layout='fill'
-                                        src='/istoe.webp'
-                                        alt='Luiz Gregatti - Istoé'
-                                    />
-                                </div>
-                                <div className='relative h-full mb-1'>
-                                    <BlurImage
-                                        layout='fill'
-                                        src='/extra.webp'
-                                        alt='Luiz Gregatti - Extra'
-                                    />
-                                </div>
-                                <div className='relative h-full mb-1'>
-                                    <BlurImage
-                                        layout='fill'
-                                        src='/folha-vi.webp'
-                                        alt='Luiz Gregatti - Folha Vitória'
-                                    />
-                                </div>
+                    <span
+                        className='text-white font-semibold text-center w-full block'>Assista aqui antes que saia do AR! 👇</span>
+
+                    <div className='grid md:grid-cols-2 mt-8 text-center gap-4'>
+                        <a target='_blank' rel='noreferrer' href={'https://youtube.com/live/sibPsOs2Gek?feature=share'}
+                           className='flex justify-center flex-col items-center duration-300 transition-all hover:scale-105'>
+                            <div className='relative w-[380px] h-[200px] bg-gray-800'>
+                                <BlurImage
+                                    layout={'fill'}
+                                    src='/1.png'
+                                    alt='Luiz'
+                                    className='object-contain'
+                                />
                             </div>
-                        </MockupIphone>
+                            <p className='max-w-[300px] mx-auto text-gray-500 mt-2 text-sm'>
+                                AULA 01 - A metodologia AHO, que NÃO depende de Milhas
+                                e entrega os seus Primeiros Clientes Grátis!
+                            </p>
+                        </a>
+
+                        <a target='_blank' rel='noreferrer' href={'https://youtube.com/live/HuBKqgEkHdg?feature=share'}
+                           className='flex justify-center flex-col items-center duration-300 transition-all hover:scale-105'>
+                            <div className='relative w-[380px] h-[200px] bg-gray-800'>
+                                <BlurImage
+                                    layout={'fill'}
+                                    src='/2.png'
+                                    alt='Luiz'
+                                    className='object-contain'
+                                />
+                            </div>
+                            <p className='max-w-[300px] mx-auto text-gray-500 mt-2 text-sm'>
+                                AULA 2 - A DESCOBERTA: Como criar a sua Agência Home
+                                Office &quot;sem investir&quot; o seu DINHEIRO!
+                            </p>
+                        </a>
                     </div>
 
-                    {offer && <CallToAction />}
                 </div>
             </section>
 
@@ -312,101 +308,39 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                 <Blur direction='right' />
                 <div className='container mx-auto max-w-3xl'>
                     <div className='grid gap-8 md:mb-12'>
-                        <div className='grid z-10'>
-                            <h2 className='font-bold text-center text-white bg-error py-1 px-2 text-2xl md:text-5xl mx-auto md:mt-8 mb-4'>
-                                O RENDA COM MILHAS NÃO É UM &quot;CURSINHO DE
-                                MILHAS&quot;
-                            </h2>
-                            <p className='text-white text-center mb-8 text-lg'>
-                                É um ecossistema completo, um programa de
-                                acompanhamento com ferramentas, professores e
-                                suporte intensivo que vai do{' '}
-                                <strong className='text-warning'>
-                                    zero até seu segundo salário completo.
-                                </strong>
-                            </p>
+                        <h2 className='font-bold text-center text-2xl md:text-4xl mx-auto mb-8 md:mb-8 uppercase'>
+                            O que o modelo de negócio da A.H.O me entrega?
+                        </h2>
 
-                            <div className='relative w-full h-64 md:h-96 mb-8'>
-                                <BlurImage
-                                    src='/mockup3.webp'
-                                    alt='Mockup'
-                                    layout='fill'
-                                    className='object-contain'
-                                />
-                            </div>
-
-                            <ul className='text-light md:text-xl text-white grid gap-4 max-w-3xl mx-auto mb-8'>
-                                <li>
-                                    ✅{' '}
-                                    <span className='font-bold text-warning'>
-                                        30 estratégias de fazer dinheiro
-                                    </span>{' '}
-                                    e voar praticamente de graça
-                                </li>
-                                <li>
-                                    ✅{' '}
-                                    <span className='font-bold text-warning'>
-                                        Apostila Renda com Milhas
-                                    </span>{' '}
-                                    (Material de Apoio)
-                                </li>
-                                <li>
-                                    ✅{' '}
-                                    <span className='font-bold text-warning'>
-                                        Professores a tempo integral
-                                    </span>{' '}
-                                    para te assessorar
-                                </li>
-                                <li>
-                                    ✅ Garantia de 365 dias ={' '}
-                                    <span className='font-bold text-warning'>
-                                        1 ano (ÚNICO NO PAÍS - ZERO RISCO)
-                                    </span>
-                                </li>
-                                <li>
-                                    ✅ Planilha de controle e organização de
-                                    milhas (PLAMILHAS)
-                                </li>
-                                <li>
-                                    ✅{' '}
-                                    <span className='font-bold text-warning'>
-                                        Plantões tira dúvidas AO VIVO
-                                    </span>{' '}
-                                    com os Professores
-                                </li>
-                                <li>
-                                    ✅{' '}
-                                    <span className='font-bold text-warning'>
-                                        Certificado de Formação
-                                    </span>{' '}
-                                    em Milhas e Cartões com Conclusão
-                                </li>
-                            </ul>
+                        <div className='relative w-full h-64 md:h-[500px] mb-8'>
+                            <BlurImage
+                                src='/mockup.webp'
+                                alt='Mockup'
+                                layout='fill'
+                                className='object-contain'
+                            />
                         </div>
-                    </div>
 
-                    {offer && <CallToAction />}
+                    </div>
                 </div>
-            </section>
-            <section
-                className='relative mx-auto py-12 sm:py-24 px-6 bg-[url(/bg.webp)] bg-fixed bg-contain bg-no-repeat bg-right'>
+
                 <Blur direction='right' />
                 <Blur />
                 <FloatBlocks />
-                <div className='container mx-auto'>
-                    <h2 className='font-bold text-white text-center text-2xl md:text-5xl mx-auto mb-8 md:mb-8'>
-                        MÓDULOS QUE VOCÊ TERÁ ACESSO
+                <div className='container mx-auto mb-12'>
+                    <h2 className='font-bold text-center text-2xl md:text-4xl mx-auto mb-8 md:mb-8 max-w-4xl'>
+                        E TODO O CONHECIMENTO DIVIDIDO NESSES MÓDULOS AQUI 👇
                     </h2>
 
                     <div className='flex flex-wrap justify-center gap-4 max-w-5xl mx-auto'>
                         <div
-                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-glow hover:z-10'>
-                            <figure className='relative h-[500px]'>
+                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-red-glow hover:z-10'>
+                            <figure className='relative h-[590px]'>
                                 <BlurImage
-                                    src='/modulos/1.webp'
+                                    src='/modules/01.webp'
                                     alt='Módulo 1'
                                     layout='fill'
-                                    className='object-contain'
+                                    className='object-cover'
                                 />
                             </figure>
                             <div className='card-body'>
@@ -421,13 +355,13 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
 
                         <div
-                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-glow hover:z-10'>
-                            <figure className='relative h-[500px]'>
+                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-red-glow hover:z-10'>
+                            <figure className='relative h-[590px]'>
                                 <BlurImage
-                                    src='/modulos/2.webp'
+                                    src='/modules/02.webp'
                                     alt='Módulo 2'
                                     layout='fill'
-                                    className='object-contain'
+                                    className='object-cover'
                                 />
                             </figure>
                             <div className='card-body'>
@@ -442,13 +376,13 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
 
                         <div
-                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-glow hover:z-10'>
-                            <figure className='relative h-[500px]'>
+                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-red-glow hover:z-10'>
+                            <figure className='relative h-[590px]'>
                                 <BlurImage
-                                    src='/modulos/3.webp'
+                                    src='/modules/03.webp'
                                     alt='Módulo 3'
                                     layout='fill'
-                                    className='object-contain'
+                                    className='object-cover'
                                 />
                             </figure>
                             <div className='card-body'>
@@ -463,13 +397,13 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
 
                         <div
-                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-glow hover:z-10'>
-                            <figure className='relative h-[500px]'>
+                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-red-glow hover:z-10'>
+                            <figure className='relative h-[590px]'>
                                 <BlurImage
-                                    src='/modulos/4.webp'
+                                    src='/modules/04.webp'
                                     alt='Módulo 4'
                                     layout='fill'
-                                    className='object-contain'
+                                    className='object-cover'
                                 />
                             </figure>
                             <div className='card-body'>
@@ -484,13 +418,13 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
 
                         <div
-                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-glow hover:z-10'>
-                            <figure className='relative h-[500px]'>
+                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-red-glow hover:z-10'>
+                            <figure className='relative h-[590px]'>
                                 <BlurImage
-                                    src='/modulos/5.webp'
+                                    src='/modules/05.webp'
                                     alt='Módulo 5'
                                     layout='fill'
-                                    className='object-contain'
+                                    className='object-cover'
                                 />
                             </figure>
                             <div className='card-body'>
@@ -506,13 +440,13 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
 
                         <div
-                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-glow hover:z-10'>
-                            <figure className='relative h-[500px]'>
+                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-red-glow hover:z-10'>
+                            <figure className='relative h-[590px]'>
                                 <BlurImage
-                                    src='/modulos/6.webp'
+                                    src='/modules/06.webp'
                                     alt='Módulo 6'
                                     layout='fill'
-                                    className='object-contain'
+                                    className='object-cover'
                                 />
                             </figure>
                             <div className='card-body'>
@@ -528,13 +462,13 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
 
                         <div
-                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-glow hover:z-10'>
-                            <figure className='relative h-[500px]'>
+                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-red-glow hover:z-10'>
+                            <figure className='relative h-[590px]'>
                                 <BlurImage
-                                    src='/modulos/7.webp'
+                                    src='/modules/07.webp'
                                     alt='Módulo 7'
                                     layout='fill'
-                                    className='object-contain'
+                                    className='object-cover'
                                 />
                             </figure>
                             <div className='card-body'>
@@ -550,13 +484,13 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
 
                         <div
-                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-glow hover:z-10'>
-                            <figure className='relative h-[500px]'>
+                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-red-glow hover:z-10'>
+                            <figure className='relative h-[590px]'>
                                 <BlurImage
-                                    src='/modulos/8.webp'
+                                    src='/modules/08.webp'
                                     alt='Módulo 8'
                                     layout='fill'
-                                    className='object-contain'
+                                    className='object-cover'
                                 />
                             </figure>
                             <div className='card-body'>
@@ -569,13 +503,13 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
 
                         <div
-                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-glow hover:z-10'>
-                            <figure className='relative h-[500px]'>
+                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-red-glow hover:z-10'>
+                            <figure className='relative h-[590px]'>
                                 <BlurImage
-                                    src='/modulos/9.webp'
+                                    src='/modules/09.webp'
                                     alt='Módulo 9'
                                     layout='fill'
-                                    className='object-contain'
+                                    className='object-cover'
                                 />
                             </figure>
                             <div className='card-body'>
@@ -591,13 +525,13 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
 
                         <div
-                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-glow hover:z-10'>
-                            <figure className='relative h-[500px]'>
+                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-red-glow hover:z-10'>
+                            <figure className='relative h-[590px]'>
                                 <BlurImage
-                                    src='/modulos/26.webp'
+                                    src='/modules/10.webp'
                                     alt='Módulo 10'
                                     layout='fill'
-                                    className='object-contain'
+                                    className='object-cover'
                                 />
                             </figure>
                             <div className='card-body'>
@@ -612,13 +546,13 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
 
                         <div
-                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-glow hover:z-10'>
-                            <figure className='relative h-[500px]'>
+                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-red-glow hover:z-10'>
+                            <figure className='relative h-[590px]'>
                                 <BlurImage
-                                    src='/modulos/10.webp'
-                                    alt='Módulo 10'
+                                    src='/modules/11.webp'
+                                    alt='Módulo 11'
                                     layout='fill'
-                                    className='object-contain'
+                                    className='object-cover'
                                 />
                             </figure>
                             <div className='card-body'>
@@ -632,13 +566,13 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
 
                         <div
-                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-glow hover:z-10'>
-                            <figure className='relative h-[500px]'>
+                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-red-glow hover:z-10'>
+                            <figure className='relative h-[590px]'>
                                 <BlurImage
-                                    src='/modulos/11.webp'
-                                    alt='Módulo 11'
+                                    src='/modules/12.webp'
+                                    alt='Módulo 12'
                                     layout='fill'
-                                    className='object-contain'
+                                    className='object-cover'
                                 />
                             </figure>
                             <div className='card-body'>
@@ -653,13 +587,97 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
 
                         <div
-                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-glow hover:z-10'>
-                            <figure className='relative h-[500px]'>
+                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-red-glow hover:z-10'>
+                            <figure className='relative h-[590px]'>
                                 <BlurImage
-                                    src='/modulos/25.webp'
-                                    alt='Módulo 12'
+                                    src='/modules/13.webp'
+                                    alt='Módulo 13'
                                     layout='fill'
-                                    className='object-contain'
+                                    className='object-cover'
+                                />
+                            </figure>
+                            <div className='card-body'>
+                                <h2 className='card-title'>
+                                    VIAJANDO PRATICAMENTE DE GRAÇA
+                                </h2>
+                                <p className=''>
+                                    O método que somente donos de agências de
+                                    viagens tinham acesso, liberados para você.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-red-glow hover:z-10'>
+                            <figure className='relative h-[590px]'>
+                                <BlurImage
+                                    src='/modules/14.webp'
+                                    alt='Módulo 14'
+                                    layout='fill'
+                                    className='object-cover'
+                                />
+                            </figure>
+                            <div className='card-body'>
+                                <h2 className='card-title'>
+                                    VIAJANDO PRATICAMENTE DE GRAÇA
+                                </h2>
+                                <p className=''>
+                                    O método que somente donos de agências de
+                                    viagens tinham acesso, liberados para você.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-red-glow hover:z-10'>
+                            <figure className='relative h-[590px]'>
+                                <BlurImage
+                                    src='/modules/15.webp'
+                                    alt='Módulo 15'
+                                    layout='fill'
+                                    className='object-cover'
+                                />
+                            </figure>
+                            <div className='card-body'>
+                                <h2 className='card-title'>
+                                    VIAJANDO PRATICAMENTE DE GRAÇA
+                                </h2>
+                                <p className=''>
+                                    O método que somente donos de agências de
+                                    viagens tinham acesso, liberados para você.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-red-glow hover:z-10'>
+                            <figure className='relative h-[590px]'>
+                                <BlurImage
+                                    src='/modules/16.webp'
+                                    alt='Módulo 16'
+                                    layout='fill'
+                                    className='object-cover'
+                                />
+                            </figure>
+                            <div className='card-body'>
+                                <h2 className='card-title'>
+                                    VIAJANDO PRATICAMENTE DE GRAÇA
+                                </h2>
+                                <p className=''>
+                                    O método que somente donos de agências de
+                                    viagens tinham acesso, liberados para você.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            className='w-full sm:w-[40%] md:w-[30%] card card-compact bg-base-100 shadow-xl hover:scale-105 transition-all duration-500 hover:box-red-glow hover:z-10'>
+                            <figure className='relative h-[590px]'>
+                                <BlurImage
+                                    src='/modules/17.webp'
+                                    alt='Módulo 17'
+                                    layout='fill'
+                                    className='object-cover'
                                 />
                             </figure>
                             <div className='card-body'>
@@ -674,168 +692,15 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         </div>
                     </div>
                 </div>
+                {<CallToAction2 />}
             </section>
-            <section
-                className='relative mx-auto py-12 sm:py-24 px-6 bg-[url(/bg-2.webp)] bg-cover bg-fixed bg-no-repeat'>
-                <div className='container mx-auto max-w-5xl'>
-                    <h2 className='font-bold text-black text-center text-2xl md:text-5xl max-w-3xl mx-auto mb-8 md:mb-16'>
-                        ENTRANDO HOJE VOCÊ LEVA:{' '}
-                        <span className='bg-primary'>
-                            + DE 4 MIL REAIS EM PRESENTES 🎁
-                        </span>
+
+            <section className='relative w-full bg-gradient px-6 py-12'>
+                <div className='container mx-auto max-w-3xl'>
+                    <h2 className='font-bold text-center text-2xl md:text-4xl mx-auto mb-8 md:mb-8 text-white'>
+                        VOCÊ NÃO VAI PAGAR + DE R$100.000 PARA ABRIR SUA AGÊNCIA!
                     </h2>
-
-                    <div className='flex flex-col gap-4 mb-12'>
-                        <div
-                            className='card lg:card-side bg-white text-black shadow-xl box-glow hover:scale-105 transition-all duration-500'>
-                            <figure className='relative w-full min-h-52 h-52 md:h-auto md:w-[25%]'>
-                                <BlurImage
-                                    src='/bonus/1.webp'
-                                    alt='Bônus 1'
-                                    layout='fill'
-                                    className='object-cover'
-                                />
-                            </figure>
-                            <div className='card-body md:max-w-[60%]'>
-                                <h2 className='card-title'>
-                                    BÔNUS 1: GESTOR PROFISSIONAL DE MILHAS
-                                    (GESTOR 5K):
-                                </h2>
-                                <p className=''>
-                                    Como você pode fazer mais de R$5.000 reais
-                                    mês, com uma nova profissão, se tornando
-                                    gestor de outras contas de milhas,
-                                    trabalhando pouco tempo por dia e escalando
-                                    seus ganhos.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div
-                            className='card lg:card-side bg-white text-black shadow-xl box-glow hover:scale-105 transition-all duration-500'>
-                            <figure className='relative w-full min-h-52 h-52 md:h-auto md:w-[25%]'>
-                                <BlurImage
-                                    src='/bonus/2.webp'
-                                    alt='Bônus 2'
-                                    layout='fill'
-                                    className='object-cover'
-                                />
-                            </figure>
-                            <div className='card-body md:max-w-[60%]'>
-                                <h2 className='card-title'>
-                                    BÔNUS 2: CONTABILIDADE DE MILHAS NA PRÁTICA:
-                                </h2>
-                                <p className=''>
-                                    Tudo que você precisa saber para declarar
-                                    suas milhas no seu imposto de renda, com
-                                    isenção e ficar tranquilo com o
-                                    &quot;Leão&quot;. Com o maior especialista
-                                    do país no assunto.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div
-                            className='card lg:card-side bg-white text-black shadow-xl box-glow hover:scale-105 transition-all duration-500'>
-                            <figure className='relative w-full min-h-52 h-52 md:h-auto md:w-[25%]'>
-                                <BlurImage
-                                    src='/bonus/3.webp'
-                                    alt='Bônus 3'
-                                    layout='fill'
-                                    className='object-cover'
-                                />
-                            </figure>
-                            <div className='card-body md:max-w-[60%]'>
-                                <h2 className='card-title'>
-                                    BÔNUS 3: PLAMILHAS:
-                                </h2>
-                                <p className=''>
-                                    A única ferramenta para você gerenciar suas
-                                    milhas e das contas que você administra,
-                                    centralizado tudo em um único lugar, podendo
-                                    filtrar a quantidade, mês, estratégia e
-                                    conta que você acumulou ou vendeu suas
-                                    milhas.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div
-                            className='card lg:card-side bg-white text-black shadow-xl box-glow hover:scale-105 transition-all duration-500'>
-                            <figure className='relative w-full min-h-52 h-52 md:h-auto md:w-[25%]'>
-                                <BlurImage
-                                    src='/bonus/4.webp'
-                                    alt='Bônus 4'
-                                    layout='fill'
-                                    className='object-cover'
-                                />
-                            </figure>
-                            <div className='card-body md:max-w-[60%]'>
-                                <h2 className='card-title'>
-                                    BÔNUS 4: OS 3 PILARES PARA CRIAR UM NEGÓCIO
-                                    LUCRATIVO:
-                                </h2>
-                                <p className=''>
-                                    Aulas sobre vendas, mkt digital, tráfego
-                                    (anúncios) para você já entender como
-                                    funciona esse mundo digital que te
-                                    possibilita escala de ganhos e liberdade!
-                                </p>
-                            </div>
-                        </div>
-
-                        <div
-                            className='card lg:card-side bg-white text-black shadow-xl box-glow hover:scale-105 transition-all duration-500'>
-                            <figure className='relative w-full min-h-52 h-52 md:h-auto md:w-[25%]'>
-                                <BlurImage
-                                    src='/bonus/5.webp'
-                                    alt='Bônus 5'
-                                    layout='fill'
-                                    className='object-cover'
-                                />
-                            </figure>
-                            <div className='card-body md:max-w-[60%]'>
-                                <h2 className='card-title'>
-                                    BÔNUS 5: BANCO DE MILHAS:
-                                </h2>
-                                <p className=''>
-                                    Aqui você pode vender suas milhas e receber
-                                    no mesmo dia por pix na sua conta bancária.
-                                    Recebendo antes mesmo de pagar a fatura do
-                                    seu cartão de crédito.
-                                </p>
-                            </div>
-                        </div>
-
-                        <div
-                            className='card lg:card-side bg-white text-black shadow-xl box-glow hover:scale-105 transition-all duration-500'>
-                            <figure className='relative w-full min-h-52 h-52 md:h-auto md:w-[25%]'>
-                                <BlurImage
-                                    src='/bonus/6.webp'
-                                    alt='Bônus 6'
-                                    layout='fill'
-                                    className='object-cover'
-                                />
-                            </figure>
-                            <div className='card-body md:max-w-[60%]'>
-                                <h2 className='card-title'>
-                                    BÔNUS 6: CONSULTORES DE CARTÕES BLACKS:
-                                </h2>
-                                <p className=''>
-                                    Contatos dentro dos bancos que facilitam a
-                                    aprovação de cartões de créditos blacks, que
-                                    geram mais milhas e benefícios como acessos
-                                    ilimitados a salas VIPs.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    {offer && <CallToAction />}
-                </div>
-            </section>
-            <section className='relative w-full bg-black px-6 py-12'>
-                <div className='container mx-auto max-w-4xl'>
-                    <div className='relative w-full md:h-[56vh] h-56 z-0'>
+                    <div className='relative w-full md:h-[32vh] h-56 z-0'>
                         <BlurImage
                             src='/mockup2.webp'
                             alt='Mockup'
@@ -844,390 +709,234 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                         />
                     </div>
 
-                    <Money />
-                    <Blur direction='right' />
-                    <Blur />
-                    <FloatBlocks />
+                    <h3 className='text-white font-bold text-center mt-8 mb-4'>
+                        ENTENDA A DIFERENÇA DE UM NEGÓCIO FÍSICO PARA UM DIGITAL 👇
+                    </h3>
 
-                    <div
-                        className='bg-base-100 relative overflow-x-auto border-dashed border rounded-xl md:p-8 border-primary box-glow md:hover:scale-105 transition-all duration-500'>
-                        <table className='table table-zebra mx-auto text-xs md:text-lg w-full'>
-                            <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Valor</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>
-                                    <div className='flex gap-4 items-center w-[50vw] whitespace-pre-wrap md:w-auto'>
-                                            <span className='hidden md:block text-2xl'>
-                                                ✅
-                                            </span>{' '}
-                                        Renda com Milhas
-                                    </div>
-                                </td>
-                                <td>R$ 1.497,00</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div className='flex gap-4 items-center w-[50vw] whitespace-pre-wrap md:w-auto'>
-                                            <span className='hidden md:block text-2xl'>
-                                                ✅
-                                            </span>{' '}
-                                        Empreendendo com o seu CPF
-                                    </div>
-                                </td>
-                                <td>R$ 497,00</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div className='flex gap-4 items-center w-[50vw] whitespace-pre-wrap md:w-auto'>
-                                            <span className='hidden md:block text-2xl'>
-                                                ✅
-                                            </span>{' '}
-                                        Os 4 passos para aumentar o seu
-                                        Score em 7 dias
-                                    </div>
-                                </td>
-                                <td>R$ 297,00</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div className='flex gap-4 items-center w-[50vw] whitespace-pre-wrap md:w-auto'>
-                                            <span className='hidden md:block text-2xl'>
-                                                ✅
-                                            </span>{' '}
-                                        Contabilidade de milhas na prática
-                                    </div>
-                                </td>
-                                <td>R$ 197,00</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div className='flex gap-4 items-center w-[50vw] whitespace-pre-wrap md:w-auto'>
-                                            <span className='hidden md:block text-2xl'>
-                                                ✅
-                                            </span>{' '}
-                                        &quot;Plamilhas&quot;
-                                    </div>
-                                </td>
-                                <td>R$ 97,00</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div className='flex gap-4 items-center w-[50vw] whitespace-pre-wrap md:w-auto'>
-                                            <span className='hidden md:block text-2xl'>
-                                                ✅
-                                            </span>{' '}
-                                        Consultora Bradesco Black
-                                    </div>
-                                </td>
-                                <td>R$ 347,00</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div className='flex gap-4 items-center w-[50vw] whitespace-pre-wrap md:w-auto'>
-                                            <span className='hidden md:block text-2xl'>
-                                                ✅
-                                            </span>{' '}
-                                        Banco de milhas RCM
-                                    </div>
-                                </td>
-                                <td>R$ 397,00</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div className='flex gap-4 items-center w-[50vw] whitespace-pre-wrap md:w-auto'>
-                                            <span className='hidden md:block text-2xl'>
-                                                ✅
-                                            </span>{' '}
-                                        Como dá os primeiros passos no mundo
-                                        dos investimentos
-                                    </div>
-                                </td>
-                                <td>R$ 247,00</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div className='flex gap-4 items-center w-[50vw] whitespace-pre-wrap md:w-auto'>
-                                            <span className='hidden md:block text-2xl'>
-                                                ✅
-                                            </span>{' '}
-                                        Acesso ao nosso corretor parceiro
-                                        Porto Seguro
-                                    </div>
-                                </td>
-                                <td>R$ 347,00</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div className='flex gap-4 items-center w-[50vw] whitespace-pre-wrap md:w-auto'>
-                                            <span className='hidden md:block text-2xl'>
-                                                ✅
-                                            </span>{' '}
-                                        O passo a passo para declarar o seu
-                                        Imposto de Renda do jeito certo
-                                    </div>
-                                </td>
-                                <td>R$ 97,00</td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            {offer && (
-                                <>
-                                    <tr className='font-bold text-white'>
-                                        <td>SUBTOTAL</td>
-                                        <td>
-                                            <strong>R$ 4.020,00</strong>
-                                        </td>
-                                    </tr>
-                                    <tr className='font-bold text-white'>
-                                        <td>DESCONTO</td>
-                                        <td>
-                                            <strong className='text-primary'>
-                                                {offer.discount}
-                                            </strong>
-                                        </td>
-                                    </tr>
-                                </>
-                            )}
-                            </tbody>
-                        </table>
+                    <div className='flex flex-col md:flex-row'>
+                        <div
+                            className='bg-base-100 w-full relative overflow-x-auto border-dashed border rounded-xl p-8 border-primary box-glow md:hover:scale-105 transition-all duration-500 flex flex-col justify-center items-center'>
+                            <span className='text-4xl'>✅</span>
+                            <span className='font-bold mb-4'>NEGÓCIO DIGITAL (A.H.O)</span>
+                            <ul className='grid gap-4 text-xs'>
+                                <li>✅ Retorno do investimento das primeiras semanas e escala devendas a nível nacional e
+                                    internacional.
+                                </li>
+                                <li>
+                                    ✅ Você pode emitir com milhas e técnicas de emissão desconhecidas por 99,9% das
+                                    agências do Brasil.
+                                </li>
+                                <li>
+                                    ✅ Você possui seu banco de milhas próprio, assim não dependendo do seu acúmulo.
+                                </li>
+                                <li>
+                                    ✅ Você pode vender Gestão de Milhas para seus clientes, e ter 100% de lucro do
+                                    serviço (isso aqui é o OURO em pó)
+                                </li>
+                            </ul>
+                        </div>
+                        <div className='divider md:divider-horizontal text-white h-10 md:h-auto md:w-16'>
+                            <div className='relative w-24 '>
+                                <BlurImage
+                                    src='/vs.png'
+                                    alt='Mockup'
+                                    width={100}
+                                    height={100}
+                                    className='object-contain'
+                                />
+                            </div>
+                        </div>
+                        <div
+                            className='bg-base-100 w-full relative overflow-x-auto border-dashed border rounded-xl p-8 border-error box-red-glow md:hover:scale-105 transition-all duration-500 flex flex-col justify-center items-center'>
+                            <span className='text-4xl'>❌</span>
+                            <span className='font-bold mb-4'>NEGÓCIO FÍSICO</span>
+                            <ul className='grid gap-4 text-xs'>
+                                <li>❌ Você não precisa de alto investimento (+R$100.000 ou mais) para iniciar e não
+                                    precisa esperar 25 meses para ter seu retorno de volta!
+                                </li>
+                                <li>
+                                    ❌ Você não precisa de ponto físico.
+                                </li>
+                                <li>
+                                    ❌ Você não precisa de funcionários pra começar.
+                                </li>
+                                <li>
+                                    ❌ Você não precisa de um fluxo de caixa de 5 meses para manter o negócio, pois nas
+                                    primeiras semanas já pode fazer vendas e por dinheiro no bolso.
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-
-                    {offer && (
-                        <>
-                            <div className='w-fit rounded-lg mx-auto bg-error mt-12 text-white py-2 px-6'>
-                                {/* gerar cronometro de 10 minutos retrocedendo o tempo */}
-                                <div className='flex flex-col gap-8 text-center'>
-                                    <h2 className='font-bold text-sm md:text-2xl'>
-                                        {expired
-                                            ? 'Oferta encerrada.'
-                                            : 'Atenção! Oferta por tempo limitado'}
-                                    </h2>
-                                </div>
-                            </div>
-
-                            <div className='flex justify-center mt-4'>
-                                <Countdown />
-                            </div>
-
-                            <div
-                                className={`grid gap-4 my-8 ${
-                                    expired && 'opacity-30 grayscale'
-                                }`}
-                            >
-                                <h3 className='text-center text-primary font-bold text-3xl md:text-5xl'>
-                                    {offer.installment}
-                                </h3>
-
-                                <h4 className='text-center bg-warning text-black w-fit px-2 mx-auto font-bold text-lg md:text-3xl'>
-                                    {offer.price}
-                                </h4>
-                            </div>
-                            {offer && <CallToAction />}
-                            {/* <span className="text-center block text-xs opacity-80 mt-1">
-                        * Assinatura anual com renovação automática
-                    </span> */}
-                        </>
-                    )}
                 </div>
             </section>
             <section
-                className='relative mx-auto py-12 sm:py-24 px-6 bg-[url(/bg-2.webp)] bg-cover bg-fixed bg-no-repeat'>
+                className='relative mx-auto py-12 px-6 bg-black text-white'>
+                <h2 className='font-bold text-center text-2xl md:text-4xl mx-auto text-white'>
+                    A MINHA PROPOSTA PRA VOCÊ É PRATICAMENTE INDECENTE...
+                </h2>
+            </section>
+            <section
+                className='relative mx-auto py-6 px-6 bg-[url(/bg-2.webp)] bg-cover bg-fixed bg-no-repeat'>
                 <div className='container max-w-4xl px-0 mx-auto'>
-                    <span className='block font-bold text-center text-xs badge badge-primary'>
-                        FAQ
-                    </span>
-                    <h2 className='text-black font-bold text-2xl md:text-4xl mb-8 md:mb-16'>
-                        Perguntas Frequentes
+
+                    <h1 className='md:text-center uppercase my-6 rounded-md text-xl md:text-3xl md:leading-snug font-bold text-center w-full inline-grid sm:block'
+                    >
+                        Você entra na AHO hoje <span
+                        className='text-white bg-gradient font-bold rounded-lg px-4'>financiado</span>{' '}
+                        pelos seus primeiros clientes!
+                    </h1>
+
+                    <div className='grid gap-3'>
+                        <p>
+                            Nós temos uma entrega de 20 a 30 leads para que você possa fazer suas primeiras vendas, mais
+                            sua rede de contato, mais estratégias de tráfego pago, mais funil de indicação, mais várias
+                            estratégias de vendas…
+                        </p>
+                        <p>
+                            Mas a lógica é simples, fazendo 1 só venda de Gestão de Milhas para seu Cliente (ticket
+                            médio de R$1.000) ou até mesmo 2 ou 3 passagens aéreas (lucro médio de R$800) no primeiro
+                            mês já pagou o valor mensal da AHO.
+                        </p>
+                        <p>
+                            E você vai fazendo todos os meses os lucros que você conquista na AHO pagar ela própria!
+                        </p>
+                        <p className='bg-gradient text-white w-fit px-2 rounded-md font-semibold'>Luiz, e se isso o que
+                            você está propondo não funcionar?!</p>
+                        <p>
+                            Você tem 1 ano, 365 dias, para executar todos os funis, participar das aulas semanais ao
+                            vivo, acessar o ViajaFlux, tirar dúvidas com seu Gerente de conta e tutor, tudo! E se mesmo
+                            assim, você me mostrar que fez tudo isso e não teve nem o valor que investiu na AHO de lucro
+                            eu devolvo seu dinheiro e dou mais R$1.000 do meu bolso, como pedido de desculpa!
+                        </p>
+                    </div>
+
+                    <div className='font-bold text-center my-8'>
+                        Não existe uma só chance de você <span
+                        className='text-white rounded-md px-1 bg-gradient'>NÃO</span> ter
+                        resultado.
+                    </div>
+
+
+                    <h2 className='text-black font-bold text-2xl md:text-4xl mb-4 text-center'>
+                        Se fossemos somar:
                     </h2>
 
                     <div className='grid gap-2'>
-                        <label
-                            tabIndex={0}
-                            className='collapse collapse-arrow shadown-md bg-white text-black rounded-box group'
-                        >
-                            <input type='checkbox' className='peer' />
-                            <div className='collapse-title font-bold group-focus:text-primary'>
-                                <span className='block text-xs md:text-base leading-1 md:leading-normal'>
-                                    EM QUANTO TEMPO VOU RECUPERAR O DINHEIRO
-                                    INVESTIDO NO CURSO?
-                                </span>
-                            </div>
-                            <div className='collapse-content'>
-                                <p className='text-sm md:text-base'>
-                                    Uma das primeiras coisas que vou te ensinar
-                                    é como você vai conseguir recuperar o
-                                    dinheiro que está investindo no curso em
-                                    pouco tempo. Tudo depende de quanto tempo
-                                    vai demorar para você aplicar o que aprendeu
-                                </p>
-                            </div>
-                        </label>
-                        <label
-                            tabIndex={0}
-                            className='collapse collapse-arrow shadown-md bg-white text-black rounded-box group'
-                        >
-                            <input type='checkbox' className='peer' />
-                            <div className='collapse-title font-bold group-focus:text-primary'>
-                                <span className='block text-xs md:text-base leading-1 md:leading-normal'>
-                                    QUAIS RESULTADOS EU TEREI COM O RENDA COM
-                                    MILHAS?
-                                </span>
-                            </div>
-                            <div className='collapse-content'>
-                                <p className='text-sm md:text-base'>
-                                    Mais controle financeiro simples, uma nova
-                                    fonte de renda e viagens todo ano
-                                    praticamente de graça apenas por saber usar
-                                    o seu cartão de crédito de forma
-                                    inteligente.
-                                </p>
-                            </div>
-                        </label>
-                        <label
-                            tabIndex={0}
-                            className='collapse collapse-arrow shadown-md bg-white text-black rounded-box group'
-                        >
-                            <input type='checkbox' className='peer' />
-                            <div className='collapse-title font-bold group-focus:text-primary'>
-                                <span className='block text-xs md:text-base leading-1 md:leading-normal'>
-                                    TEREI ALGUM TIPO DE SUPORTE?
-                                </span>
-                            </div>
-                            <div className='collapse-content'>
-                                <p className='text-sm md:text-base'>
-                                    Claro! Jamais estará sozinho. Temos a área
-                                    de membros do curso e uma comunidade de
-                                    alunos onde todos se ajudam, podendo
-                                    compartilhar suas dúvidas e resultados.
-                                </p>
-                            </div>
-                        </label>
-                        <label
-                            tabIndex={0}
-                            className='collapse collapse-arrow shadown-md bg-white text-black rounded-box group'
-                        >
-                            <input type='checkbox' className='peer' />
-                            <div className='collapse-title font-bold group-focus:text-primary'>
-                                <span className='block text-xs md:text-base leading-1 md:leading-normal'>
-                                    EM QUANTO TEMPO RECEBEREI MEU ACESSO?
-                                </span>
-                            </div>
-                            <div className='collapse-content'>
-                                <p className='text-sm md:text-base'>
-                                    Pagamentos no cartão: 2 minutos. Pagamento
-                                    via boleto: 2 dias.
-                                </p>
-                            </div>
-                        </label>
-                        <label
-                            tabIndex={0}
-                            className='collapse collapse-arrow shadown-md bg-white text-black rounded-box group'
-                        >
-                            <input type='checkbox' className='peer' />
-                            <div className='collapse-title font-bold group-focus:text-primary'>
-                                <span className='block text-xs md:text-base leading-1 md:leading-normal'>
-                                    ESTOU NEGATIVADO, ISSO ME PREJUDICA?
-                                </span>
-                            </div>
-                            <div className='collapse-content'>
-                                <p className='text-sm md:text-base'>
-                                    Se você já tem um cartão com um bom limite
-                                    não, agora se você não tem cartão ou ele tem
-                                    pouco limite, o ideal é você focar em limpar
-                                    seu nome e assim será possível aumentar
-                                    muito mais o seu limite e conseguir melhores
-                                    cartões. Mas no curso tem aulas ensinando
-                                    como conseguir cartões com mais facilidade
-                                    mesmo sendo negativado.
-                                </p>
-                            </div>
-                        </label>
-
-                        <label
-                            tabIndex={0}
-                            className='collapse collapse-arrow shadown-md bg-white text-black rounded-box group'
-                        >
-                            <input type='checkbox' className='peer' />
-                            <div className='collapse-title font-bold group-focus:text-primary'>
-                                <span className='block text-xs md:text-base leading-1 md:leading-normal'>
-                                    EM QUANTO TEMPO JÁ CONSIGO FAZER DINHEIRO?
-                                </span>
-                            </div>
-                            <div className='collapse-content'>
-                                <p className='text-sm md:text-base'>
-                                    Na primeira semana já é possível você
-                                    aplicar algumas das estratégias e começar a
-                                    lucrar, como existem vários tipos de
-                                    estratégias, algumas aparecem com o tempo e
-                                    algumas já é possível aplicar agora mesmo.
-                                </p>
-                            </div>
-                        </label>
-
-                        <label
-                            tabIndex={0}
-                            className='collapse collapse-arrow shadown-md bg-white text-black rounded-box group'
-                        >
-                            <input type='checkbox' className='peer' />
-                            <div className='collapse-title font-bold group-focus:text-primary'>
-                                <span className='block text-xs md:text-base leading-1 md:leading-normal'>
-                                    É LEGAL VENDER MILHAS?
-                                </span>
-                            </div>
-                            <div className='collapse-content'>
-                                <p className='text-sm md:text-base'>
-                                    Sim, você está protegido por LEI, é 100%
-                                    legal o comércio dos frutos do cartão de
-                                    crédito.
-                                </p>
-                            </div>
-                        </label>
-
-                        <label
-                            tabIndex={0}
-                            className='collapse collapse-arrow shadown-md bg-white text-black rounded-box group'
-                        >
-                            <input type='checkbox' className='peer' />
-                            <div className='collapse-title font-bold group-focus:text-primary'>
-                                <span className='block text-xs md:text-base leading-1 md:leading-normal'>
-                                    PRECISO DE COMPUTADOR OU POSSO ACESSAR PELO
-                                    CELULAR?
-                                </span>
-                            </div>
-                            <div className='collapse-content'>
-                                <p className='text-sm md:text-base'>
-                                    Todas as plataformas e sites podem ser
-                                    acessados pelo celular. Portanto, não é
-                                    necessário usar o seu computador.
-                                </p>
-                            </div>
-                        </label>
+                        <div
+                            className='relative rounded-box shadow-md p-4 bg-gradient text-lg text-white flex justify-between'>
+                            Agência Home Office
+                            <span>R$ 15.000</span>
+                            <span className='absolute right-8 top-3 text-4xl animate-pulse'>❌</span>
+                        </div>
+                        <div
+                            className='relative rounded-box shadow-md p-4 bg-gradient text-lg text-white flex justify-between'>
+                            Banco de Milhas
+                            <span>R$ 997</span>
+                            <span className='absolute right-8 top-3 text-4xl animate-pulse'>❌</span>
+                        </div>
+                        <div
+                            className='relative rounded-box shadow-md p-4 bg-gradient text-lg text-white flex justify-between'>
+                            ViajaFlux
+                            <span>R$ 2.000</span>
+                            <span className='absolute right-8 top-3 text-4xl animate-pulse'>❌</span>
+                        </div>
+                        <div
+                            className='relative rounded-box shadow-md p-4 bg-gradient text-lg text-white flex justify-between'>
+                            5 Fornecedores com acordos comerciais
+                            <span>R$ 5.000</span>
+                            <span className='absolute right-8 top-3 text-4xl animate-pulse'>❌</span>
+                        </div>
+                        <div
+                            className='relative rounded-box shadow-md p-4 bg-gradient text-lg text-white flex justify-between'>
+                            Site próprio com e-mail profissional
+                            <span>R$ 1.000</span>
+                            <span className='absolute right-8 top-3 text-4xl animate-pulse'>❌</span>
+                        </div>
+                        <div
+                            className='relative rounded-box shadow-md p-4 bg-gradient text-lg text-white flex justify-between'>
+                            Os primeiros clientes grátis
+                            <span>R$ 2.000</span>
+                            <span className='absolute right-8 top-3 text-4xl animate-pulse'>❌</span>
+                        </div>
+                        <div
+                            className='relative rounded-box shadow-md p-4 bg-gradient text-lg text-white flex justify-between'>
+                            Aulas AO VIVO de Tráfego, Vendas, Turismo, Emissões
+                            <span>R$ 10.000</span>
+                            <span className='absolute right-8 top-3 text-4xl animate-pulse'>❌</span>
+                        </div>
+                        <div
+                            className='relative rounded-box shadow-md p-4 bg-gradient text-lg text-white flex justify-between'>
+                            Link de pagamento com as melhores taxas do mercado
+                            <span>R$ 1.000</span>
+                            <span className='absolute right-8 top-3 text-4xl animate-pulse'>❌</span>
+                        </div>
                     </div>
 
-                    <span className='hidden md:block'>
-                        <Divider />
-                    </span>
+                    <div className='text-center font-bold text-xl md:text-2xl my-8 relative w-fit mx-auto'>
+                        <span className='absolute right-5 -top-1 text-4xl animate-pulse'>❌</span>
+                        TOTAL DE R$ 36.997
+                    </div>
+
+                    <div
+                        className='text-center font-bold text-2xl md:text-3xl my-8 flex flex-col relative w-fit mx-auto'>
+                        <span className='absolute right-5 -top-1 text-4xl animate-pulse'>❌</span>
+                        Por 12x R$ 1.500
+                        <span
+                            className='text-xl bg-warning w-fit mx-auto rounded-md mt-2 px-4'>ou R$ 15.000 à vista!</span>
+                    </div>
+
+                    <div className='text-center font-bold text-xl md:text-2xl my-8'>
+                        <span className='text-white bg-gradient rounded-md px-2'>Luiz, eu quero entrar na AHO!</span>
+                    </div>
+
+                    <div className='text-center font-bold text-xl md:text-2xl my-8 max-w-md mx-auto'>
+                        Os <span className='bg-warning rounded-md px-2'>50 primeiros</span>
+                        {' '} que entrarem na AHO pagarão apenas:
+                    </div>
+
+                    <div className='text-center font-bold text-2xl md:text-3xl my-8 flex flex-col'>
+                        Incríveis 12x R$ 399,70
+                        <span
+                            className='text-xl bg-warning w-fit mx-auto rounded-md mt-2 px-4'>ou R$ 3.997 à vista!</span>
+                    </div>
+
+                    <div className='w-fit rounded-lg mx-auto bg-gradient mt-12 text-white py-2 px-6'>
+                        {/* gerar cronometro de 10 minutos retrocedendo o tempo */}
+                        <div className='flex flex-col gap-8 text-center'>
+                            <h2 className='font-bold text-sm md:text-2xl'>
+                                {expired
+                                    ? 'Oferta encerrada.'
+                                    : 'Atenção! Oferta por tempo limitado'}
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div className='flex justify-center my-4'>
+                        <Countdown />
+                    </div>
+
+                    {<CallToAction2 />}
+
+                </div>
+            </section>
+            <section className='bg-black pt-16 pb-12'>
+                <div className='container mx-auto'>
                     <div className='card-body justify-between gap-4 items-center w-full pb-0'>
                         <div className='flex gap-4 text-center'>
                             <div>
-                                <h2 className='text-2xl text-black'>
+                                <h2 className='text-2xl text-white'>
                                     Ficou com qualquer dúvida?
                                 </h2>
-                                <p className='text-black'>
+                                <p className='text-white'>
                                     Pode acionar meu time de especialistas!
                                 </p>
                             </div>
                         </div>
 
-                        <label
-                            htmlFor='lead'
+                        <a
+                            target='_blank'
+                            href='https://empreendaclub.typeform.com/go-aho'
+                            rel='noreferrer'
                             className='btn btn-warning btn-lg relative'
                         >
                             <span className='absolute flex h-3 w-3 -top-1 -right-1'>
@@ -1250,11 +959,11 @@ export default function BlockedPage({ show = true, offer }: BlockedProps) {
                                 />
                             </svg>
                             Falar com especialista
-                        </label>
+                        </a>
                     </div>
                 </div>
+                <Footer />
             </section>
-            <Footer />
         </>
     ) : (
         <></>
