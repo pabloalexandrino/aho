@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import Blur from './Blur'
-import CallToAction from './CallToAction'
+import CallToAction2 from './CallToAction2'
 import Countdown from './CountDown'
 import { OfferContext } from '../providers/Offer'
 import { parseCookies } from 'nookies'
@@ -169,13 +169,13 @@ export default function Vsl({
                         </div>
                     )}
 
-                    <h1 className='md:text-center uppercase my-6 rounded-md text-xl md:text-3xl md:leading-snug font-bold text-justify inline-block'
+                    <h1 className='text-center uppercase my-6 rounded-md text-xl md:text-3xl md:leading-snug font-bold inline-block'
                     >
                         Lucre de <span
                         className='text-white bg-gradient font-bold rounded-lg px-4'>10 a 50 mil reais
                         por mês</span> {' '}(ou mais) com sua agência de viagens home office!
                     </h1>
-                    <h3 className='text-sm md:text-lg md:text-center'>
+                    <h3 className='text-sm md:text-lg text-center'>
                         O modelo de negócio que permite <span className='font-bold'>Lucro, Escala e Liberdade</span>,
                         usando apenas uma única plataforma: <span className='font-bold'>O ViajaFlux!</span>
                     </h3>
@@ -237,7 +237,7 @@ export default function Vsl({
                     </div>
 
                     <div className={`mt-8 ${showButton ? 'block' : 'hidden'}`}>
-                        <CallToAction />
+                        <CallToAction2 />
                     </div>
                 </div>
             </section>

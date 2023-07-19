@@ -88,8 +88,8 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                 </div>
 
                 <h3 className='text-center container mx-auto max-w-2xl my-12 font-semibold'>
-                    Literalmente tudo o que você precisa para ter seu negócio online faturando alto, com liberdade e
-                    lucro!
+                    Literalmente tudo o que você precisa para ter seu negócio online faturando alto, com lucro e
+                    liberdade!
                 </h3>
 
                 <div className='mt-8'>{<CallToAction2 />}</div>
@@ -104,7 +104,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                     <div className='grid gap-8'>
                         <div>
                             <h2 className='font-bold text-center text-2xl md:text-3xl mx-auto mb-8'>
-                                SÃO MAIS DE 800 AGÊNCIAS ESPALHADAS POR BRASIL E MUNDO!
+                                SÃO MAIS DE 400 AGÊNCIAS ESPALHADAS POR BRASIL E MUNDO!
                             </h2>
                         </div>
                     </div>
@@ -126,14 +126,13 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                         />
                     </div>
                     <p className='max-w-xl mx-auto my-6 text-center'>
-                        Pessoas com condições parecidas ou até <span className='font-bold'>piores</span> que a sua,
-                        mudando de realidade com a <span className='font-bold'>missão 20k!</span>
+                        Espero que você seja o próximo a me envia vídeos como esses.
                     </p>
 
                     <div className='mt-8'>{<CallToAction2 />}</div>
 
-                    <p className='max-w-xl text-lg mx-auto mt-12 mb-6 text-center font-bold'>
-                        Pessoas mudando de realidade com a AHO.
+                    <p className='max-w-xl text-xl mx-auto mt-12 mb-6 text-center font-bold'>
+                        Dê uma olhada nos resultados dos agentes:
                     </p>
 
                     <div className='grid gap-4 md:grid-cols-3'>
@@ -823,49 +822,49 @@ export default function BlockedPage({ show = true }: BlockedProps) {
 
                     <div className='grid gap-2'>
                         <div
-                            className='relative rounded-box shadow-md p-4 bg-gradient text-lg text-white flex justify-between'>
+                            className='relative rounded-box shadow-md p-4 bg-gradient sm:text-lg text-sm text-white flex justify-between'>
                             Agência Home Office
                             <span>R$ 15.000</span>
                             <span className='absolute right-8 top-3 text-4xl animate-pulse'>❌</span>
                         </div>
                         <div
-                            className='relative rounded-box shadow-md p-4 bg-gradient text-lg text-white flex justify-between'>
+                            className='relative rounded-box shadow-md p-4 bg-gradient sm:text-lg text-sm text-white flex justify-between'>
                             Banco de Milhas
                             <span>R$ 997</span>
                             <span className='absolute right-8 top-3 text-4xl animate-pulse'>❌</span>
                         </div>
                         <div
-                            className='relative rounded-box shadow-md p-4 bg-gradient text-lg text-white flex justify-between'>
+                            className='relative rounded-box shadow-md p-4 bg-gradient sm:text-lg text-sm text-white flex justify-between'>
                             ViajaFlux
                             <span>R$ 2.000</span>
                             <span className='absolute right-8 top-3 text-4xl animate-pulse'>❌</span>
                         </div>
                         <div
-                            className='relative rounded-box shadow-md p-4 bg-gradient text-lg text-white flex justify-between'>
+                            className='relative rounded-box shadow-md p-4 bg-gradient sm:text-lg text-sm text-white flex justify-between'>
                             5 Fornecedores com acordos comerciais
                             <span>R$ 5.000</span>
                             <span className='absolute right-8 top-3 text-4xl animate-pulse'>❌</span>
                         </div>
                         <div
-                            className='relative rounded-box shadow-md p-4 bg-gradient text-lg text-white flex justify-between'>
+                            className='relative rounded-box shadow-md p-4 bg-gradient sm:text-lg text-sm text-white flex justify-between'>
                             Site próprio com e-mail profissional
                             <span>R$ 1.000</span>
                             <span className='absolute right-8 top-3 text-4xl animate-pulse'>❌</span>
                         </div>
                         <div
-                            className='relative rounded-box shadow-md p-4 bg-gradient text-lg text-white flex justify-between'>
+                            className='relative rounded-box shadow-md p-4 bg-gradient sm:text-lg text-sm text-white flex justify-between'>
                             Os primeiros clientes grátis
                             <span>R$ 2.000</span>
                             <span className='absolute right-8 top-3 text-4xl animate-pulse'>❌</span>
                         </div>
                         <div
-                            className='relative rounded-box shadow-md p-4 bg-gradient text-lg text-white flex justify-between'>
+                            className='relative rounded-box shadow-md p-4 bg-gradient sm:text-lg text-sm text-white flex justify-between'>
                             Aulas AO VIVO de Tráfego, Vendas, Turismo, Emissões
                             <span>R$ 10.000</span>
                             <span className='absolute right-8 top-3 text-4xl animate-pulse'>❌</span>
                         </div>
                         <div
-                            className='relative rounded-box shadow-md p-4 bg-gradient text-lg text-white flex justify-between'>
+                            className='relative rounded-box shadow-md p-4 bg-gradient sm:text-lg text-sm text-white flex justify-between'>
                             Link de pagamento com as melhores taxas do mercado
                             <span>R$ 1.000</span>
                             <span className='absolute right-8 top-3 text-4xl animate-pulse'>❌</span>
@@ -898,7 +897,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                     <div className='text-center font-bold text-2xl md:text-3xl my-8 flex flex-col'>
                         Só 12x R$ 399,70
                         <span
-                            className='text-xl bg-warning w-fit mx-auto rounded-md mt-2 px-4'>ou R$ 3.997 à vista!</span>
+                            className='text-xl bg-primary w-fit mx-auto rounded-md mt-2 px-4'>ou R$ 3.997 à vista!</span>
                     </div>
 
                     <div className='w-fit rounded-lg mx-auto bg-gradient mt-12 text-white py-2 px-6'>

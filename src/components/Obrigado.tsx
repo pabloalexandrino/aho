@@ -15,7 +15,7 @@ export default function Obrigado(): JSX.Element {
             <h2 className='mt-12 font-bold uppercase text-white text-center text-2xl md:text-3xl max-w-3xl mx-auto'>
                 SEJA MUITO BEM VINDO A A.H.O! TEM 1 PRESNTE PARA VOCÊ NESSE VÍDEO.
             </h2>
-            <p className='text-center my-3 max-w-xl mx-auto text-xl text-white'>
+            <p className='text-center my-3 max-w-xl mx-auto mb-8 sm:mb-0 sm:text-xl text-white'>
                 <strong className='text-black bg-primary px-3 rounded-md'>
                     Assista-o até o final!
                 </strong>

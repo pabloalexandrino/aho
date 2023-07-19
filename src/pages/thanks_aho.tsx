@@ -134,7 +134,7 @@ export default function Home(): JSX.Element {
                 <div>
 
                     <div className='relative text-center w-full'>
-                    <span className='text-center mb-1 font-bold text-warning animate-pulse'>
+                    <span className='text-center mb-1 text-xs sm:text-base sm:font-bold text-white animate-pulse'>
                         * Não toque no botão sem antes assistir todo o vídeo!
                     </span>
                     </div>
@@ -145,8 +145,8 @@ export default function Home(): JSX.Element {
                     rel={'noreferrer'}
                     target={'_blank'}
                 >
-                    <div className='btn btn-primary h-auto mx-auto'>
-                        <span className='text-3xl mr-2 block text-center'>
+                    <div className='btn btn-primary h-auto mx-auto mt-2 py-4'>
+                        <span className='text-3xl mr-2 text-center hidden sm:block'>
                             🚀
                         </span>
                         QUERO IR PARA O GAME CHANGE EMPREENDA EM SP!
