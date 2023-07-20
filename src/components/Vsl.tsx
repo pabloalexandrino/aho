@@ -22,7 +22,6 @@ export default function Vsl({
                                 video,
                                 showTimer = false,
                                 player,
-                                playerComponent = 'panda',
                             }: IVsl): JSX.Element {
     const [clientWindowHeight, setClientWindowHeight] = useState(0)
     const [isClosed, setIsClosed] = useState(!float)
@@ -108,39 +107,6 @@ export default function Vsl({
 
         setIsClosed(true)
     }
-
-    // useEffect(() => {
-    //     if (clientWindowHeight > 960 && !isClosed) {
-    //         document
-    //             .getElementById('vsl')
-    //             ?.classList.add(
-    //             'fixed',
-    //             'bottom-0',
-    //             'right-0',
-    //             'max-w-[400px]',
-    //             'box-red-glow',
-    //             'rounded-xl',
-    //         )
-    //
-    //         document.getElementById('close')?.classList.remove('hidden')
-    //
-    //         document.getElementById('overlay')?.classList.remove('absolute')
-    //     } else {
-    //         document
-    //             .getElementById('vsl')
-    //             ?.classList.remove(
-    //             'fixed',
-    //             'bottom-0',
-    //             'right-0',
-    //             'max-w-[400px]',
-    //             'box-red-glow',
-    //         )
-    //
-    //         document.getElementById('close')?.classList.add('hidden')
-    //
-    //         document.getElementById('overlay')?.classList.add('absolute')
-    //     }
-    // }, [clientWindowHeight, isClosed])
 
     player = player ?? process.env.NEXT_PUBLIC_PLAYER_ID
     video = video ?? process.env.NEXT_PUBLIC_VIDEO_ID

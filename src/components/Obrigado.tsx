@@ -13,7 +13,7 @@ export default function Obrigado(): JSX.Element {
             </div>
 
             <h2 className='mt-12 font-bold uppercase text-white text-center text-2xl md:text-3xl max-w-3xl mx-auto'>
-                SEJA MUITO BEM VINDO A A.H.O! TEM 1 PRESNTE PARA VOCÊ NESSE VÍDEO.
+                SEJA MUITO BEM VINDO A A.H.O! TEM 1 PRESENTE PARA VOCÊ NESSE VÍDEO.
             </h2>
             <p className='text-center my-3 max-w-xl mx-auto mb-8 sm:mb-0 sm:text-xl text-white'>
                 <strong className='text-black bg-primary px-3 rounded-md'>
@@ -34,7 +34,7 @@ export default function Obrigado(): JSX.Element {
                             className='w-full flex justify-center z-20'
                             id='vsl'
                         >
-                            <VTurb player={'64a407bb2e6fd10009827d12'}
+                            <VTurb player={'64b92bc7e891af000a1d977a'}
                                    video={'99583553-0c7c-40d5-b819-534dcd7867b9'} />
                         </div>
                     </div>

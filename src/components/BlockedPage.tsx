@@ -33,7 +33,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
     }, [])
 
     useEffect(() => {
-        if (clientWindowHeight > 17500 && !isCountdownVisible) {
+        if (clientWindowHeight > 15500 && !isCountdownVisible) {
             const target = new Date().setMinutes(
                 new Date().getMinutes() +
                 parseInt(process.env.NEXT_PUBLIC_TIME_1 ?? '0'),
