@@ -16,6 +16,7 @@ export default function VTurb({ player, video, vertical = false, iframe = false 
             <div className={`${vertical ? 'pb-[176.6%]' : 'pb-[56.25%]'} relative`}>
                 <iframe src={`https://scripts.converteai.net/${video}/players/${player}/embed.html`}
                         id={`ifr_${player}`}
+                        title='Video Player'
                         className='absolute top-0 left-0 w-full h-full rounded-xl'
                         referrerPolicy='origin'>
                 </iframe>

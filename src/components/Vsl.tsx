@@ -141,10 +141,10 @@ export default function Vsl({
                         className='text-white bg-gradient font-bold rounded-lg px-4'>10 a 50 mil reais
                         por mês</span> {' '}(ou mais) com sua agência de viagens home office!
                     </h1>
-                    <h3 className='text-sm md:text-lg text-center'>
+                    <h2 className='text-sm md:text-lg text-center'>
                         O modelo de negócio que permite <span className='font-bold'>Lucro, Escala e Liberdade</span>,
                         usando apenas uma única plataforma: <span className='font-bold'>O ViajaFlux!</span>
-                    </h3>
+                    </h2>
 
                     <div className='my-8 w-full max-w-5xl flex mx-auto relative'>
                         <div

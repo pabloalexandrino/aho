@@ -84,7 +84,8 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                 </h3>
 
                 <div className='relative h-52 sm:h-96'>
-                    <BlurImage src='/circulo.webp' layout={'fill'} className='object-contain' />
+                    <BlurImage src='/circulo.webp' layout={'fill'} className='object-contain'
+                               alt='Ecossistema ViajaFlux' />
                 </div>
 
                 <h3 className='text-center container mx-auto max-w-2xl my-12 font-semibold'>
@@ -98,7 +99,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
             <section
                 className='relative mx-auto py-12 px-6 bg-gradient-to-tl from-rose-600 via-red-900 to-red-950 text-white'>
                 <div className='absolute h-72 w-72 -left-16 top-0'>
-                    <BlurImage src='/aho.png' layout={'fill'} className='object-contain' />
+                    <BlurImage src='/aho.png' layout={'fill'} className='object-contain' alt='Logotipo' />
                 </div>
                 <div className='container mx-auto max-w-5xl mb-12'>
                     <div className='grid gap-8'>
@@ -190,7 +191,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
             </section>
 
 
-            <section className='relative mx-auto py-12 px-6 bg-[url(/bg-2.webp)] bg-cover bg-fixed'>
+            <section className='relative mx-auto py-12 px-6'>
                 <h2 className='font-bold text-black text-center text-2xl md:text-3xl max-w-5xl mx-auto'>
                     SOMOS OS ÚNICOS NO BRASIL!
                 </h2>
@@ -222,8 +223,8 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                     className='text-white bg-gradient font-bold rounded-lg px-4'>AGÊNCIA HOME OFFICE?</span>
                 </h1>
 
-                <h3 className='font-semibold text-center mt-6'>⚠️ A AHO não é um cursinho de agência, é um modelo de
-                    negócio validado. ⚠️</h3>
+                <h2 className='font-semibold text-center mt-6'>⚠️ A AHO não é um cursinho de agência, é um modelo de
+                    negócio validado. ⚠️</h2>
 
                 <div className='grid gap-3 mt-4 max-w-3xl mx-auto'>
                     <div className='relative hover:z-10 bg-gradient rounded-3xl text-white p-4'>
@@ -277,7 +278,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                                     className='object-contain'
                                 />
                             </div>
-                            <p className='max-w-[300px] mx-auto text-gray-500 mt-2 text-sm'>
+                            <p className='max-w-[300px] mx-auto text-neutral-content mt-2 text-sm'>
                                 AULA 01 - A metodologia AHO, que NÃO depende de Milhas
                                 e entrega os seus Primeiros Clientes Grátis!
                             </p>
@@ -293,7 +294,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                                     className='object-contain'
                                 />
                             </div>
-                            <p className='max-w-[300px] mx-auto text-gray-500 mt-2 text-sm'>
+                            <p className='max-w-[300px] mx-auto text-neutral-content mt-2 text-sm'>
                                 AULA 2 - A DESCOBERTA: Como criar a sua Agência Home
                                 Office &quot;sem investir&quot; o seu DINHEIRO!
                             </p>
@@ -303,7 +304,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                 </div>
             </section>
 
-            <section className='relative mx-auto py-12 sm:py-24 px-6 bg-[url(/bg.webp)] bg-cover'>
+            <section className='relative mx-auto py-12 sm:py-24 px-6'>
                 <Blur direction='right' />
                 <div className='container mx-auto max-w-3xl'>
                     <div className='grid gap-8 md:mb-12'>
@@ -783,7 +784,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                 </h2>
             </section>
             <section
-                className='relative mx-auto py-6 px-6 bg-[url(/bg-2.webp)] bg-cover bg-fixed bg-no-repeat'>
+                className='relative mx-auto py-6 px-6'>
                 <div className='container max-w-4xl px-0 mx-auto'>
 
                     <h1 className='md:text-center uppercase my-6 rounded-md text-xl md:text-3xl md:leading-snug font-bold text-center w-full inline-grid sm:block'

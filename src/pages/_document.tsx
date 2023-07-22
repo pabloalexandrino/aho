@@ -17,7 +17,7 @@ class MyDocument extends Document {
                     {/* favicon */}
                     <link rel='icon' href='/icon-512x512.webp' />
                     <meta name='theme-color' content='#000000' />
-                    
+
                     <link rel='preconnect' href='https://fonts.googleapis.com' />
                     <link rel='preconnect' href='https://fonts.gstatic.com' />
                     <link
@@ -53,12 +53,7 @@ class MyDocument extends Document {
                         property='og:image'
                         content={`${process.env.NEXT_PUBLIC_URL}/icon-512x512.webp`}
                     />
-
-                    <Script
-                        strategy='afterInteractive'
-                        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_TRACKING_ID}`}
-                    />
-
+                    
                     <Script id='google-analytics' strategy='afterInteractive'>
                         {`
                             window.dataLayer = window.dataLayer || [];
