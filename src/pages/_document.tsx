@@ -22,7 +22,8 @@ class MyDocument extends Document {
                     <link rel='preconnect' href='https://fonts.gstatic.com' />
                     <link
                         href='https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;900&display=swap'
-                        rel='stylesheet' />
+                        rel='stylesheet'
+                    />
 
                     <meta
                         name='description'
@@ -53,7 +54,7 @@ class MyDocument extends Document {
                         property='og:image'
                         content={`${process.env.NEXT_PUBLIC_URL}/icon-512x512.webp`}
                     />
-                    
+
                     <Script id='google-analytics' strategy='afterInteractive'>
                         {`
                             window.dataLayer = window.dataLayer || [];

@@ -1,8 +1,6 @@
 import { ThemeProvider } from 'next-themes'
 import type { AppProps } from 'next/app'
 import { useRouter } from 'next/router'
-import { useEffect } from 'react'
-import TagManager from 'react-gtm-module'
 import { OfferProvider } from '../providers/Offer'
 import '../styles/globals.css'
 import { setCookies } from '../utils/useCookies'
@@ -12,12 +10,6 @@ import { ParallaxProvider } from 'react-scroll-parallax'
 
 function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter()
-
-    useEffect(() => {
-        TagManager.initialize({
-            gtmId: process.env.NEXT_PUBLIC_GT_TRACKING_ID!,
-        })
-    }, [])
 
     if (router.asPath.includes('?') && router.asPath.includes('utm_source')) {
         const utmSource = router.asPath.split('utm_source=')[1]?.split('&')[0]

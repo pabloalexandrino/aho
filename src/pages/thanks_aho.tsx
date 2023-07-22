@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Script from 'next/script'
 import { useCallback, useContext, useEffect, useState } from 'react'
-import TagManager from 'react-gtm-module'
 import Footer from '../components/Footer'
 import Obrigado from '../components/Obrigado'
 import fb from '../utils/fb'
@@ -16,43 +15,7 @@ export default function Home(): JSX.Element {
     // const minutes = 5
 
     useEffect(() => {
-        const utm = localStorage.getItem('utm')
-        const gclid = localStorage.getItem('gclid')
-        const fbclid = localStorage.getItem('fbclid')
-
         setFbClick(localStorage.getItem('fb-click') || '')
-
-        if (utm) {
-            const utmObj = JSON.parse(utm)
-            TagManager.dataLayer({
-                dataLayer: {
-                    event: 'utm',
-                    utm_source: utmObj.utm_source,
-                    utm_medium: utmObj.utm_medium,
-                    utm_campaign: utmObj.utm_campaign,
-                    utm_content: utmObj.utm_content,
-                    utm_term: utmObj.utm_term,
-                },
-            })
-        }
-
-        if (gclid) {
-            TagManager.dataLayer({
-                dataLayer: {
-                    event: 'gclid',
-                    gclid: gclid,
-                },
-            })
-        }
-
-        if (fbclid) {
-            TagManager.dataLayer({
-                dataLayer: {
-                    event: 'fbclid',
-                    fbclid: fbClick,
-                },
-            })
-        }
     }, [fbClick])
 
     const fetchPrice = useCallback(async () => {

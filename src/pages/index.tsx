@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { useContext, useEffect } from 'react'
-import TagManager from 'react-gtm-module'
 import BlockedPage from '../components/BlockedPage'
 import Navbar from '../components/Navbar'
 import Vsl from '../components/Vsl'
@@ -25,12 +24,6 @@ export default function Home(): JSX.Element {
     useEffect(() => {
         if (process.env.NODE_ENV === 'production') {
             fb('PageView', 'PageView' + eventId).then(r => r)
-            TagManager.dataLayer({
-                dataLayer: {
-                    event: 'PageView' + eventId,
-                    page: 'aho',
-                },
-            })
         }
     }, [eventId])
 
@@ -49,7 +42,7 @@ export default function Home(): JSX.Element {
                     </Script>
                 </>
             )}
-            
+
             <Navbar leadRedirect={'https://empreendaclub.typeform.com/go-aho'} />
             <Vsl showButton playerComponent={'vturb'} player={'64b92bbdd66489000873fe34'}
                  video={'99583553-0c7c-40d5-b819-534dcd7867b9'} />
