@@ -18,13 +18,6 @@ class MyDocument extends Document {
                     <link rel='icon' href='/icon-512x512.webp' />
                     <meta name='theme-color' content='#000000' />
 
-                    <link rel='preconnect' href='https://fonts.googleapis.com' />
-                    <link rel='preconnect' href='https://fonts.gstatic.com' />
-                    <link
-                        href='https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;900&display=swap'
-                        rel='stylesheet'
-                    />
-
                     <meta
                         name='description'
                         content='Como montar sua própria Agência de Viagens online e fazer 10, 20, 30 mil reais por mês!'

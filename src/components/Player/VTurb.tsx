@@ -39,7 +39,6 @@ export default function VTurb({ player, video, vertical = false, iframe = false 
                          style={{ WebkitBackdropFilter: 'blur(5px)' }}></div>
                 </div>
                 <Script id={`src_${player}`}
-                        strategy='afterInteractive'
                         src={`https://scripts.converteai.net/${video}/players/${player}/player.js`}>
                 </Script>
             </div>

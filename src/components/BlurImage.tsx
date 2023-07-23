@@ -16,16 +16,17 @@ export default function BlurImage({ src, className, ...props }: blurImageProps) 
         <Image
             {...props}
             src={src}
-            quality={100}
+            quality={75}
             // objectFit="contain"
             className={cn(
-                `duration-300 ease-in-out ${className}`,
+                `duration-100 ease-in-out ${className}`,
                 isLoading
-                    ? 'grayscale blur-2xl scale-110'
-                    : 'grayscale-0 blur-0 scale-100',
+                    ? 'blur-2xl'
+                    : 'blur-0',
             )}
             onLoadingComplete={() => setLoading(false)}
             alt={props.alt}
+            priority={true}
         />
     )
 }

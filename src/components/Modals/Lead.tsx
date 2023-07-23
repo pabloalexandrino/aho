@@ -45,8 +45,8 @@ export default function Lead({ redirectTo }: ILead) {
 
     function sendPixel() {
         // if (process.env.NODE_ENV === 'production') {
-            fb('Lead', 'Lead' + eventId, nameLead, emailLead, whatsappLead)
-                .then((r) => r)
+        fb('Lead', 'Lead' + eventId, nameLead, emailLead, whatsappLead)
+            .then((r) => r)
         // }
         window.location.href = pagina === 'aho-trafego' ? process.env.NEXT_PUBLIC_WHATSAPP_TRAFEGO! : process.env.NEXT_PUBLIC_WHATSAPP_ALUNOS!
     }
@@ -113,7 +113,7 @@ export default function Lead({ redirectTo }: ILead) {
 
             {/*    Fazer inscrição gratuitamente*/}
             {/*</label>*/}
-
+            <label htmlFor='lead'></label>
             <input type='checkbox' id='lead' className='modal-toggle' />
             <label
                 htmlFor='lead'
