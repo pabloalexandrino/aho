@@ -16,7 +16,7 @@ export default function BlurImage({ src, className, ...props }: blurImageProps) 
         <Image
             {...props}
             src={src}
-            quality={75}
+            quality={65}
             // objectFit="contain"
             className={cn(
                 `duration-100 ease-in-out ${className}`,

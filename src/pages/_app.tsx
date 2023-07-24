@@ -7,7 +7,6 @@ import { setCookies } from '../utils/useCookies'
 import { ToastContainer } from 'react-toastify'
 import FloatBlocks from '../components/FloatBlocks'
 import { ParallaxProvider } from 'react-scroll-parallax'
-import { GoogleFonts } from 'next-google-fonts'
 
 function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter()
@@ -52,8 +51,8 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     return (
         <>
-            <GoogleFonts
-                href='https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;900&display=swap' />
+            {/*<GoogleFonts*/}
+            {/*    href='https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;900&display=swap' />*/}
             <ThemeProvider defaultTheme='light'>
                 <OfferProvider>
                     <ParallaxProvider>
