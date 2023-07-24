@@ -84,7 +84,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                 </h3>
 
                 <div className='relative h-52 sm:h-96'>
-                    <BlurImage src='/circulo.webp' layout={'fill'} className='object-contain'
+                    <BlurImage src='/circulo.svg' layout={'fill'} className='object-contain'
                                alt='Ecossistema ViajaFlux' />
                 </div>
 
