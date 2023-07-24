@@ -172,11 +172,12 @@ export default function Vsl({
                                 />
                             </svg>
                         </button>
-                        <div
-                            className='w-full flex justify-center z-20'
-                            id='vsl'
-                        >
-                            <VTurb player={player} video={video} />
+                        {/*<div*/}
+                        {/*    className='w-full flex justify-center z-20'*/}
+                        {/*    id='vsl'*/}
+                        {/*>*/}
+                        <div className='aspect-video box-glow container max-w-3xl mx-auto'>
+                            <VTurb player={player} video={video} iframe />
                         </div>
                     </div>
 
