@@ -116,7 +116,7 @@ export default function Vsl({
             <section className='flex justify-center pb-12'>
                 <Blur />
 
-                <div className='container max-w-4xl px-6 md:mt-6'>
+                <div className='container max-w-5xl px-6 md:mt-6'>
                     {showTimer && display && (
                         <div className='w-fit rounded-lg mx-auto bg-error text-white py-2 px-6'>
                             {/* gerar cronometro de 10 minutos retrocedendo o tempo */}
@@ -176,7 +176,7 @@ export default function Vsl({
                         {/*    className='w-full flex justify-center z-20'*/}
                         {/*    id='vsl'*/}
                         {/*>*/}
-                        <div className='aspect-video box-glow container max-w-3xl mx-auto'>
+                        <div className='aspect-video box-glow container max-w-5xl mx-auto'>
                             <VTurb player={player} video={video} iframe />
                         </div>
                     </div>
