@@ -98,9 +98,6 @@ export default function BlockedPage({ show = true }: BlockedProps) {
 
             <section
                 className='relative mx-auto py-12 px-6 bg-gradient-to-tl from-rose-600 via-red-900 to-red-950 text-white'>
-                <div className='absolute h-72 w-72 -left-16 top-0'>
-                    <BlurImage src='/aho.png' layout={'fill'} className='object-contain' alt='Logotipo' />
-                </div>
                 <div className='container mx-auto max-w-5xl mb-12'>
                     <div className='grid gap-8'>
                         <div>
@@ -269,15 +266,15 @@ export default function BlockedPage({ show = true }: BlockedProps) {
 
                     <div className='grid md:grid-cols-2 mt-8 text-center gap-4'>
                         <a target='_blank' rel='noreferrer' href={'https://youtube.com/live/sibPsOs2Gek?feature=share'}
-                           className='flex justify-center flex-col items-center duration-300 transition-all hover:scale-105'>
-                            <div className='relative w-[380px] h-[200px] bg-gray-800'>
-                                <BlurImage
-                                    layout={'fill'}
-                                    src='/1.png'
-                                    alt='Luiz'
-                                    className='object-contain'
-                                />
-                            </div>
+                           className='relative flex justify-center flex-col items-center duration-300 transition-all hover:scale-105'>
+                            <BlurImage
+                                src='/1.png'
+                                alt='Luiz'
+                                height={200}
+                                width={380}
+                                className='object-contain'
+                            />
+
                             <p className='max-w-[300px] mx-auto text-neutral-content mt-2 text-sm'>
                                 AULA 01 - A metodologia AHO, que NÃO depende de Milhas
                                 e entrega os seus Primeiros Clientes Grátis!
@@ -285,15 +282,14 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                         </a>
 
                         <a target='_blank' rel='noreferrer' href={'https://youtube.com/live/HuBKqgEkHdg?feature=share'}
-                           className='flex justify-center flex-col items-center duration-300 transition-all hover:scale-105'>
-                            <div className='relative w-[380px] h-[200px] bg-gray-800'>
-                                <BlurImage
-                                    layout={'fill'}
-                                    src='/2.png'
-                                    alt='Luiz'
-                                    className='object-contain'
-                                />
-                            </div>
+                           className='relative flex justify-center flex-col items-center duration-300 transition-all hover:scale-105'>
+                            <BlurImage
+                                src='/2.png'
+                                alt='Luiz'
+                                height={200}
+                                width={380}
+                                className='object-contain'
+                            />
                             <p className='max-w-[300px] mx-auto text-neutral-content mt-2 text-sm'>
                                 AULA 2 - A DESCOBERTA: Como criar a sua Agência Home
                                 Office &quot;sem investir&quot; o seu DINHEIRO!
@@ -328,7 +324,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                 <Blur />
                 <FloatBlocks />
                 <div className='container mx-auto mb-12'>
-                    <h2 className='font-bold text-center text-2xl md:text-4xl mx-auto mb-8 md:mb-8 max-w-4xl'>
+                    <h2 className='font-bold text-center text-xl md:text-4xl mx-auto mb-8 md:mb-8 max-w-4xl'>
                         E TODO O CONHECIMENTO DIVIDIDO NESSES MÓDULOS AQUI 👇
                     </h2>
 

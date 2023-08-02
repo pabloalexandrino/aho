@@ -59,6 +59,7 @@ class MyDocument extends Document {
                     </Script>
 
                     <link rel='preconnect' href='https://connect.facebook.net' />
+                    <link rel='preconnect' href='https://cdn.converteai.net' />
 
                     <Script id='facebook-pixel' strategy='afterInteractive'>
                         {`

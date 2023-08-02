@@ -10,7 +10,7 @@ export default function CapturePage({ form }: CapturePageProps) {
     return (
         <>
             <div
-                className='grid md:grid-cols-2 h-full bg-black mx-auto bg-contain w-full bg-[url(/../luiz.webp)] bg-no-repeat bg-right-top'>
+                className='grid md:grid-cols-2 h-full bg-black mx-auto bg-contain bg-[url(/../luiz.webp)] w-full bg-no-repeat bg-right-top'>
                 <div className='text-white px-6 md:px-24 mt-10 md:max-w-3xl xl:max-w-4xl sm:col-span-2 col-span-1'>
                     <div className='relative w-40 h-16 md:w-[348px] md:h-[138px]'>
                         <BlurImage src={'/logo.webp'} layout={'fill'} className='object-contain' alt='Logotipo' />
@@ -63,36 +63,19 @@ export default function CapturePage({ form }: CapturePageProps) {
                     <h3 className='text-center text-white text-3xl font-bold'>
                         O que você irá aprender<br />nessa jornada
                     </h3>
-                    <div className='grid md:grid-cols-2 mt-8 text-center gap-4'>
+                    <div className='grid mt-8 text-center gap-4'>
                         <div className='text-center'>
-                            <div className='relative w-[380px] h-[200px] bg-base-300'>
-                                <BlurImage
-                                    layout={'fill'}
-                                    src='/1.png'
-                                    alt='Luiz'
-                                    className='object-contain'
-                                />
-                            </div>
-                            <h4 className='text-white text-lg mt-4'>17/07 às 19:30h</h4>
+                            <BlurImage
+                                src='/1.png'
+                                alt='Luiz'
+                                width={380}
+                                height={200}
+                                className='object-contain'
+                            />
+                            <h4 className='text-white text-lg mt-4'>15/08 às 19:30h</h4>
                             <p className='max-w-[300px] mx-auto'>
                                 AULA 01 - A metodologia AHO, que NÃO depende de Milhas
                                 e entrega os seus Primeiros Clientes Grátis!
-                            </p>
-                        </div>
-
-                        <div className='text-center'>
-                            <div className='relative w-[380px] h-[200px] bg-base-300'>
-                                <BlurImage
-                                    layout={'fill'}
-                                    src='/2.png'
-                                    alt='Luiz'
-                                    className='object-contain'
-                                />
-                            </div>
-                            <h4 className='text-white text-lg mt-4'>19/07 às 19:30h</h4>
-                            <p className='max-w-[300px] mx-auto'>
-                                AULA 2- A DESCOBERTA: Como criar a sua Agência Home
-                                Office &quot;sem investir&quot; o seu DINHEIRO!
                             </p>
                         </div>
                     </div>

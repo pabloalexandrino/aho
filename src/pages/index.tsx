@@ -6,6 +6,7 @@ import Vsl from '../components/Vsl'
 import { OfferContext } from '../providers/Offer'
 import fb from '../utils/fb'
 import Script from 'next/script'
+import { ParallaxProvider } from 'react-scroll-parallax'
 
 export default function Home(): JSX.Element {
     const {
@@ -43,12 +44,14 @@ export default function Home(): JSX.Element {
                 </>
             )}
 
-            <Navbar leadRedirect={'https://empreendaclub.typeform.com/go-aho'} />
-            <Vsl showButton playerComponent={'vturb'} player={'64b92bbdd66489000873fe34'}
-                 video={'99583553-0c7c-40d5-b819-534dcd7867b9'} />
-            <BlockedPage
-                show={true}
-            />
+            <ParallaxProvider>
+                <Navbar leadRedirect={'https://empreendaclub.typeform.com/go-aho'} />
+                <Vsl showButton playerComponent={'vturb'} player={'64b92bbdd66489000873fe34'}
+                     video={'99583553-0c7c-40d5-b819-534dcd7867b9'} />
+                <BlockedPage
+                    show={true}
+                />
+            </ParallaxProvider>
         </div>
     )
 }
