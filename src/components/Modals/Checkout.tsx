@@ -116,7 +116,7 @@ export default function Checkout() {
                 if (process.env.NEXT_PUBLIC_DEVZAPP_LEAD) {
                     await fetch(
                         process.env.NEXT_PUBLIC_DEVZAPP_LEAD + '?' +
-                        new URLSearchParams({ whatsapp, firstName: name, produto: 'AHO' }),
+                        new URLSearchParams({ whatsapp }),
                     )
                 }
 

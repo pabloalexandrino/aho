@@ -13,7 +13,7 @@ export default function Home() {
 
     useEffect(() => {
         setPagina('aho-trafego')
-        setValue(3500)
+        setValue(4000)
     }, [setPagina, setValue])
 
     return (

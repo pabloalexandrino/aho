@@ -42,7 +42,25 @@ export default function LeadForm() {
         // if (process.env.NODE_ENV === 'production') {
         fb('Lead', 'Lead' + eventId, nameLead, '', whatsappLead).then(r => r)
         // }
-        window.location.href = pagina === 'aho-trafego' ? process.env.NEXT_PUBLIC_WHATSAPP_TRAFEGO! : process.env.NEXT_PUBLIC_WHATSAPP_ALUNOS!
+        
+        const form = document.createElement('form')
+        form.method = 'POST'
+        form.action = 'https://go.rendacommilhas.com.br/form/99cd4aab-72b3-49a2-8b2f-0dc6f739555d'
+
+        const nameField = document.createElement('input')
+        nameField.type = 'hidden'
+        nameField.name = 'name'
+        nameField.value = nameLead
+        form.appendChild(nameField)
+
+        const phoneField = document.createElement('input')
+        phoneField.type = 'hidden'
+        phoneField.name = 'phone_number'
+        phoneField.value = whatsappLead
+        form.appendChild(phoneField)
+
+        document.body.appendChild(form)
+        form.submit()
     }
 
     const handleSubmitLead = async (event: { preventDefault: () => void }) => {
@@ -62,6 +80,21 @@ export default function LeadForm() {
                 valor: value.toString(),
             }
 
+            //DEVZAP
+            if (process.env.NEXT_PUBLIC_DEVZAPP_LEAD) {
+                const devzapp = await fetch(
+                    process.env.NEXT_PUBLIC_DEVZAPP_LEAD + '?' +
+                    new URLSearchParams({
+                        whatsapp: whatsappLead,
+                    }),
+                )
+            }
+
+            if (process.env.NEXT_PUBLIC_CLINT_TRAFEGO || process.env.NEXT_PUBLIC_CLINT_ALUNOS) {
+                const clint = pagina === 'aho-trafego' ? process.env.NEXT_PUBLIC_CLINT_TRAFEGO : process.env.NEXT_PUBLIC_CLINT_ALUNOS
+                await fetch(clint + '?' + new URLSearchParams(data))
+            }
+
             await fetch('/api/addToList', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -69,9 +102,6 @@ export default function LeadForm() {
                     ...data, list: 53,
                 }),
             })
-
-            const clint = pagina === 'aho-trafego' ? process.env.NEXT_PUBLIC_CLINT_TRAFEGO : process.env.NEXT_PUBLIC_CLINT_ALUNOS
-            await fetch(clint + '?' + new URLSearchParams(data))
 
             setLoading(false)
             redirectTo()

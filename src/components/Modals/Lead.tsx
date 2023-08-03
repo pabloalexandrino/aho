@@ -71,27 +71,27 @@ export default function Lead({ redirectTo }: ILead) {
                 valor: value.toString(),
             }
 
-            await fetch('/api/addToList', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ ...data, list: 53 }),
-            })
-
             //CLINT
             const clint_api = pagina === 'aho-alunos' ? process.env.NEXT_PUBLIC_CLINT_ALUNOS : process.env.NEXT_PUBLIC_CLINT_TRAFEGO
-            await fetch(
+            const clint = await fetch(
                 clint_api + '?' +
                 new URLSearchParams(data),
             )
 
             //DEVZAP
             if (process.env.NEXT_PUBLIC_DEVZAPP_LEAD) {
-                await fetch(
+                const devzapp = await fetch(
                     process.env.NEXT_PUBLIC_DEVZAPP_LEAD + '?' +
-                    new URLSearchParams({ whatsapp: whatsappLead, firstName: nameLead, produto: 'AHO' }),
+                    new URLSearchParams({ whatsapp: whatsappLead }),
                 )
             }
 
+            await fetch('/api/addToList', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ...data, list: 53 }),
+            })
+            
             setLoading(false)
             sendPixel()
         } catch (error) {
