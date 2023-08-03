@@ -84,6 +84,14 @@ export default function Lead({ redirectTo }: ILead) {
                 new URLSearchParams(data),
             )
 
+            //DEVZAP
+            if (process.env.NEXT_PUBLIC_DEVZAPP_LEAD) {
+                await fetch(
+                    process.env.NEXT_PUBLIC_DEVZAPP_LEAD + '?' +
+                    new URLSearchParams({ whatsapp: whatsappLead, firstName: nameLead, produto: 'AHO' }),
+                )
+            }
+
             setLoading(false)
             sendPixel()
         } catch (error) {
