@@ -20,20 +20,20 @@ export default function CapturePage({ form }: CapturePageProps) {
                     {' '}por mês (ou mais) com sua agência de viagens home office!
                 </h1>
                 <h2 className='text-sm md:text-xl'>
-                    O modelo de negócio que não depende de milhas e entrega seus primeiros clientes de graça!
+                    Deixe os dados abaixo para agendar uma sessão estratégica individual de 1h com um especialista!
                 </h2>
 
-                <div className='flex gap-6 mt-10 flex-col sm:flex-row text-xs'>
-                    <div className='flex items-center gap-2'>
-                        <BlurImage src={'/calendar.webp'} width={20} height={20} alt='Calendário' />
-                        <span className='opacity-50'>15 de Agosto</span>
-                    </div>
+                {/*<div className='flex gap-6 mt-10 flex-col sm:flex-row text-xs'>*/}
+                {/*    <div className='flex items-center gap-2'>*/}
+                {/*        <BlurImage src={'/calendar.webp'} width={20} height={20} alt='Calendário' />*/}
+                {/*        <span className='opacity-50'>15 de Agosto</span>*/}
+                {/*    </div>*/}
 
-                    <div className='flex items-center gap-2'>
-                        <BlurImage src={'/ticket.webp'} width={20} height={20} alt='Ticket' />
-                        <span className='opacity-50'>Evento online e gratuito</span>
-                    </div>
-                </div>
+                {/*    <div className='flex items-center gap-2'>*/}
+                {/*        <BlurImage src={'/ticket.webp'} width={20} height={20} alt='Ticket' />*/}
+                {/*        <span className='opacity-50'>Evento online e gratuito</span>*/}
+                {/*    </div>*/}
+                {/*</div>*/}
 
                 <div className='card card-compact w-full h-fit rounded-lg my-4 md:my-2'>
                     {!form ? (

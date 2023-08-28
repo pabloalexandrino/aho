@@ -42,25 +42,27 @@ export default function LeadForm() {
         // if (process.env.NODE_ENV === 'production') {
         fb('Lead', 'Lead' + eventId, nameLead, '', whatsappLead).then(r => r)
         // }
-        
-        const form = document.createElement('form')
-        form.method = 'POST'
-        form.action = 'https://go.rendacommilhas.com.br/form/99cd4aab-72b3-49a2-8b2f-0dc6f739555d'
 
-        const nameField = document.createElement('input')
-        nameField.type = 'hidden'
-        nameField.name = 'name'
-        nameField.value = nameLead
-        form.appendChild(nameField)
+        // const form = document.createElement('form')
+        // form.method = 'POST'
+        // form.action = 'https://go.rendacommilhas.com.br/form/99cd4aab-72b3-49a2-8b2f-0dc6f739555d'
+        //
+        // const nameField = document.createElement('input')
+        // nameField.type = 'hidden'
+        // nameField.name = 'name'
+        // nameField.value = nameLead
+        // form.appendChild(nameField)
+        //
+        // const phoneField = document.createElement('input')
+        // phoneField.type = 'hidden'
+        // phoneField.name = 'phone_number'
+        // phoneField.value = whatsappLead
+        // form.appendChild(phoneField)
+        //
+        // document.body.appendChild(form)
+        // form.submit()
 
-        const phoneField = document.createElement('input')
-        phoneField.type = 'hidden'
-        phoneField.name = 'phone_number'
-        phoneField.value = whatsappLead
-        form.appendChild(phoneField)
-
-        document.body.appendChild(form)
-        form.submit()
+        window.location.href = 'https://andrinno.com/redirect/queue/42'
     }
 
     const handleSubmitLead = async (event: { preventDefault: () => void }) => {
@@ -91,7 +93,8 @@ export default function LeadForm() {
             }
 
             if (process.env.NEXT_PUBLIC_CLINT_TRAFEGO || process.env.NEXT_PUBLIC_CLINT_ALUNOS) {
-                const clint = pagina === 'aho-trafego' ? process.env.NEXT_PUBLIC_CLINT_TRAFEGO : process.env.NEXT_PUBLIC_CLINT_ALUNOS
+                // const clint = pagina === 'aho-trafego' ? process.env.NEXT_PUBLIC_CLINT_TRAFEGO : process.env.NEXT_PUBLIC_CLINT_ALUNOS
+                const clint = 'https://andrinno.com/api/redirect/queue/41'
                 await fetch(clint + '?' + new URLSearchParams(data))
             }
 
@@ -196,7 +199,7 @@ export default function LeadForm() {
                     </svg>
 
                 )}
-                Fazer inscrição gratuitamente
+                Falar com um especialista
             </button>
         </form>
     )
