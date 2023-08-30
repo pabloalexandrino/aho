@@ -16,7 +16,7 @@ export default function CapturePage({ form }: CapturePageProps) {
                 </div>
                 <h1 className='uppercase mb-4 md:mb-8 rounded-md text-xl md:text-3xl md:leading-snug text-justify inline-block my-8 mt-32 md:mt-8'
                 >
-                    Lucre de <span className='bg-gradient font-bold rounded-lg px-4'>10 a 50 mil reais</span>
+                    Lucre de <span className='bg-gradient font-bold rounded-lg px-4'>5 a 30 mil reais</span>
                     {' '}por mês (ou mais) com sua agência de viagens home office!
                 </h1>
                 <h2 className='text-sm md:text-xl'>
