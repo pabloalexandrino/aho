@@ -8,6 +8,7 @@ import fb from '../utils/fb'
 export default function LeadForm() {
     const [nameLead, setNameLead] = useState('')
     // const [emailLead, setEmailLead] = useState('')
+    const [businessLead, setBusinessLead] = useState('')
     const [whatsappLead, setWhatsappLead] = useState('')
     const [loading, setLoading] = useState(false)
 
@@ -19,6 +20,7 @@ export default function LeadForm() {
 
     const schema = yup.object().shape({
         nameLead: yup.string().required('Por favor, informe o seu nome.'),
+        businessLead: yup.string().required('Por favor, informe o capital disponível para o seu novo negócio.'),
         // emailLead: yup
         //     .string()
         //     .email('Por favor, informe um e-mail válido.')
@@ -71,7 +73,7 @@ export default function LeadForm() {
 
         try {
             await schema.validate(
-                { nameLead, whatsappLead },
+                { nameLead, whatsappLead, businessLead },
                 { abortEarly: false },
             )
 
@@ -80,6 +82,7 @@ export default function LeadForm() {
                 whatsapp: whatsappLead,
                 pagina,
                 valor: value.toString(),
+                tag: businessLead,
             }
 
             //DEVZAP
@@ -162,6 +165,29 @@ export default function LeadForm() {
                 className='input input-bordered input-primary w-full bg-white text-black'
                 placeholder='(XX) 9XXXX-XXXX'
             />
+
+            <select
+                name='business_lead'
+                className='select select-bordered select-primary w-full bg-white text-black'
+                value={businessLead}
+                onChange={(event) =>
+                    setBusinessLead(event.target.value)
+                }
+            >
+                <option value='' disabled>
+                    Valor disponível para investimento
+                </option>
+                <option value='Até R$ 3.000,00'>Até R$ 3.000,00</option>
+                <option value='De R$ 3.000,00 a R$ 5.000,00'>
+                    De R$ 3.000,00 a R$ 5.000,00
+                </option>
+                <option value='De R$ 5.000,00 a R$ 10.000,00'>
+                    De R$ 5.000,00 a R$ 10.000,00
+                </option>
+                <option value='De R$ 10.000,00 a R$ 20.000,00'>
+                    De R$ 10.000,00 a R$ 20.000,00
+                </option>
+            </select>
 
             <button
                 form='formLead'
