@@ -175,7 +175,7 @@ export default function LeadForm() {
                 }
             >
                 <option value='' disabled>
-                    Valor disponível para investimento
+                    Quanto você investiria no seu novo negócio?
                 </option>
                 <option value='Até R$ 3.000,00'>Até R$ 3.000,00</option>
                 <option value='De R$ 3.000,00 a R$ 5.000,00'>
