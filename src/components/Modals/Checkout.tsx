@@ -113,12 +113,12 @@ export default function Checkout() {
                 }
 
                 //DEVZAP
-                if (process.env.NEXT_PUBLIC_DEVZAPP_LEAD) {
-                    await fetch(
-                        process.env.NEXT_PUBLIC_DEVZAPP_LEAD + '?' +
-                        new URLSearchParams({ whatsapp }),
-                    )
-                }
+                // if (process.env.NEXT_PUBLIC_DEVZAPP_LEAD) {
+                //     await fetch(
+                //         process.env.NEXT_PUBLIC_DEVZAPP_LEAD + '?' +
+                //         new URLSearchParams({ whatsapp }),
+                //     )
+                // }
 
                 //DISCORD
                 // if (process.env.NEXT_PUBLIC_TELEGRAND_LEAD) {

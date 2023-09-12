@@ -17,7 +17,7 @@ export default function Home(): JSX.Element {
     } = useContext(OfferContext)
 
     useEffect(() => {
-        setCheckoutLink('https://view.forms.app/gregatti/formspaginaaho')
+        setCheckoutLink('https://empreendaclub.typeform.com/go-aho')
         setPagina('aho-site')
         setValue(3500)
     }, [setCheckoutLink, setPagina, setValue])

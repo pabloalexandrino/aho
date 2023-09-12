@@ -79,19 +79,19 @@ export default function Lead({ redirectTo }: ILead) {
             )
 
             //DEVZAP
-            if (process.env.NEXT_PUBLIC_DEVZAPP_LEAD) {
-                const devzapp = await fetch(
-                    process.env.NEXT_PUBLIC_DEVZAPP_LEAD + '?' +
-                    new URLSearchParams({ whatsapp: whatsappLead }),
-                )
-            }
+            // if (process.env.NEXT_PUBLIC_DEVZAPP_LEAD) {
+            //     const devzapp = await fetch(
+            //         process.env.NEXT_PUBLIC_DEVZAPP_LEAD + '?' +
+            //         new URLSearchParams({ whatsapp: whatsappLead }),
+            //     )
+            // }
 
             await fetch('/api/addToList', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ ...data, list: 53 }),
             })
-            
+
             setLoading(false)
             sendPixel()
         } catch (error) {
