@@ -889,9 +889,9 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                     <div
                         className='text-center font-bold text-2xl md:text-3xl my-8 flex flex-col relative w-fit mx-auto'>
                         <span className='absolute right-5 -top-1 text-4xl animate-pulse'>❌</span>
-                        Por 12x R$ 1.500
+                        Por 12x R$ 1.000
                         <span
-                            className='text-xl bg-warning w-fit mx-auto rounded-md mt-2 px-4'>ou R$ 15.000 à vista!</span>
+                            className='text-xl bg-warning w-fit mx-auto rounded-md mt-2 px-4'>ou R$ 10.000 à vista!</span>
                     </div>
 
                     <div className='text-center font-bold text-xl md:text-2xl my-8 max-w-md mx-auto'>
