@@ -881,28 +881,11 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                         TOTAL DE R$ 36.997
                     </div>
 
-                    <div className='text-center font-bold text-xl md:text-2xl my-8'>
-                        <span
-                            className='text-white bg-gradient rounded-md px-2'>Preço de Lançamento em Janeiro de 2024</span>
-                    </div>
 
-                    <div
-                        className='text-center font-bold text-2xl md:text-3xl my-8 flex flex-col relative w-fit mx-auto'>
-                        <span className='absolute right-5 -top-1 text-4xl animate-pulse'>❌</span>
+                    <div className='text-center font-bold text-2xl md:text-5xl my-8 flex flex-col'>
                         Por 12x R$ 1.000
                         <span
-                            className='text-xl bg-warning w-fit mx-auto rounded-md mt-2 px-4'>ou R$ 10.000 à vista!</span>
-                    </div>
-
-                    <div className='text-center font-bold text-xl md:text-2xl my-8 max-w-md mx-auto'>
-                        Os <span className='bg-warning rounded-md px-2'>20 primeiros</span>
-                        {' '} que entrarem neste Pré-lançamento, terão acesso a tudo isso por:
-                    </div>
-
-                    <div className='text-center font-bold text-2xl md:text-3xl my-8 flex flex-col'>
-                        Só 12x R$ 399,70
-                        <span
-                            className='text-xl bg-primary w-fit mx-auto rounded-md mt-2 px-4'>ou R$ 3.997 à vista!</span>
+                            className='text-xl bg-primary w-fit mx-auto rounded-md mt-2 px-4'>ou R$ 10.000 à vista!</span>
                     </div>
 
                     <div className='w-fit rounded-lg mx-auto bg-gradient mt-12 text-white py-2 px-6'>
@@ -910,7 +893,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                         <div className='flex flex-col gap-8 text-center'>
                             <h2 className='font-bold text-sm md:text-2xl'>
                                 {expired
-                                    ? 'Oferta encerrada.'
+                                    ? 'Oferta encerrada'
                                     : 'Atenção! Oferta por tempo limitado'}
                             </h2>
                         </div>
