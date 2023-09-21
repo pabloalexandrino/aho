@@ -16,9 +16,10 @@ export default function VTurb({ player, video, vertical = false, iframe = false 
             <div className={`${vertical ? 'pb-[176.6%]' : 'pb-[56.25%]'} relative`}>
                 <iframe src={`https://scripts.converteai.net/${video}/players/${player}/embed.html`}
                         id={`ifr_${player}`}
-                        title='Video Player'
                         className='absolute top-0 left-0 w-full h-full rounded-xl'
-                        referrerPolicy='origin'>
+                        referrerPolicy='origin'
+                        title='Video Player'
+                >
                 </iframe>
             </div>
         ) : (
@@ -39,6 +40,7 @@ export default function VTurb({ player, video, vertical = false, iframe = false 
                          style={{ WebkitBackdropFilter: 'blur(5px)' }}></div>
                 </div>
                 <Script id={`src_${player}`}
+                        strategy='afterInteractive'
                         src={`https://scripts.converteai.net/${video}/players/${player}/player.js`}>
                 </Script>
             </div>
@@ -49,7 +51,7 @@ export default function VTurb({ player, video, vertical = false, iframe = false 
 export const HiddenElements = ({ children, seconds }) => {
     const { showElements, setShowElements } = useContext(OfferContext)
     useEffect(() => {
-        const alreadyDisplayedKey = `@AHOalreadyElsDisplayed${seconds}`
+        const alreadyDisplayedKey = `@RCMalreadyElsDisplayed${seconds}`
 
         let attempts = 0
 

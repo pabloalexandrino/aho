@@ -102,7 +102,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                     <div className='grid gap-8'>
                         <div>
                             <h2 className='font-bold text-center text-2xl md:text-3xl mx-auto mb-8'>
-                                SÃO MAIS DE 400 AGÊNCIAS ESPALHADAS POR BRASIL E MUNDO!
+                                SÃO MAIS DE 400 AGÊNCIAS ESPALHADAS PELO BRASIL E PELO MUNDO!
                             </h2>
                         </div>
                     </div>
@@ -250,53 +250,88 @@ export default function BlockedPage({ show = true }: BlockedProps) {
 
                 {<CallToAction2 />}
             </section>
-            <section className='relative w-full bg-zinc-900 px-6 py-12'>
-                <Blur direction='right' />
+            {/*<section className='relative w-full bg-zinc-900 px-6 py-12'>*/}
+            {/*    <Blur direction='right' />*/}
+            {/*    <FloatBlocks />*/}
+            {/*    <div className='container mx-auto max-w-3xl'>*/}
+
+            {/*        <h1 className=' text-white md:text-center uppercase my-6 rounded-md text-xl md:text-3xl md:leading-snug font-bold text-center w-full'*/}
+            {/*        >*/}
+            {/*            Perdeu as aulas da semana <br /><span*/}
+            {/*            className='text-white bg-gradient font-bold rounded-lg px-4 w-fit'>&quot;A SUA AGÊNCIA HOME OFFICE&quot;</span>?*/}
+            {/*        </h1>*/}
+
+            {/*        <span*/}
+            {/*            className='text-white font-semibold text-center w-full block'>Assista aqui antes que saia do AR! 👇</span>*/}
+
+            {/*        <div className='grid md:grid-cols-2 mt-8 text-center gap-4'>*/}
+            {/*            <a target='_blank' rel='noreferrer' href={'https://youtube.com/live/sibPsOs2Gek?feature=share'}*/}
+            {/*               className='relative flex justify-center flex-col items-center duration-300 transition-all hover:scale-105'>*/}
+            {/*                <BlurImage*/}
+            {/*                    src='/1.png'*/}
+            {/*                    alt='Luiz'*/}
+            {/*                    height={200}*/}
+            {/*                    width={380}*/}
+            {/*                    className='object-contain'*/}
+            {/*                />*/}
+
+            {/*                <p className='max-w-[300px] mx-auto text-neutral-content mt-2 text-sm'>*/}
+            {/*                    AULA 01 - A metodologia AHO, que NÃO depende de Milhas*/}
+            {/*                    e entrega os seus Primeiros Clientes Grátis!*/}
+            {/*                </p>*/}
+            {/*            </a>*/}
+
+            {/*            <a target='_blank' rel='noreferrer' href={'https://youtube.com/live/HuBKqgEkHdg?feature=share'}*/}
+            {/*               className='relative flex justify-center flex-col items-center duration-300 transition-all hover:scale-105'>*/}
+            {/*                <BlurImage*/}
+            {/*                    src='/2.png'*/}
+            {/*                    alt='Luiz'*/}
+            {/*                    height={200}*/}
+            {/*                    width={380}*/}
+            {/*                    className='object-contain'*/}
+            {/*                />*/}
+            {/*                <p className='max-w-[300px] mx-auto text-neutral-content mt-2 text-sm'>*/}
+            {/*                    AULA 2 - A DESCOBERTA: Como criar a sua Agência Home*/}
+            {/*                    Office &quot;sem investir&quot; o seu DINHEIRO!*/}
+            {/*                </p>*/}
+            {/*            </a>*/}
+            {/*        </div>*/}
+
+            {/*    </div>*/}
+            {/*</section>*/}
+
+            <section className='bg-black relative py-12 md:py-24 px-8'>
+                <Blur />
                 <FloatBlocks />
-                <div className='container mx-auto max-w-3xl'>
 
-                    <h1 className=' text-white md:text-center uppercase my-6 rounded-md text-xl md:text-3xl md:leading-snug font-bold text-center w-full'
-                    >
-                        Perdeu as aulas da semana <br /><span
-                        className='text-white bg-gradient font-bold rounded-lg px-4 w-fit'>&quot;A SUA AGÊNCIA HOME OFFICE&quot;</span>?
-                    </h1>
-
-                    <span
-                        className='text-white font-semibold text-center w-full block'>Assista aqui antes que saia do AR! 👇</span>
-
-                    <div className='grid md:grid-cols-2 mt-8 text-center gap-4'>
-                        <a target='_blank' rel='noreferrer' href={'https://youtube.com/live/sibPsOs2Gek?feature=share'}
-                           className='relative flex justify-center flex-col items-center duration-300 transition-all hover:scale-105'>
+                <div className='grid gap-2 max-w-4xl mx-auto'>
+                    <div className='flex flex-col lg:flex-row gap-2 items-center'>
+                        <div className='relative w-full h-96 lg:h-[500px] mb-8 lg:w-6/12'>
                             <BlurImage
-                                src='/1.png'
+                                src='/eu_luiz.webp'
                                 alt='Luiz'
-                                height={200}
-                                width={380}
+                                layout='fill'
                                 className='object-contain'
                             />
+                        </div>
+                        <div className='text-justify lg:w-6/12'>
+                            <h2 className='font-bold text-white text-lg md:text-3xl max-w-6xl mx-auto mb-6'>
+                                QUEM É
+                                <span className='bg-gradient mx-2 text-black px-2'>LUIZ GREGATTI</span>
+                            </h2>
+                            <p className='text-md text-white'>
+                                Empresário, palestrante e viajante profissional, já conheceu mais de 40 países, possui
+                                mais de 21 mil alunos em diversos programas de acompanhamento que juntos (os alunos)
+                                colocaram no bolso mais de R$41.000.000,00 entre lucro e economia de viagens. (milhões
+                                de reais).
+                                <br /><br />
+                                Nos últimos anos Luiz acumulou mais de 60 milhões de milhas e montou o ÚNICO PROGRAMA DE
+                                ACOMPANHAMENTO DO BRASIL QUE ENSINA OS SEGREDOS DOS VIAJANTES PROFISSIONAIS E AGÊNCIAS
+                                usam para economizar até 90% em suas passagens e hospedagens.
 
-                            <p className='max-w-[300px] mx-auto text-neutral-content mt-2 text-sm'>
-                                AULA 01 - A metodologia AHO, que NÃO depende de Milhas
-                                e entrega os seus Primeiros Clientes Grátis!
                             </p>
-                        </a>
-
-                        <a target='_blank' rel='noreferrer' href={'https://youtube.com/live/HuBKqgEkHdg?feature=share'}
-                           className='relative flex justify-center flex-col items-center duration-300 transition-all hover:scale-105'>
-                            <BlurImage
-                                src='/2.png'
-                                alt='Luiz'
-                                height={200}
-                                width={380}
-                                className='object-contain'
-                            />
-                            <p className='max-w-[300px] mx-auto text-neutral-content mt-2 text-sm'>
-                                AULA 2 - A DESCOBERTA: Como criar a sua Agência Home
-                                Office &quot;sem investir&quot; o seu DINHEIRO!
-                            </p>
-                        </a>
+                        </div>
                     </div>
-
                 </div>
             </section>
 
@@ -700,11 +735,11 @@ export default function BlockedPage({ show = true }: BlockedProps) {
             </section>
 
             <section className='relative w-full bg-gradient px-6 py-12'>
-                <div className='container mx-auto max-w-3xl'>
-                    <h2 className='font-bold text-center text-2xl md:text-4xl mx-auto mb-8 md:mb-8 text-white'>
-                        VOCÊ NÃO VAI PAGAR + DE R$100.000 PARA ABRIR SUA AGÊNCIA!
+                <div className='container mx-auto '>
+                    <h2 className='font-bold text-center max-w-3xl text-2xl md:text-4xl mx-auto mb-8 md:mb-8 text-white'>
+                        VOCÊ NÃO VAI PAGAR + DE R$160.000 PARA ABRIR SUA AGÊNCIA!
                     </h2>
-                    <div className='relative w-full md:h-[32vh] h-56 z-0'>
+                    <div className='relative w-full md:h-[60vh] h-56 z-0'>
                         <BlurImage
                             src='/mockup2.webp'
                             alt='Mockup'
@@ -783,42 +818,42 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                 className='relative mx-auto py-6 px-6'>
                 <div className='container max-w-4xl px-0 mx-auto'>
 
-                    <h1 className='md:text-center uppercase my-6 rounded-md text-xl md:text-3xl md:leading-snug font-bold text-center w-full inline-grid sm:block'
-                    >
-                        Você entra na AHO hoje <span
-                        className='text-white bg-gradient font-bold rounded-lg px-4'>financiado</span>{' '}
-                        pelos seus primeiros clientes!
-                    </h1>
+                    {/*<h1 className='md:text-center uppercase my-6 rounded-md text-xl md:text-3xl md:leading-snug font-bold text-center w-full inline-grid sm:block'*/}
+                    {/*>*/}
+                    {/*    Você entra na AHO hoje <span*/}
+                    {/*    className='text-white bg-gradient font-bold rounded-lg px-4'>financiado</span>{' '}*/}
+                    {/*    pelos seus primeiros clientes!*/}
+                    {/*</h1>*/}
 
-                    <div className='grid gap-3'>
-                        <p>
-                            Nós temos uma entrega de 20 a 30 leads para que você possa fazer suas primeiras vendas, mais
-                            sua rede de contato, mais estratégias de tráfego pago, mais funil de indicação, mais várias
-                            estratégias de vendas…
-                        </p>
-                        <p>
-                            Mas a lógica é simples, fazendo 1 só venda de Gestão de Milhas para seu Cliente (ticket
-                            médio de R$1.000) ou até mesmo 2 ou 3 passagens aéreas (lucro médio de R$800) no primeiro
-                            mês já pagou o valor mensal da AHO.
-                        </p>
-                        <p>
-                            E você vai fazendo todos os meses os lucros que você conquista na AHO pagar ela própria!
-                        </p>
-                        <p className='bg-gradient text-white w-fit px-2 rounded-md font-semibold'>Luiz, e se isso o que
-                            você está propondo não funcionar?!</p>
-                        <p>
-                            Você tem 1 ano, 365 dias, para executar todos os funis, participar das aulas semanais ao
-                            vivo, acessar o ViajaFlux, tirar dúvidas com seu Gerente de conta e tutor, tudo! E se mesmo
-                            assim, você me mostrar que fez tudo isso e não teve nem o valor que investiu na AHO de lucro
-                            eu devolvo seu dinheiro e dou mais R$1.000 do meu bolso, como pedido de desculpa!
-                        </p>
-                    </div>
+                    {/*<div className='grid gap-3'>*/}
+                    {/*    <p>*/}
+                    {/*        Nós temos uma entrega de 20 a 30 leads para que você possa fazer suas primeiras vendas, mais*/}
+                    {/*        sua rede de contato, mais estratégias de tráfego pago, mais funil de indicação, mais várias*/}
+                    {/*        estratégias de vendas…*/}
+                    {/*    </p>*/}
+                    {/*    <p>*/}
+                    {/*        Mas a lógica é simples, fazendo 1 só venda de Gestão de Milhas para seu Cliente (ticket*/}
+                    {/*        médio de R$1.000) ou até mesmo 2 ou 3 passagens aéreas (lucro médio de R$800) no primeiro*/}
+                    {/*        mês já pagou o valor mensal da AHO.*/}
+                    {/*    </p>*/}
+                    {/*    <p>*/}
+                    {/*        E você vai fazendo todos os meses os lucros que você conquista na AHO pagar ela própria!*/}
+                    {/*    </p>*/}
+                    {/*    <p className='bg-gradient text-white w-fit px-2 rounded-md font-semibold'>Luiz, e se isso o que*/}
+                    {/*        você está propondo não funcionar?!</p>*/}
+                    {/*    <p>*/}
+                    {/*        Você tem 1 ano, 365 dias, para executar todos os funis, participar das aulas semanais ao*/}
+                    {/*        vivo, acessar o ViajaFlux, tirar dúvidas com seu Gerente de conta e tutor, tudo! E se mesmo*/}
+                    {/*        assim, você me mostrar que fez tudo isso e não teve nem o valor que investiu na AHO de lucro*/}
+                    {/*        eu devolvo seu dinheiro e dou mais R$1.000 do meu bolso, como pedido de desculpa!*/}
+                    {/*    </p>*/}
+                    {/*</div>*/}
 
-                    <div className='font-bold text-center my-8'>
-                        Não existe uma só chance de você <span
-                        className='text-white rounded-md px-1 bg-gradient'>NÃO</span> ter
-                        resultado.
-                    </div>
+                    {/*<div className='font-bold text-center my-8'>*/}
+                    {/*    Não existe uma só chance de você <span*/}
+                    {/*    className='text-white rounded-md px-1 bg-gradient'>NÃO</span> ter*/}
+                    {/*    resultado.*/}
+                    {/*</div>*/}
 
 
                     <h2 className='text-black font-bold text-2xl md:text-4xl mb-4 text-center'>
@@ -883,9 +918,9 @@ export default function BlockedPage({ show = true }: BlockedProps) {
 
 
                     <div className='text-center font-bold text-2xl md:text-5xl my-8 flex flex-col'>
-                        Por 12x R$ 1.000
+                        Por 12x R$ 1.500
                         <span
-                            className='text-xl bg-primary w-fit mx-auto rounded-md mt-2 px-4'>ou R$ 10.000 à vista!</span>
+                            className='text-xl bg-primary w-fit mx-auto rounded-md mt-2 px-4'>ou R$ 15.000 à vista!</span>
                     </div>
 
                     <div className='w-fit rounded-lg mx-auto bg-gradient mt-12 text-white py-2 px-6'>

@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react'
 import 'react-toastify/dist/ReactToastify.css'
-import { OfferContext } from '../providers/Offer'
-import CapturePage from '../components/CapturePage'
+import { OfferContext } from '../../providers/Offer'
+import CapturePage from '../../components/CapturePage'
 import Head from 'next/head'
 
 export default function Home() {

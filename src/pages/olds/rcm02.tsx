@@ -1,7 +1,7 @@
 import { useContext, useEffect } from 'react'
 import 'react-toastify/dist/ReactToastify.css'
-import { OfferContext } from '../providers/Offer'
-import CapturePage from '../components/CapturePage'
+import { OfferContext } from '../../providers/Offer'
+import CapturePage from '../../components/CapturePage'
 import Script from 'next/script'
 import Head from 'next/head'
 
@@ -28,7 +28,8 @@ export default function Home() {
                     fbq('track', 'PageView', {}, {eventID: '${'PageView' + eventId}'});
                 `}
             </Script>
-            <CapturePage form={true} />
+
+            <CapturePage form={false} />
         </>
     )
 }

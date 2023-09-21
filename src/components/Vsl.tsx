@@ -135,17 +135,21 @@ export default function Vsl({
                         </div>
                     )}
 
+                    <div className='mt-6 flex w-fit mx-auto items-center gap-1'>
+                        {/*<span className="mr-2">⚠️</span>*/}
+                        <h2 className='animate-pulse p-2 bg-warning text-black text-center text-xs md:text-lg leading-normal max-w-xs rounded-lg'>
+                            VÍDEO ABAIXO REVELA
+                        </h2>
+                        {/*<span className="ml-2">⚠️</span>*/}
+                    </div>
+
                     <h1 className='text-center uppercase my-6 rounded-md text-xl md:text-3xl md:leading-snug font-bold inline-block'
                     >
-                        Lucre de <span
-                        className='text-white bg-gradient font-bold rounded-lg px-4'>10 a 50 mil reais
-                        por mês</span> {' '}(ou mais) com sua agência de viagens home office!
+                        Entenda como lucrar de <span
+                        className='text-white bg-gradient font-bold rounded-lg px-4'>10 a 30 mil reais
+                        por mês</span> {' '}<span className='normal-case'>(ou mais)</span> com sua agência de viagens
+                        home office!
                     </h1>
-                    <h2 className='text-sm md:text-lg text-center'>
-                        O modelo de negócio que permite <span className='font-bold'>Lucro, Escala e Liberdade</span>,
-                        usando apenas uma única plataforma: <span className='font-bold'>O ViajaFlux!</span>
-                    </h2>
-
                     <div className='my-8 w-full max-w-5xl flex mx-auto relative'>
                         <div
                             id='overlay'
@@ -177,11 +181,15 @@ export default function Vsl({
                         {/*    id='vsl'*/}
                         {/*>*/}
                         <div className='aspect-video box-glow container max-w-5xl mx-auto'>
-                            <VTurb player={player} video={video} iframe />
+                            <VTurb player={player} video={video} />
                         </div>
                     </div>
 
-                    <div className='text-center relative flex justify-center w-full'>
+                    <div className='text-center'>
+                        Assista até o final, tem 2 presentes 🎁 para você lá!
+                    </div>
+
+                    <div className='mt-2 text-center relative flex justify-center w-full'>
                         <svg
                             xmlns='http://www.w3.org/2000/svg'
                             fill='none'
