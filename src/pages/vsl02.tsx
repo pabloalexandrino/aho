@@ -57,11 +57,11 @@ export default function Vsl01(): JSX.Element {
 
                 <Geo />
                 <Navbar leadRedirect={url} logo={false} />
-                <Vsl showButton={showElements} playerComponent={'vturb'} player={'64b92bbdd66489000873fe34'}
+                <Vsl showButton={showElements} playerComponent={'vturb'} player={'651428293e82640009918670'}
                      video={'99583553-0c7c-40d5-b819-534dcd7867b9'} showTimer={true} />
-                
-                {/*9:09*/}
-                <HiddenElements seconds='549'>
+
+                {/*8:40*/}
+                <HiddenElements seconds='520'>
                     <BlockedPage
                         show={showElements}
                     />
