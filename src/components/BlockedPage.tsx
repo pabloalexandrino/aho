@@ -13,9 +13,10 @@ import Countdown from './CountDown'
 
 interface BlockedProps {
     show?: boolean
+    url: string
 }
 
-export default function BlockedPage({ show = true }: BlockedProps) {
+export default function BlockedPage({ show = true, url }: BlockedProps) {
     const [clientWindowHeight, setClientWindowHeight] = useState(0)
     const [isCountdownVisible, setIsCountdownVisible] = useState(false)
     const { targetDate, setTargetDate, expired } = useContext(OfferContext)
@@ -93,7 +94,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                     liberdade!
                 </h3>
 
-                <div className='mt-8'>{<CallToAction2 />}</div>
+                <div className='mt-8'>{<CallToAction2 url={url} />}</div>
             </section>
 
             <section
@@ -127,7 +128,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                         Espero que você seja o próximo a me envia vídeos como esses.
                     </p>
 
-                    <div className='mt-8'>{<CallToAction2 />}</div>
+                    <div className='mt-8'>{<CallToAction2 url={url} />}</div>
 
                     <p className='max-w-xl text-xl mx-auto mt-12 mb-6 text-center font-bold'>
                         Dê uma olhada nos resultados dos agentes:
@@ -184,7 +185,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                         </div>
                     </div>
                 </div>
-                {<CallToAction2 />}
+                {<CallToAction2 url={url} />}
             </section>
 
 
@@ -210,7 +211,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                         <strong>SEU RISCO AQUI É ZERO</strong>
                     </div>
                 </div>
-                {<CallToAction2 />}
+                {<CallToAction2 url={url} />}
 
                 <div className='w-full border-b-4 my-10 border-dashed border-black'></div>
 
@@ -248,7 +249,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                     negócio
                 </div>
 
-                {<CallToAction2 />}
+                {<CallToAction2 url={url} />}
             </section>
             {/*<section className='relative w-full bg-zinc-900 px-6 py-12'>*/}
             {/*    <Blur direction='right' />*/}
@@ -731,7 +732,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                         </div>
                     </div>
                 </div>
-                {<CallToAction2 />}
+                {<CallToAction2 url={url} />}
             </section>
 
             <section className='relative w-full bg-gradient px-6 py-12'>
@@ -938,7 +939,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
                         <Countdown />
                     </div>
 
-                    {<CallToAction2 />}
+                    {<CallToAction2 url={url} />}
 
                 </div>
             </section>
@@ -958,7 +959,7 @@ export default function BlockedPage({ show = true }: BlockedProps) {
 
                         <a
                             target='_blank'
-                            href='https://empreendaclub.typeform.com/go-aho'
+                            href={url}
                             rel='noreferrer'
                             className='btn btn-warning btn-lg relative'
                         >

@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from 'react'
 import { OfferContext } from '../providers/Offer'
 
-export default function CallToAction2(props: { text?: string }) {
-    const { text } = props
+export default function CallToAction2(props: { text?: string, url: string }) {
+    const { text, url } = props
     const [isReady, setIsReady] = useState(false)
     const { expired, chance } = useContext(OfferContext)
 
@@ -27,7 +27,7 @@ export default function CallToAction2(props: { text?: string }) {
                 </span>
             )}
             <a
-                href='https://empreendaclub.typeform.com/go-aho'
+                href={url}
                 className={`btn md:btn-lg ${
                     expired ? 'btn-warning' : 'btn-primary'
                 } w-fit flex mx-auto relative`}

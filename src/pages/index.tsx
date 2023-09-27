@@ -15,12 +15,13 @@ export default function Home(): JSX.Element {
         setPagina,
         eventId,
         setValue,
+        checkoutLink,
     } = useContext(OfferContext)
 
     useEffect(() => {
         setCheckoutLink('https://empreendaclub.typeform.com/go-aho')
         setPagina('aho-site')
-        setValue(3500)
+        setValue(15000)
     }, [setCheckoutLink, setPagina, setValue])
 
     useEffect(() => {
@@ -48,10 +49,11 @@ export default function Home(): JSX.Element {
             <Geo />
             <ParallaxProvider>
                 <Navbar leadRedirect={'https://empreendaclub.typeform.com/go-aho'} logo={false} />
-                <Vsl showButton playerComponent={'vturb'} player={'64b92bbdd66489000873fe34'}
+                <Vsl url={checkoutLink} showButton playerComponent={'vturb'} player={'64b92bbdd66489000873fe34'}
                      video={'99583553-0c7c-40d5-b819-534dcd7867b9'} />
                 <BlockedPage
                     show={true}
+                    url={checkoutLink}
                 />
             </ParallaxProvider>
         </div>

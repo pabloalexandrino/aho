@@ -14,6 +14,7 @@ interface IVsl {
     showTimer?: boolean
     player?: string
     playerComponent?: string
+    url: string
 }
 
 export default function Vsl({
@@ -22,6 +23,7 @@ export default function Vsl({
                                 video,
                                 showTimer = false,
                                 player,
+                                url,
                             }: IVsl): JSX.Element {
     const [clientWindowHeight, setClientWindowHeight] = useState(0)
     const [isClosed, setIsClosed] = useState(!float)
@@ -212,7 +214,7 @@ export default function Vsl({
                     </div>
 
                     <div className={`mt-8 ${showButton ? 'block' : 'hidden'}`}>
-                        <CallToAction2 />
+                        <CallToAction2 url={url} />
                     </div>
                 </div>
             </section>

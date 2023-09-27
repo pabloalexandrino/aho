@@ -17,6 +17,7 @@ export default function Vsl01(): JSX.Element {
         eventId,
         setValue,
         showElements,
+        checkoutLink,
     } = useContext(OfferContext)
 
     const url = 'https://empreendaclub.typeform.com/aho-vsl01'
@@ -57,12 +58,14 @@ export default function Vsl01(): JSX.Element {
 
                 <Geo />
                 <Navbar leadRedirect={url} logo={false} />
-                <Vsl showButton={showElements} playerComponent={'vturb'} player={'651427fd0c9e0a0009284921'}
+                <Vsl url={checkoutLink} showButton={showElements} playerComponent={'vturb'}
+                     player={'651427fd0c9e0a0009284921'}
                      video={'99583553-0c7c-40d5-b819-534dcd7867b9'} showTimer={true} />
 
                 {/*6:30*/}
                 <HiddenElements seconds='390'>
                     <BlockedPage
+                        url={checkoutLink}
                         show={showElements}
                     />
                 </HiddenElements>
