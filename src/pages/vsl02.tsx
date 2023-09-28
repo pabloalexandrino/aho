@@ -20,7 +20,9 @@ export default function Vsl01(): JSX.Element {
         checkoutLink,
     } = useContext(OfferContext)
 
-    const url = 'https://empreendaclub.typeform.com/aho-vsl02'
+    const urlParams = new URLSearchParams(window.location.search)
+    const utmParams = urlParams.get('utm_source') ? `?utm_source=${urlParams.get('utm_source')}&utm_medium=${urlParams.get('utm_medium')}&utm_campaign=${urlParams.get('utm_campaign')}&utm_term=${urlParams.get('utm_term')}&utm_content=${urlParams.get('utm_content')}` : ''
+    const url = 'https://empreendaclub.typeform.com/aho-vsl02' + utmParams
 
     useEffect(() => {
         setCheckoutLink(url)
