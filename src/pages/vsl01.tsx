@@ -20,11 +20,11 @@ export default function Vsl01(): JSX.Element {
         checkoutLink,
     } = useContext(OfferContext)
 
-    const urlParams = new URLSearchParams(window.location.search)
-    const utmParams = urlParams.get('utm_source') ? `?utm_source=${urlParams.get('utm_source')}&utm_medium=${urlParams.get('utm_medium')}&utm_campaign=${urlParams.get('utm_campaign')}&utm_term=${urlParams.get('utm_term')}&utm_content=${urlParams.get('utm_content')}` : ''
-    const url = 'https://empreendaclub.typeform.com/aho-vsl01' + utmParams
-
     useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search)
+        const utmParams = urlParams.get('utm_source') ? `?utm_source=${urlParams.get('utm_source')}&utm_medium=${urlParams.get('utm_medium')}&utm_campaign=${urlParams.get('utm_campaign')}&utm_term=${urlParams.get('utm_term')}&utm_content=${urlParams.get('utm_content')}` : ''
+        const url = 'https://empreendaclub.typeform.com/aho-vsl01' + utmParams
+
         setCheckoutLink(url)
         setPagina('vls01')
         setValue(10000)
@@ -59,7 +59,7 @@ export default function Vsl01(): JSX.Element {
 
 
                 <Geo />
-                <Navbar leadRedirect={url} logo={false} />
+                <Navbar leadRedirect={checkoutLink} logo={false} />
                 <Vsl url={checkoutLink} showButton={showElements} playerComponent={'vturb'}
                      player={'651494853e82640009918ac8'}
                      video={'99583553-0c7c-40d5-b819-534dcd7867b9'} showTimer={true} />
