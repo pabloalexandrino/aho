@@ -147,9 +147,11 @@ export default function Vsl({
 
                     <h1 className='text-center uppercase my-6 rounded-md text-xl md:text-3xl md:leading-snug font-bold inline-block'
                     >
-                        Entenda como lucrar de <span
+                        Entenda como lucrar de <br className='sm:hidden' /><span
                         className='text-white bg-gradient font-bold rounded-lg px-4'>10 a 30 mil reais
-                        por mês</span> {' '}<span className='normal-case'>(ou mais)</span> com sua agência de viagens
+                        por mês</span> {' '}<br className='sm:hidden' /><span
+                        className='normal-case'>(ou mais)</span> com sua agência de
+                        viagens
                         home office!
                     </h1>
                     <div className='my-8 w-full max-w-5xl flex mx-auto relative'>
