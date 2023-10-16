@@ -17,7 +17,7 @@ export default function CapturePage({ form }: CapturePageProps) {
                 <h1 className='uppercase mb-4 md:mb-8 rounded-md text-xl md:text-3xl md:leading-snug text-justify inline-block my-8 mt-32 md:mt-8'
                 >
                     Lucre de <span className='bg-gradient font-bold rounded-lg px-4'>5 a 30 mil reais</span>
-                    {' '}por mês (ou mais) com sua agência de viagens home office!
+                    {' '}por mês com sua agência home office!
                 </h1>
                 <h2 className='text-sm md:text-xl'>
                     Deixe os dados abaixo para agendar uma sessão estratégica individual de 1h com um especialista!

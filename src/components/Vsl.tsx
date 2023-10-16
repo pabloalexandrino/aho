@@ -56,32 +56,32 @@ export default function Vsl({
     }, [showTimer, CountdownCookies, setTargetDate])
 
 
-    useEffect(() => {
-        const now = new Date()
-
-        if (now.getHours() >= 0 && now.getHours() < 6) {
-            setInitialValue(96)
-        } else if (now.getHours() >= 6 && now.getHours() < 12) {
-            setInitialValue(514)
-        } else if (now.getHours() >= 12 && now.getHours() < 18) {
-            setInitialValue(754)
-        } else {
-            setInitialValue(914)
-        }
-
-        setCounter(initialValue)
-
-        const intervalId = setInterval(() => {
-            const random = Math.random()
-            if (random > 0.4) {
-                setCounter((prevCounter) => prevCounter + 3)
-            } else {
-                setCounter((prevCounter) => prevCounter - 2)
-            }
-        }, 3000)
-
-        return () => clearInterval(intervalId)
-    }, [initialValue, float])
+    // useEffect(() => {
+    //     const now = new Date()
+    //
+    //     if (now.getHours() >= 0 && now.getHours() < 6) {
+    //         setInitialValue(96)
+    //     } else if (now.getHours() >= 6 && now.getHours() < 12) {
+    //         setInitialValue(514)
+    //     } else if (now.getHours() >= 12 && now.getHours() < 18) {
+    //         setInitialValue(754)
+    //     } else {
+    //         setInitialValue(914)
+    //     }
+    //
+    //     setCounter(initialValue)
+    //
+    //     const intervalId = setInterval(() => {
+    //         const random = Math.random()
+    //         if (random > 0.4) {
+    //             setCounter((prevCounter) => prevCounter + 3)
+    //         } else {
+    //             setCounter((prevCounter) => prevCounter - 2)
+    //         }
+    //     }, 3000)
+    //
+    //     return () => clearInterval(intervalId)
+    // }, [initialValue, float])
 
     const handleScroll = () => {
         setClientWindowHeight(window.scrollY)
@@ -115,7 +115,8 @@ export default function Vsl({
 
     return (
         <>
-            <section className='flex justify-center pb-12'>
+            <section
+                className='flex justify-center pb-12 bg-gradient-to-tl from-gray-700 via-gray-900 to-black text-white'>
                 <Blur />
 
                 <div className='container max-w-5xl px-6 md:mt-6'>
@@ -137,20 +138,19 @@ export default function Vsl({
                         </div>
                     )}
 
-                    <div className='mt-6 flex w-fit mx-auto items-center gap-1'>
-                        {/*<span className="mr-2">⚠️</span>*/}
-                        <h2 className='animate-pulse p-2 bg-warning text-black text-center text-xs md:text-lg leading-normal max-w-xs rounded-lg'>
-                            VÍDEO ABAIXO REVELA
-                        </h2>
-                        {/*<span className="ml-2">⚠️</span>*/}
-                    </div>
+                    {/*<div className='mt-6 flex w-fit mx-auto items-center gap-1'>*/}
+                    {/*    /!*<span className="mr-2">⚠️</span>*!/*/}
+                    {/*    <h2 className='animate-pulse p-2 bg-warning text-black text-center text-xs md:text-lg leading-normal max-w-xs rounded-lg'>*/}
+                    {/*        VÍDEO ABAIXO REVELA*/}
+                    {/*    </h2>*/}
+                    {/*    /!*<span className="ml-2">⚠️</span>*!/*/}
+                    {/*</div>*/}
 
                     <h1 className='text-center uppercase my-6 rounded-md text-xl md:text-3xl md:leading-snug font-bold inline-block'
                     >
                         Entenda como lucrar de <br className='sm:hidden' /><span
                         className='text-white bg-gradient font-bold rounded-lg px-4'>10 a 30 mil reais
-                        por mês</span> {' '}<br className='sm:hidden' /><span
-                        className='normal-case'>(ou mais)</span> com sua agência de
+                        por mês</span> {' '}<br className='sm:hidden' /> com sua agência de
                         viagens
                         home office!
                     </h1>
@@ -189,31 +189,31 @@ export default function Vsl({
                         </div>
                     </div>
 
-                    <div className='text-center'>
-                        Assista até o final, tem 2 presentes 🎁 para você lá!
-                    </div>
+                    {/*<div className='text-center'>*/}
+                    {/*    Assista até o final, tem 2 presentes 🎁 para você lá!*/}
+                    {/*</div>*/}
 
-                    <div className='mt-2 text-center relative flex justify-center w-full'>
-                        <svg
-                            xmlns='http://www.w3.org/2000/svg'
-                            fill='none'
-                            viewBox='0 0 24 24'
-                            strokeWidth={1.5}
-                            stroke='currentColor'
-                            className='w-6 h-6'
-                        >
-                            <path
-                                strokeLinecap='round'
-                                strokeLinejoin='round'
-                                d='M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z'
-                            />
-                        </svg>
+                    {/*<div className='mt-2 text-center relative flex justify-center w-full'>*/}
+                    {/*    <svg*/}
+                    {/*        xmlns='http://www.w3.org/2000/svg'*/}
+                    {/*        fill='none'*/}
+                    {/*        viewBox='0 0 24 24'*/}
+                    {/*        strokeWidth={1.5}*/}
+                    {/*        stroke='currentColor'*/}
+                    {/*        className='w-6 h-6'*/}
+                    {/*    >*/}
+                    {/*        <path*/}
+                    {/*            strokeLinecap='round'*/}
+                    {/*            strokeLinejoin='round'*/}
+                    {/*            d='M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z'*/}
+                    {/*        />*/}
+                    {/*    </svg>*/}
 
-                        <span className='mx-2'>
-                            <span className='font-bold'>{counter}</span> pessoas
-                            assistindo agora
-                        </span>
-                    </div>
+                    {/*    <span className='mx-2'>*/}
+                    {/*        <span className='font-bold'>{counter}</span> pessoas*/}
+                    {/*        assistindo agora*/}
+                    {/*    </span>*/}
+                    {/*</div>*/}
 
                     <div className={`mt-8 ${showButton ? 'block' : 'hidden'}`}>
                         <CallToAction2 url={url} />

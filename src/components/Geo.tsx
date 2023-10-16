@@ -32,14 +32,14 @@ export default function Geo() {
     // }, [])
 
     return (
-        <div className="w-full bg-error p-2 text-white text-center">
+        <div className='w-full bg-error p-2 text-white text-center'>
             <h1>
                 {/* Você e algumas pessoas de{' '}
                 <span className="font-bold">{city ?? 'São Paulo'}</span> foram
                 selecionadas para participar */}
-                <span className="mr-2">⚠️</span>
-                NÃO FECHE A PÁGINA! ENTENDA O DESAFIO DO PIX de R$1.000!
-                <span className="ml-2">⚠️</span>
+                <span className='mr-2'>⚠️</span>
+                ASSISTA O VIDEO ABAIXO E ENTENDA O DESAFIO DO PIX de R$1.000!
+                <span className='ml-2'>⚠️</span>
             </h1>
         </div>
     )
