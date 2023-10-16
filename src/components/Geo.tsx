@@ -38,7 +38,7 @@ export default function Geo() {
                 <span className="font-bold">{city ?? 'São Paulo'}</span> foram
                 selecionadas para participar */}
                 <span className='mr-2'>⚠️</span>
-                ASSISTA O VIDEO ABAIXO E ENTENDA O DESAFIO DO PIX de R$1.000!
+                ASSISTA O VÍDEO ABAIXO E ENTENDA O DESAFIO DO PIX de R$1.000!
                 <span className='ml-2'>⚠️</span>
             </h1>
         </div>

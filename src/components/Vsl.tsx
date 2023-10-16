@@ -116,7 +116,7 @@ export default function Vsl({
     return (
         <>
             <section
-                className='flex justify-center pb-12 bg-gradient-to-tl from-gray-700 via-gray-900 to-black text-white'>
+                className='flex justify-center pb-12 bg-gradient-to-tl from-gray-700 via-gray-900 to-black text-white min-h-screen'>
                 <Blur />
 
                 <div className='container max-w-5xl px-6 md:mt-6'>
@@ -150,9 +150,7 @@ export default function Vsl({
                     >
                         Entenda como lucrar de <br className='sm:hidden' /><span
                         className='text-white bg-gradient font-bold rounded-lg px-4'>10 a 30 mil reais
-                        por mês</span> {' '}<br className='sm:hidden' /> com sua agência de
-                        viagens
-                        home office!
+                        por mês</span> {' '}<br className='sm:hidden' /> com sua agência home office!
                     </h1>
                     <div className='my-8 w-full max-w-5xl flex mx-auto relative'>
                         <div
