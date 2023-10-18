@@ -135,7 +135,7 @@ export default function BlockedPage({ show = true, url }: BlockedProps) {
                     </p>
 
                     <div className='grid gap-4 md:grid-cols-3'>
-                        <div className='relative hover:z-10 h-[490px] box-red-glow rounded-xl'>
+                        <div className='relative hover:z-10 h-[580px] box-red-glow rounded-xl'>
                             <BlurImage
                                 src='/testimonials/1.webp'
                                 alt='Depoimento 1'
@@ -143,7 +143,7 @@ export default function BlockedPage({ show = true, url }: BlockedProps) {
                                 className='object-cover rounded-xl shadow-lg'
                             />
                         </div>
-                        <div className='relative hover:z-10 h-[490px] box-red-glow rounded-xl'>
+                        <div className='relative hover:z-10 h-[580px] box-red-glow rounded-xl'>
                             <BlurImage
                                 src='/testimonials/2.webp'
                                 alt='Depoimento 2'
@@ -151,7 +151,7 @@ export default function BlockedPage({ show = true, url }: BlockedProps) {
                                 className='object-cover rounded-xl shadow-lg'
                             />
                         </div>
-                        <div className='relative hover:z-10 h-[490px] box-red-glow rounded-xl'>
+                        <div className='relative hover:z-10 h-[580px] box-red-glow rounded-xl'>
                             <BlurImage
                                 src='/testimonials/3.webp'
                                 alt='Depoimento 3'
@@ -159,7 +159,7 @@ export default function BlockedPage({ show = true, url }: BlockedProps) {
                                 className='object-cover rounded-xl shadow-lg'
                             />
                         </div>
-                        <div className='relative hover:z-10 h-[490px] box-red-glow rounded-xl'>
+                        <div className='relative hover:z-10 h-[580px] box-red-glow rounded-xl'>
                             <BlurImage
                                 src='/testimonials/4.webp'
                                 alt='Depoimento 4'
@@ -167,7 +167,7 @@ export default function BlockedPage({ show = true, url }: BlockedProps) {
                                 className='object-cover rounded-xl shadow-lg'
                             />
                         </div>
-                        <div className='relative hover:z-10 h-[490px] box-red-glow rounded-xl'>
+                        <div className='relative hover:z-10 h-[580px] box-red-glow rounded-xl'>
                             <BlurImage
                                 src='/testimonials/5.webp'
                                 alt='Depoimento 5'
@@ -175,7 +175,7 @@ export default function BlockedPage({ show = true, url }: BlockedProps) {
                                 className='object-cover rounded-xl shadow-lg'
                             />
                         </div>
-                        <div className='relative hover:z-10 h-[490px] box-red-glow rounded-xl'>
+                        <div className='relative hover:z-10 h-[580px] box-red-glow rounded-xl'>
                             <BlurImage
                                 src='/testimonials/6.webp'
                                 alt='Depoimento 6'
