@@ -14,6 +14,11 @@ import Countdown from './CountDown'
 interface BlockedProps {
     show?: boolean
     url: string
+    offer?: {
+        price: string
+        installment: string
+        discount?: string
+    }
 }
 
 export default function BlockedPage({ show = true, url }: BlockedProps) {

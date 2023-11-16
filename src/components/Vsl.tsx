@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from 'react'
 import Blur from './Blur'
-import CallToAction2 from './CallToAction2'
 import Countdown from './CountDown'
 import { OfferContext } from '../providers/Offer'
 import { parseCookies } from 'nookies'
 import { setCookies } from '../utils/useCookies'
 import VTurb from './Player/VTurb'
+import CallToAction from './CallToAction'
 
 interface IVsl {
     showButton?: boolean
@@ -14,7 +14,8 @@ interface IVsl {
     showTimer?: boolean
     player?: string
     playerComponent?: string
-    url: string
+    full?: boolean
+    arrow?: boolean
 }
 
 export default function Vsl({
@@ -23,7 +24,9 @@ export default function Vsl({
                                 video,
                                 showTimer = false,
                                 player,
-                                url,
+                                playerComponent = 'panda',
+                                full = false,
+                                arrow = false,
                             }: IVsl): JSX.Element {
     const [clientWindowHeight, setClientWindowHeight] = useState(0)
     const [isClosed, setIsClosed] = useState(!float)
@@ -214,7 +217,7 @@ export default function Vsl({
                     {/*</div>*/}
 
                     <div className={`mt-8 ${showButton ? 'block' : 'hidden'}`}>
-                        <CallToAction2 url={url} />
+                        <CallToAction />
                     </div>
                 </div>
             </section>

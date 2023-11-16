@@ -13,10 +13,12 @@ interface OfferContextData {
     pagina: string
     setPagina: React.Dispatch<React.SetStateAction<string>>
     eventId: string,
-    value: number,
-    setValue: React.Dispatch<React.SetStateAction<number>>,
     showElements: boolean,
-    setShowElements: React.Dispatch<React.SetStateAction<boolean>>
+    setShowElements: React.Dispatch<React.SetStateAction<boolean>>,
+    value: number,
+    setValue: React.Dispatch<React.SetStateAction<number>>
+    clint: string
+    setClint: React.Dispatch<React.SetStateAction<string>>
 }
 
 interface OfferProviderProps {
@@ -24,19 +26,20 @@ interface OfferProviderProps {
 }
 
 export const OfferContext = createContext<OfferContextData>(
-    {} as OfferContextData
+    {} as OfferContextData,
 )
 
 export function OfferProvider({ children }: OfferProviderProps) {
-    const { '@AHO:Countdown': CountdownCookies } = parseCookies(undefined)
-    const { '@AHO:Chance': ChanceCookies } = parseCookies(undefined)
+    const { '@VP:Countdown': CountdownCookies } = parseCookies(undefined)
+    const { '@VP:Chance': ChanceCookies } = parseCookies(undefined)
     const [chance, setChance] = useState(ChanceCookies)
     const [targetDate, setTargetDate] = useState(CountdownCookies)
     const [expired, setExpired] = useState(false)
     const [checkoutLink, setCheckoutLink] = useState('')
     const [pagina, setPagina] = useState('')
-    const [value, setValue] = useState(0)
     const [showElements, setShowElements] = useState(false)
+    const [value, setValue] = useState(0)
+    const [clint, setClint] = useState('')
 
     const eventId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
 
@@ -54,21 +57,15 @@ export function OfferProvider({ children }: OfferProviderProps) {
                 pagina,
                 setPagina,
                 eventId,
+                showElements,
+                setShowElements,
                 value,
                 setValue,
-                showElements,
-                setShowElements
+                clint,
+                setClint,
             }}
         >
             {children}
         </OfferContext.Provider>
     )
 }
-
-// export function useOfferContext() {
-//     const context = React.useContext(OfferContext)
-//     if (context === undefined) {
-//         throw new Error('useOfferContext must be used within a OfferProvider')
-//     }
-//     return context
-// }

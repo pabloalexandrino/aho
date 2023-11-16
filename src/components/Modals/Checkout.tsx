@@ -17,6 +17,7 @@ export default function Checkout() {
         pagina,
         eventId,
         value,
+        clint,
     } = useContext(OfferContext)
     // const [checked, setChecked] = useState(false)
 
@@ -46,8 +47,8 @@ export default function Checkout() {
         const link = checkoutLink
 
         if (process.env.NODE_ENV === 'production') {
-            fb('Lead', 'Lead' + eventId, name, email, whatsapp)
-            fb('InitiateCheckout', 'InitiateCheckout' + eventId, name, email, whatsapp)
+            fb('Lead', 'Lead' + eventId, name, email, whatsapp).then(r => r)
+            fb('InitiateCheckout', 'InitiateCheckout' + eventId, name, email, whatsapp).then(r => r)
         }
 
         if (link) {
@@ -90,27 +91,15 @@ export default function Checkout() {
                 { name, email, whatsapp },
                 { abortEarly: false },
             ).then(async () => {
-                //CLINT
-                if (process.env.NEXT_PUBLIC_CLINT_LEAD) {
-                    const data = {
-                        name,
-                        email,
-                        whatsapp,
-                        pagina,
-                        valor: value.toString(),
-                    }
-                    await fetch(
-                        process.env.NEXT_PUBLIC_CLINT_LEAD + '?' +
-                        new URLSearchParams(data),
-                    )
-                    // const res = await fetch('https://functions-api.clint.digital/endpoints/integration/webhook/346fcdc4-12c6-4d07-bf4b-7775998dc1b8', {
-                    //     method: 'POST',
-                    //     headers: { 'Content-Type': 'application/json' },
-                    //     body: JSON.stringify(data),
-                    // })
-
-                    // console.log(res)
+                const data = {
+                    name,
+                    email,
+                    whatsapp,
+                    pagina,
+                    valor: value.toString(),
                 }
+                const url = clint ?? process.env.NEXT_PUBLIC_CLINT_LEAD
+                await fetch(url + '?' + new URLSearchParams(data))
 
                 //DEVZAP
                 // if (process.env.NEXT_PUBLIC_DEVZAPP_LEAD) {

@@ -1,37 +1,46 @@
 import Head from 'next/head'
 import { useContext, useEffect } from 'react'
-import BlockedPage from '../components/BlockedPage'
 import Navbar from '../components/Navbar'
 import Vsl from '../components/Vsl'
 import { OfferContext } from '../providers/Offer'
 import fb from '../utils/fb'
 import Script from 'next/script'
-import { ParallaxProvider } from 'react-scroll-parallax'
+import BlockedPage from '../components/BlockedPage'
+import { HiddenElements } from '../components/Player/VTurb'
 import Geo from '../components/Geo'
+import { ParallaxProvider } from 'react-scroll-parallax'
 
-export default function Home(): JSX.Element {
+export default function Vsl03(): JSX.Element {
     const {
         setCheckoutLink,
         setPagina,
         eventId,
         setValue,
+        showElements,
         checkoutLink,
     } = useContext(OfferContext)
 
     useEffect(() => {
-        setCheckoutLink('https://empreendaclub.typeform.com/go-aho')
-        setPagina('aho-site')
-        setValue(15000)
+        const urlParams = new URLSearchParams(window.location.search)
+        const utmParams = urlParams.get('utm_source') ? `?utm_source=${urlParams.get('utm_source')}&utm_medium=${urlParams.get('utm_medium')}&utm_campaign=${urlParams.get('utm_campaign')}&utm_term=${urlParams.get('utm_term')}&utm_content=${urlParams.get('utm_content')}` : ''
+        const url = 'https://empreendaclub.typeform.com/aho-vsl02' + utmParams
+
+        setCheckoutLink(url)
+        setPagina('vls03')
+        setValue(3997)
     }, [setCheckoutLink, setPagina, setValue])
 
     useEffect(() => {
-        if (process.env.NODE_ENV === 'production') {
-            fb('PageView', 'PageView' + eventId).then(r => r)
+        if (eventId) {
+            if (process.env.NODE_ENV === 'production') {
+                fb('PageView', 'PageView' + eventId).then(r => r)
+            }
         }
     }, [eventId])
 
     return (
-        <div className='bg-left-top bg-[length:100vw_100vh] bg-fixed bg-[url(/bg-white.webp)]' data-theme={'dark'}>
+        <div className='min-h-screen bg-left-top bg-[length:100vw_100vh] bg-fixed bg-[url(/bg-white.webp)]'
+             data-theme={'dark'}>
             <Head>
                 <title>Agência Home Office - Sua agência de viagens online</title>
             </Head>
@@ -46,15 +55,23 @@ export default function Home(): JSX.Element {
                 </>
             )}
 
-            <Geo />
             <ParallaxProvider>
-                <Navbar leadRedirect={'https://empreendaclub.typeform.com/go-aho'} logo={false} />
-                <Vsl url={checkoutLink} showButton playerComponent={'vturb'} player={'64b92bbdd66489000873fe34'}
-                     video={'99583553-0c7c-40d5-b819-534dcd7867b9'} />
-                <BlockedPage
-                    show={true}
-                    url={checkoutLink}
-                />
+
+
+                <Geo />
+                <Navbar leadRedirect={checkoutLink} logo={false} />
+                <Vsl showButton={showElements} playerComponent={'vturb'}
+                     player={'6552e7f9156f08000920a96b'}
+                     video={'99583553-0c7c-40d5-b819-534dcd7867b9'} showTimer={true} />
+
+                <HiddenElements seconds='437'>
+                    <BlockedPage
+                        url={checkoutLink}
+                        show={showElements}
+                    />
+                </HiddenElements>
+
+
             </ParallaxProvider>
         </div>
     )

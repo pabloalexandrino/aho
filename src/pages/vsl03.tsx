@@ -10,7 +10,7 @@ import { HiddenElements } from '../components/Player/VTurb'
 import Geo from '../components/Geo'
 import { ParallaxProvider } from 'react-scroll-parallax'
 
-export default function Vsl01(): JSX.Element {
+export default function Vsl03(): JSX.Element {
     const {
         setCheckoutLink,
         setPagina,
@@ -18,17 +18,15 @@ export default function Vsl01(): JSX.Element {
         setValue,
         showElements,
         checkoutLink,
+        setClint,
     } = useContext(OfferContext)
 
     useEffect(() => {
-        const urlParams = new URLSearchParams(window.location.search)
-        const utmParams = urlParams.get('utm_source') ? `?utm_source=${urlParams.get('utm_source')}&utm_medium=${urlParams.get('utm_medium')}&utm_campaign=${urlParams.get('utm_campaign')}&utm_term=${urlParams.get('utm_term')}&utm_content=${urlParams.get('utm_content')}` : ''
-        const url = 'https://empreendaclub.typeform.com/aho-vsl02' + utmParams
-
-        setCheckoutLink(url)
-        setPagina('vls02')
-        setValue(10000)
-    }, [setCheckoutLink, setPagina, setValue])
+        setCheckoutLink('https://go.rendacommilhas.com.br/form/9a9f6afa-e926-4e59-bcb1-37dd2d5fcf42')
+        setClint('https://andrinno.com/api/redirect/queue/76')
+        setPagina('vsl03')
+        setValue(3997)
+    }, [setCheckoutLink, setClint, setPagina, setValue])
 
     useEffect(() => {
         if (eventId) {
@@ -56,19 +54,21 @@ export default function Vsl01(): JSX.Element {
             )}
 
             <ParallaxProvider>
-
-
                 <Geo />
-                <Navbar leadRedirect={checkoutLink} logo={false} />
+                <Navbar leadRedirect={checkoutLink} logo={false} className='hidden' />
                 <Vsl showButton={showElements} playerComponent={'vturb'}
-                     player={'651490973e82640009918a9e'}
+                     player={'6552e7f9156f08000920a96b'}
                      video={'99583553-0c7c-40d5-b819-534dcd7867b9'} showTimer={true} />
 
                 {/*8:40*/}
-                <HiddenElements seconds='520'>
+                <HiddenElements seconds='1'>
                     <BlockedPage
                         url={checkoutLink}
                         show={showElements}
+                        offer={{
+                            price: 'ou R$ 397 à vista',
+                            installment: 'R$ 39,70/Mês',
+                        }}
                     />
                 </HiddenElements>
 
