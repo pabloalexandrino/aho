@@ -60,15 +60,11 @@ export default function Vsl03(): JSX.Element {
                      player={'6552e7f9156f08000920a96b'}
                      video={'99583553-0c7c-40d5-b819-534dcd7867b9'} showTimer={true} />
 
-                {/*8:40*/}
-                <HiddenElements seconds='1'>
+                {/*436*/}
+                <HiddenElements seconds='436'>
                     <BlockedPage
                         url={checkoutLink}
                         show={showElements}
-                        offer={{
-                            price: 'ou R$ 397 à vista',
-                            installment: 'R$ 39,70/Mês',
-                        }}
                     />
                 </HiddenElements>
 

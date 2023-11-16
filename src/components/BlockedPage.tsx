@@ -21,7 +21,7 @@ interface BlockedProps {
     }
 }
 
-export default function BlockedPage({ show = true, url }: BlockedProps) {
+export default function BlockedPage({ show = true, url, offer }: BlockedProps) {
     const [clientWindowHeight, setClientWindowHeight] = useState(0)
     const [isCountdownVisible, setIsCountdownVisible] = useState(false)
     const { targetDate, setTargetDate, expired } = useContext(OfferContext)
@@ -923,26 +923,30 @@ export default function BlockedPage({ show = true, url }: BlockedProps) {
                     </div>
 
 
-                    <div className='text-center font-bold text-2xl md:text-5xl my-8 flex flex-col'>
-                        Por 12x R$ 1.500
-                        <span
-                            className='text-xl bg-primary w-fit mx-auto rounded-md mt-2 px-4'>ou R$ 15.000 à vista!</span>
-                    </div>
+                    {offer && (
+                        <>
+                            <div className='text-center font-bold text-2xl md:text-5xl my-8 flex flex-col'>
+                                Por 12x R$ 1.500
+                                <span
+                                    className='text-xl bg-primary w-fit mx-auto rounded-md mt-2 px-4'>ou R$ 15.000 à vista!</span>
+                            </div>
 
-                    <div className='w-fit rounded-lg mx-auto bg-gradient mt-12 text-white py-2 px-6'>
-                        {/* gerar cronometro de 10 minutos retrocedendo o tempo */}
-                        <div className='flex flex-col gap-8 text-center'>
-                            <h2 className='font-bold text-sm md:text-2xl'>
-                                {expired
-                                    ? 'Oferta encerrada'
-                                    : 'Atenção! Oferta por tempo limitado'}
-                            </h2>
-                        </div>
-                    </div>
+                            <div className='w-fit rounded-lg mx-auto bg-gradient mt-12 text-white py-2 px-6'>
+                                {/* gerar cronometro de 10 minutos retrocedendo o tempo */}
+                                <div className='flex flex-col gap-8 text-center'>
+                                    <h2 className='font-bold text-sm md:text-2xl'>
+                                        {expired
+                                            ? 'Oferta encerrada'
+                                            : 'Atenção! Oferta por tempo limitado'}
+                                    </h2>
+                                </div>
+                            </div>
 
-                    <div className='flex justify-center my-4'>
-                        <Countdown />
-                    </div>
+                            <div className='flex justify-center my-4'>
+                                <Countdown />
+                            </div>
+                        </>
+                    )}
 
                     {<CallToAction2 url={url} />}
 
