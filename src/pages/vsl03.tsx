@@ -24,7 +24,7 @@ export default function Vsl03(): JSX.Element {
     useEffect(() => {
         setCheckoutLink('https://go.rendacommilhas.com.br/form/9a9f6afa-e926-4e59-bcb1-37dd2d5fcf42')
         setClint('https://andrinno.com/api/redirect/queue/76')
-        setPagina('vsl03')
+        setPagina('vsl03 - AHO')
         setValue(3997)
     }, [setCheckoutLink, setClint, setPagina, setValue])
 

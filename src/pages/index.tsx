@@ -18,6 +18,7 @@ export default function Vsl03(): JSX.Element {
         setValue,
         showElements,
         checkoutLink,
+        setClint,
     } = useContext(OfferContext)
 
     useEffect(() => {
@@ -26,7 +27,7 @@ export default function Vsl03(): JSX.Element {
         const url = 'https://empreendaclub.typeform.com/aho-vsl02' + utmParams
 
         setCheckoutLink(url)
-        setPagina('vls03')
+        setPagina('index - AHO')
         setValue(3997)
     }, [setCheckoutLink, setPagina, setValue])
 

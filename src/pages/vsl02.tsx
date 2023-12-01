@@ -26,7 +26,7 @@ export default function Vsl01(): JSX.Element {
         const url = 'https://empreendaclub.typeform.com/aho-vsl02' + utmParams
 
         setCheckoutLink(url)
-        setPagina('vls02')
+        setPagina('vls02 - AHO')
         setValue(10000)
     }, [setCheckoutLink, setPagina, setValue])
 
