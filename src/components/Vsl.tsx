@@ -16,6 +16,7 @@ interface IVsl {
     playerComponent?: string
     full?: boolean
     arrow?: boolean
+    children?: JSX.Element
 }
 
 export default function Vsl({
@@ -27,6 +28,7 @@ export default function Vsl({
                                 playerComponent = 'panda',
                                 full = false,
                                 arrow = false,
+                                children,
                             }: IVsl): JSX.Element {
     const [clientWindowHeight, setClientWindowHeight] = useState(0)
     const [isClosed, setIsClosed] = useState(!float)
@@ -219,6 +221,8 @@ export default function Vsl({
                     <div className={`mt-8 ${showButton ? 'block' : 'hidden'}`}>
                         <CallToAction />
                     </div>
+
+                    {children}
                 </div>
             </section>
         </>
