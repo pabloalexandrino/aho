@@ -56,7 +56,7 @@ export default function Vsl04(): JSX.Element {
                 <Geo />
                 <Navbar leadRedirect={checkoutLink} logo={false} className='hidden' />
                 <Vsl playerComponent={'vturb'}
-                     player={'65b003cf3b83440008259120'}
+                     player={'65b3ad755a96190009b25940'}
                      video={'99583553-0c7c-40d5-b819-534dcd7867b9'}>
 
                     <HiddenElements seconds='230'>
