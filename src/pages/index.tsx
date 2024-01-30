@@ -10,7 +10,7 @@ import { HiddenElements } from '../components/Player/VTurb'
 import Geo from '../components/Geo'
 import { ParallaxProvider } from 'react-scroll-parallax'
 
-export default function Vsl03(): JSX.Element {
+export default function Index(): JSX.Element {
     const {
         setCheckoutLink,
         setPagina,
@@ -18,7 +18,6 @@ export default function Vsl03(): JSX.Element {
         setValue,
         showElements,
         checkoutLink,
-        setClint,
     } = useContext(OfferContext)
 
     useEffect(() => {
