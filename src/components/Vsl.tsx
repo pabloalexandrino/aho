@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import React, { ReactNode, useContext, useEffect, useState } from 'react'
 import Blur from './Blur'
 import Countdown from './CountDown'
 import { OfferContext } from '../providers/Offer'
@@ -6,6 +6,7 @@ import { parseCookies } from 'nookies'
 import { setCookies } from '../utils/useCookies'
 import VTurb from './Player/VTurb'
 import CallToAction from './CallToAction'
+import Head from 'next/head'
 
 interface IVsl {
     showButton?: boolean
@@ -16,7 +17,8 @@ interface IVsl {
     playerComponent?: string
     full?: boolean
     arrow?: boolean
-    children?: JSX.Element
+    abTest?: boolean
+    children?: ReactNode
 }
 
 export default function Vsl({
@@ -28,6 +30,7 @@ export default function Vsl({
                                 playerComponent = 'panda',
                                 full = false,
                                 arrow = false,
+                                abTest = false,
                                 children,
                             }: IVsl): JSX.Element {
     const [clientWindowHeight, setClientWindowHeight] = useState(0)
@@ -120,6 +123,96 @@ export default function Vsl({
 
     return (
         <>
+            {playerComponent === 'panda' ? (
+                <Head>
+                    <link
+                        rel='preload'
+                        href={`https://player-${player}.tv.pandavideo.com.br/embed/css/styles.css`}
+                        as='style'
+                    />
+                    <link
+                        rel='prerender'
+                        href={`https://player-${player}.tv.pandavideo.com.br/embed/?v=${video}`}
+                    />
+                    <link
+                        rel='preload'
+                        href={`https://player-${player}.tv.pandavideo.com.br/embed/js/hls.js`}
+                        as='script'
+                    />
+                    <link
+                        rel='preload'
+                        href={`https://player-${player}.tv.pandavideo.com.br/embed/js/plyr.polyfilled.min.js`}
+                        as='script'
+                    />
+                    <link
+                        rel='preload'
+                        href={`https://config.tv.pandavideo.com.br/${player}/${video}.json`}
+                        as='fetch'
+                    />
+                    <link
+                        rel='preload'
+                        href={`https://config.tv.pandavideo.com.br/${player}/config.json`}
+                        as='fetch'
+                    />
+                    <link
+                        rel='preload'
+                        href={`https://b-${player}.tv.pandavideo.com.br/${video}/playlist.m3u8`}
+                        as='fetch'
+                    />
+                    <link
+                        rel='dns-prefetch'
+                        href={`https://b-${player}.tv.pandavideo.com.br`}
+                    />
+                    <link
+                        rel='dns-prefetch'
+                        href={`https://player-${player}.tv.pandavideo.com.br`}
+                    />
+                    <link
+                        rel='dns-prefetch'
+                        href={`https://${player}.b-cdn.net" /`}
+                    />
+                </Head>
+            ) : (
+                <Head>
+                    <link
+                        rel='preload'
+                        href={`https://scripts.converteai.net/${video}/players/${player}/player.js`}
+                        as='script'
+                    />
+                    <link
+                        rel='preload'
+                        href={'https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js'}
+                        as='script'
+                    />
+                    <link
+                        rel='preload'
+                        href={`https://images.converteai.net/${video}/${abTest ? 'ab-test' : 'players'}/${player}/thumbnail.jpg`}
+                        as='image'
+                    />
+                    <link
+                        rel='preload'
+                        href={`https://cdn.converteai.net/${video}/${player}/main.m3u8`}
+                        as='fetch'
+                    />
+                    <link
+                        rel='dns-prefetch'
+                        href='https://cdn.converteai.net'
+                    />
+                    <link
+                        rel='dns-prefetch'
+                        href='https://scripts.converteai.net'
+                    />
+                    <link
+                        rel='dns-prefetch'
+                        href='https://images.converteai.net'
+                    />
+                    <link
+                        rel='dns-prefetch'
+                        href='https://api.vturb.com.br'
+                    ></link>
+                </Head>
+            )}
+
             <section
                 className='flex justify-center pb-12 bg-gradient-to-tl from-gray-700 via-gray-900 to-black text-white min-h-screen'>
                 <Blur />
@@ -187,8 +280,8 @@ export default function Vsl({
                         {/*    className='w-full flex justify-center z-20'*/}
                         {/*    id='vsl'*/}
                         {/*>*/}
-                        <div className='aspect-video box-glow container max-w-5xl mx-auto'>
-                            <VTurb player={player} video={video} />
+                        <div id='vsl' className='w-full flex justify-center z-20'>
+                            <VTurb player={player} video={video} abTest={abTest} />
                         </div>
                     </div>
 

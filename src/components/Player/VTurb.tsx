@@ -8,41 +8,73 @@ interface IVturb {
     video: string | undefined
     vertical?: boolean
     iframe?: boolean
+    abTest?: boolean
 }
 
-export default function VTurb({ player, video, vertical = false, iframe = false }: IVturb) {
+export default function VTurb({
+                                  player,
+                                  video,
+                                  vertical = false,
+                                  iframe = false,
+                                  abTest = false,
+                              }: IVturb) {
+
+    //use effect to wait smartplayer element id to be created
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (document.getElementById(`vid_${player}`)) {
+                clearInterval(interval)
+                const smart = document.getElementById('smartplayer')
+                console.log(smart)
+                if (smart) {
+                    document.getElementById(`vid_${player}`)?.appendChild(smart)
+                }
+            }
+        }, 200)
+        return () => clearInterval(interval)
+    }, [player])
+
     return (
         iframe ? (
             <div className={`${vertical ? 'pb-[176.6%]' : 'pb-[56.25%]'} relative`}>
-                <iframe src={`https://scripts.converteai.net/${video}/players/${player}/embed.html`}
-                        id={`ifr_${player}`}
-                        className='absolute top-0 left-0 w-full h-full rounded-xl'
-                        referrerPolicy='origin'
-                        title='Video Player'
+                <iframe
+                    src={`https://scripts.converteai.net/${video}/players/${player}/embed.html`}
+                    id={`ifr_${player}`}
+                    className='absolute top-0 left-0 w-full h-full rounded-xl'
+                    referrerPolicy='origin'
+                    title='Video Player'
                 >
                 </iframe>
             </div>
         ) : (
-            <div className='w-full h-auto relative flex rounded-xl'>
+            <div className={`w-full h-auto relative flex rounded-xl ${vertical ? 'max-w-[80%]' : ''}`}>
                 <div
                     id={`vid_${player}`}
-                    className={`relative ${
-                        vertical ? 'pb-[182.6%]' : 'pb-[56.25%]'
-                    } w-full h-0 rounded-xl overflow-hidden box-glow grid place-items-center`}
+                    className={`relative w-full rounded-xl overflow-hidden box-glow grid place-items-center`}
                 >
-                    <Image id={`thumb_${player}`} layout='fill'
-                           src={`https://images.converteai.net/${video}/players/${player}/thumbnail.jpg`}
-                           className='absolute rounded-xl top-0 left-0 w-full h-full object-cover block'
-                           alt='Video Thumbnail' />
+                    <Image
+                        id={`thumb_${player}`}
+                        layout='fill'
+                        src={`https://images.converteai.net/${video}/players/${player}/thumbnail.jpg`}
+                        className={`absolute rounded-xl top-0 left-0 w-full h-full object-cover block`}
+                        alt='Video Thumbnail'
+                    />
 
-                    <div id={`backdrop_${player}`}
+                    <div id={`backdrop_${video}`}
                          className='absolute rounded-xl top-0 left-0 w-full h-full bg-black opacity-50 blackdrop-blur-sm'
-                         style={{ WebkitBackdropFilter: 'blur(5px)' }}></div>
+                         style={{ WebkitBackdropFilter: 'blur(5px)' }}
+                    ></div>
                 </div>
-                <Script id={`src_${player}`}
-                        strategy='afterInteractive'
-                        src={`https://scripts.converteai.net/${video}/players/${player}/player.js`}>
-                </Script>
+                {video && player && (
+                    <Script type='text/javascript' id={'scr_' + player}>
+                        {`
+                        const s=document.createElement('script');
+                        s.src="https://scripts.converteai.net/${video}/${abTest ? 'ab-test' : 'players'}/${player}/player.js"
+                        s.async=!0
+                        document.head.appendChild(s);
+                    `}
+                    </Script>
+                )}
             </div>
         ))
 }
@@ -50,6 +82,7 @@ export default function VTurb({ player, video, vertical = false, iframe = false 
 // @ts-ignore
 export const HiddenElements = ({ children, seconds }) => {
     const { showElements, setShowElements } = useContext(OfferContext)
+
     useEffect(() => {
         const alreadyDisplayedKey = `@RCMalreadyElsDisplayed${seconds}`
 

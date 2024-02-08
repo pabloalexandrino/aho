@@ -156,9 +156,12 @@ export default function Vsl04(): JSX.Element {
             <ParallaxProvider>
                 <Geo />
                 <Navbar leadRedirect={checkoutLink} logo={false} className='hidden' />
-                <Vsl playerComponent={'vturb'}
-                     player={'65c3c69d028b2500081ac77f'}
-                     video={'99583553-0c7c-40d5-b819-534dcd7867b9'}>
+                <Vsl
+                    playerComponent={'vturb'}
+                    player={'65c3c69d028b2500081ac77f'}
+                    video={'99583553-0c7c-40d5-b819-534dcd7867b9'}
+                    abTest
+                >
 
                     <HiddenElements seconds='230'>
                         {/*<iframe*/}
