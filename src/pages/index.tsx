@@ -22,7 +22,17 @@ export default function Index(): JSX.Element {
 
     useEffect(() => {
         const urlParams = new URLSearchParams(window.location.search)
-        const utmParams = urlParams.get('utm_source') ? `?utm_source=${urlParams.get('utm_source')}&utm_medium=${urlParams.get('utm_medium')}&utm_campaign=${urlParams.get('utm_campaign')}&utm_term=${urlParams.get('utm_term')}&utm_content=${urlParams.get('utm_content')}` : ''
+        const utmParams = urlParams.get('utm_source')
+            ? `?utm_source=${urlParams.get(
+                  'utm_source'
+              )}&utm_medium=${urlParams.get(
+                  'utm_medium'
+              )}&utm_campaign=${urlParams.get(
+                  'utm_campaign'
+              )}&utm_term=${urlParams.get(
+                  'utm_term'
+              )}&utm_content=${urlParams.get('utm_content')}`
+            : ''
         const url = 'https://empreendaclub.typeform.com/aho-vsl02' + utmParams
 
         setCheckoutLink(url)
@@ -33,45 +43,53 @@ export default function Index(): JSX.Element {
     useEffect(() => {
         if (eventId) {
             if (process.env.NODE_ENV === 'production') {
-                fb('PageView', 'PageView' + eventId).then(r => r)
+                fb('PageView', 'PageView' + eventId).then((r) => r)
             }
         }
     }, [eventId])
 
     return (
-        <div className='min-h-screen bg-left-top bg-[length:100vw_100vh] bg-fixed bg-[url(/bg-white.webp)]'
-             data-theme={'dark'}>
+        <div
+            className="min-h-screen bg-left-top bg-[length:100vw_100vh] bg-fixed bg-[url(/bg-white.webp)]"
+            data-theme={'dark'}
+        >
             <Head>
-                <title>Agência Home Office - Sua agência de viagens online</title>
+                <title>
+                    Agência Home Office - Sua agência de viagens online
+                </title>
             </Head>
             {process.env.NODE_ENV === 'production' && (
                 <>
-                    <Script id='facebook-pixel-page' strategy='afterInteractive'>
+                    <Script
+                        id="facebook-pixel-page"
+                        strategy="afterInteractive"
+                    >
                         {`
-                            fbq('init', '${process.env.NEXT_PUBLIC_FB_PIXEL_ID}');
-                            fbq('track', 'PageView', {}, {eventID: '${'PageView' + eventId}'});
+                            fbq('init', '${
+                                process.env.NEXT_PUBLIC_FB_PIXEL_ID
+                            }');
+                            fbq('track', 'PageView', {}, {eventID: '${
+                                'PageView' + eventId
+                            }'});
                         `}
                     </Script>
                 </>
             )}
 
             <ParallaxProvider>
-
-
                 <Geo />
                 <Navbar leadRedirect={checkoutLink} logo={false} />
-                <Vsl showButton={showElements} playerComponent={'vturb'}
-                     player={'6552e7f9156f08000920a96b'}
-                     video={'99583553-0c7c-40d5-b819-534dcd7867b9'} showTimer={true} />
+                <Vsl
+                    showButton={showElements}
+                    playerComponent={'vturb'}
+                    player={'6552e7f9156f08000920a96b'}
+                    video={'99583553-0c7c-40d5-b819-534dcd7867b9'}
+                    showTimer={true}
+                />
 
-                <HiddenElements seconds='437'>
-                    <BlockedPage
-                        url={checkoutLink}
-                        show={showElements}
-                    />
+                <HiddenElements seconds="0">
+                    <BlockedPage url={checkoutLink} show={showElements} />
                 </HiddenElements>
-
-
             </ParallaxProvider>
         </div>
     )

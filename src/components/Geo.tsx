@@ -6,7 +6,7 @@
 //     region_name: string
 // }
 
-export default function Geo() {
+export function Geo2() {
     // const [city, setCity] = useState<string>()
     // const [region, setRegion] = useState<string>()
 
@@ -32,15 +32,49 @@ export default function Geo() {
     // }, [])
 
     return (
-        <div className='w-full bg-error p-2 text-white text-center'>
+        <div className="w-full p-2 text-center text-white bg-error">
             <h1>
                 {/* Você e algumas pessoas de{' '}
                 <span className="font-bold">{city ?? 'São Paulo'}</span> foram
                 selecionadas para participar */}
-                <span className='mr-2'>⚠️</span>
+                <span className="mr-2">⚠️</span>
                 ASSISTA O VÍDEO ABAIXO E ENTENDA O DESAFIO DO PIX de R$1.000!
-                <span className='ml-2'>⚠️</span>
+                <span className="ml-2">⚠️</span>
             </h1>
+        </div>
+    )
+}
+
+// import { useEffect, useState } from 'react'
+// import { getLocation } from '../utils/getCity'
+
+interface IMarquee {
+    marquee?: boolean
+    text?: (string | JSX.Element)[] | string
+    gratitude?: boolean
+}
+
+import Marquee from 'react-fast-marquee'
+
+export default function Geo({
+    marquee = false,
+    text = '⚠️ ASSISTA O VÍDEO ABAIXO E ENTENDA O DESAFIO DO PIX de R$1.000 ⚠️',
+}: IMarquee): JSX.Element {
+    return (
+        <div className={`w-full px-4 py-2 text-white text-center bg-error`}>
+            {marquee && text ? (
+                <Marquee>
+                    <div className="flex gap-8 mx-4">
+                        <h1>{text}</h1>
+                        <h1>{text}</h1>
+                        <h1>{text}</h1>
+                        <h1>{text}</h1>
+                        <h1>{text}</h1>
+                    </div>
+                </Marquee>
+            ) : (
+                <h1>{text}</h1>
+            )}
         </div>
     )
 }

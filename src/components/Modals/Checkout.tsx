@@ -12,13 +12,8 @@ export default function Checkout() {
     const [whatsapp, setWhatsapp] = useState('')
     const [loading, setLoading] = useState(false)
 
-    const {
-        checkoutLink,
-        pagina,
-        eventId,
-        value,
-        clint,
-    } = useContext(OfferContext)
+    const { checkoutLink, pagina, eventId, value, clint } =
+        useContext(OfferContext)
     // const [checked, setChecked] = useState(false)
 
     const schema = yup.object().shape({
@@ -32,7 +27,7 @@ export default function Checkout() {
             .required('Por favor, informe o seu número de telefone.')
             .matches(
                 /^\(\d{2}\) \d{5}-\d{4}$/,
-                'Por favor, informe um número de telefone válido (exemplo: (99) 99999-9999).',
+                'Por favor, informe um número de telefone válido (exemplo: (99) 99999-9999).'
             ),
     })
 
@@ -47,8 +42,14 @@ export default function Checkout() {
         const link = checkoutLink
 
         if (process.env.NODE_ENV === 'production') {
-            fb('Lead', 'Lead' + eventId, name, email, whatsapp).then(r => r)
-            fb('InitiateCheckout', 'InitiateCheckout' + eventId, name, email, whatsapp).then(r => r)
+            fb('Lead', 'Lead' + eventId, name, email, whatsapp).then((r) => r)
+            fb(
+                'InitiateCheckout',
+                'InitiateCheckout' + eventId,
+                name,
+                email,
+                whatsapp
+            ).then((r) => r)
         }
 
         if (link) {
@@ -87,49 +88,48 @@ export default function Checkout() {
 
         try {
             // Validação dos dados do formulário
-            await schema.validate(
-                { name, email, whatsapp },
-                { abortEarly: false },
-            ).then(async () => {
-                const data = {
-                    name,
-                    email,
-                    whatsapp,
-                    pagina,
-                    valor: value.toString(),
-                }
-                const url = clint ?? process.env.NEXT_PUBLIC_CLINT_LEAD
-                await fetch(url + '?' + new URLSearchParams(data))
+            await schema
+                .validate({ name, email, whatsapp }, { abortEarly: false })
+                .then(async () => {
+                    const data = {
+                        name,
+                        email,
+                        whatsapp,
+                        pagina,
+                        valor: value.toString(),
+                    }
+                    const url = clint ?? process.env.NEXT_PUBLIC_CLINT_LEAD
+                    await fetch(url + '?' + new URLSearchParams(data))
 
-                //DEVZAP
-                // if (process.env.NEXT_PUBLIC_DEVZAPP_LEAD) {
-                //     await fetch(
-                //         process.env.NEXT_PUBLIC_DEVZAPP_LEAD + '?' +
-                //         new URLSearchParams({ whatsapp }),
-                //     )
-                // }
+                    //DEVZAP
+                    // if (process.env.NEXT_PUBLIC_DEVZAPP_LEAD) {
+                    //     await fetch(
+                    //         process.env.NEXT_PUBLIC_DEVZAPP_LEAD + '?' +
+                    //         new URLSearchParams({ whatsapp }),
+                    //     )
+                    // }
 
-                //DISCORD
-                // if (process.env.NEXT_PUBLIC_TELEGRAND_LEAD) {
-                //     await fetch(
-                //         process.env.NEXT_PUBLIC_TELEGRAND_LEAD + '?' +
-                //         new URLSearchParams({ name, email, whatsapp, pagina }),
-                //     )
-                // }
+                    //DISCORD
+                    // if (process.env.NEXT_PUBLIC_TELEGRAND_LEAD) {
+                    //     await fetch(
+                    //         process.env.NEXT_PUBLIC_TELEGRAND_LEAD + '?' +
+                    //         new URLSearchParams({ name, email, whatsapp, pagina }),
+                    //     )
+                    // }
 
-                //BREVO
-                await fetch('/api/mailingList', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, email, whatsapp, pagina }),
+                    //BREVO
+                    await fetch('/api/mailingList', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name, email, whatsapp, pagina }),
+                    })
+                    setLoading(false)
+                    redirectToCheckout()
                 })
-                setLoading(false)
-                redirectToCheckout()
-            })
         } catch (error) {
             if (error instanceof yup.ValidationError) {
                 const validationErrors = error.inner.map(
-                    (error) => error.message,
+                    (error) => error.message
                 )
                 validationErrors.forEach((message) => {
                     toast.error(message)
@@ -141,57 +141,57 @@ export default function Checkout() {
 
     return (
         <>
-            <label htmlFor='checkout'></label>
-            <input type='checkbox' id='checkout' className='modal-toggle' />
+            <label htmlFor="checkout"></label>
+            <input type="checkbox" id="checkout" className="modal-toggle" />
             <label
-                htmlFor='checkout'
-                className='modal modal-bottom sm:modal-middle'
+                htmlFor="checkout"
+                className="modal modal-bottom sm:modal-middle"
             >
-                <label htmlFor='' className='modal-box relative box-glow'>
+                <label htmlFor="" className="relative modal-box box-glow">
                     <label
-                        htmlFor='checkout'
-                        className='btn btn-ghost btn-circle absolute right-3 top-3'
+                        htmlFor="checkout"
+                        className="absolute btn btn-ghost btn-circle right-3 top-3"
                     >
                         ✕
                     </label>
-                    <h3 className='font-bold text-2xl text-primary'>
+                    <h3 className="text-2xl font-bold text-primary">
                         Inscreva-se
                     </h3>
                     <form
-                        id='form'
-                        className='py-4 grid gap-2'
+                        id="form"
+                        className="grid gap-2 py-4"
                         onSubmit={handleSubmit}
                     >
                         <input
-                            type='text'
-                            name='name'
-                            placeholder='Nome Completo'
-                            className='input input-bordered input-primary w-full bg-white text-black'
+                            type="text"
+                            name="name"
+                            placeholder="Nome Completo"
+                            className="w-full text-black bg-white input input-bordered input-primary"
                             value={name}
                             onChange={(event) => setName(event.target.value)}
                         />
                         <input
-                            type='email'
-                            name='email'
-                            placeholder='E-mail'
-                            className='input input-bordered input-primary w-full bg-white text-black'
+                            type="email"
+                            name="email"
+                            placeholder="E-mail"
+                            className="w-full text-black bg-white input input-bordered input-primary"
                             value={email}
                             onChange={(event) => setEmail(event.target.value)}
                         />
 
                         <InputMask
-                            mask='(__) _____-____'
+                            mask="(__) _____-____"
                             replacement={{ _: /\d/ }}
-                            name='whatsapp'
+                            name="whatsapp"
                             value={whatsapp}
                             onChange={handleInputChange}
-                            className='input input-bordered input-primary w-full bg-white text-black'
-                            placeholder='(XX) 9XXXX-XXXX'
+                            className="w-full text-black bg-white input input-bordered input-primary"
+                            placeholder="(XX) 9XXXX-XXXX"
                         />
 
-                        <div className='modal-action flex justify-between'>
+                        <div className="flex justify-between modal-action">
                             {/* <div className="form-control w-52">
-                                <label className="cursor-pointer label gap-3">
+                                <label className="gap-3 cursor-pointer label">
                                     <input
                                         type="checkbox"
                                         className="toggle toggle-primary"
@@ -204,9 +204,9 @@ export default function Checkout() {
                                 </label>
                             </div> */}
                             <button
-                                form='form'
-                                type='submit'
-                                className='btn btn-block btn-primary'
+                                form="form"
+                                type="submit"
+                                className="btn btn-block btn-primary"
                                 disabled={loading}
                                 // className={`btn btn-block ${
                                 //     !checked ? 'btn-primary' : 'btn-disabled'
@@ -214,23 +214,23 @@ export default function Checkout() {
                             >
                                 {loading && (
                                     <svg
-                                        className='animate-spin -ml-1 mr-3 h-5 w-5 text-white'
-                                        xmlns='http://www.w3.org/2000/svg'
-                                        fill='none'
-                                        viewBox='0 0 24 24'
+                                        className="w-5 h-5 mr-3 -ml-1 text-white animate-spin"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
                                     >
                                         <circle
-                                            className='opacity-25'
-                                            cx='12'
-                                            cy='12'
-                                            r='10'
-                                            stroke='currentColor'
-                                            strokeWidth='4'
+                                            className="opacity-25"
+                                            cx="12"
+                                            cy="12"
+                                            r="10"
+                                            stroke="currentColor"
+                                            strokeWidth="4"
                                         ></circle>
                                         <path
-                                            className='opacity-75'
-                                            fill='currentColor'
-                                            d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
+                                            className="opacity-75"
+                                            fill="currentColor"
+                                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                                         ></path>
                                     </svg>
                                 )}
@@ -238,7 +238,7 @@ export default function Checkout() {
                             </button>
                         </div>
                     </form>
-                    {/* <span className="text-xs leading-tight block mt-2 opacity-30">
+                    {/* <span className="block mt-2 text-xs leading-tight opacity-30">
                         Prometemos não utilizar suas informações de contato para
                         enviar qualquer tipo de SPAM.
                     </span> */}

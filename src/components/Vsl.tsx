@@ -19,20 +19,22 @@ interface IVsl {
     arrow?: boolean
     abTest?: boolean
     children?: ReactNode
+    head?: ReactNode
 }
 
 export default function Vsl({
-                                showButton,
-                                float,
-                                video,
-                                showTimer = false,
-                                player,
-                                playerComponent = 'panda',
-                                full = false,
-                                arrow = false,
-                                abTest = false,
-                                children,
-                            }: IVsl): JSX.Element {
+    showButton,
+    float,
+    video,
+    showTimer = false,
+    player,
+    playerComponent = 'panda',
+    full = false,
+    arrow = false,
+    abTest = false,
+    children,
+    head,
+}: IVsl): JSX.Element {
     const [clientWindowHeight, setClientWindowHeight] = useState(0)
     const [isClosed, setIsClosed] = useState(!float)
     const [initialValue, setInitialValue] = useState(0)
@@ -41,20 +43,18 @@ export default function Vsl({
     const { setTargetDate, expired } = useContext(OfferContext)
     const { '@AHO:Countdown': CountdownCookies } = parseCookies(undefined)
 
-
     useEffect(() => {
         if (showTimer) {
             const timeoutId = setTimeout(() => {
                 setDisplay(true)
                 const target = new Date().setMinutes(
                     new Date().getMinutes() +
-                    parseInt(process.env.NEXT_PUBLIC_TIME_1 ?? '0'),
+                        parseInt(process.env.NEXT_PUBLIC_TIME_1 ?? '0')
                 )
                 if (!CountdownCookies) {
                     setTargetDate(target.toString())
                     setCookies('@AHO:Countdown', target, 60 * 60 * 24 * 7)
                 }
-
             }, 770 * 1000) // 12 minutos e 50 segundos (770 segundos)
 
             return () => {
@@ -62,7 +62,6 @@ export default function Vsl({
             }
         }
     }, [showTimer, CountdownCookies, setTargetDate])
-
 
     // useEffect(() => {
     //     const now = new Date()
@@ -106,12 +105,12 @@ export default function Vsl({
         document
             .getElementById('vsl')
             ?.classList.remove(
-            'fixed',
-            'bottom-0',
-            'right-0',
-            'max-w-[400px]',
-            'box-red-glow',
-        )
+                'fixed',
+                'bottom-0',
+                'right-0',
+                'max-w-[400px]',
+                'box-red-glow'
+            )
         document.getElementById('close')?.classList.add('hidden')
         document.getElementById('overlay')?.classList.add('absolute')
 
@@ -126,162 +125,178 @@ export default function Vsl({
             {playerComponent === 'panda' ? (
                 <Head>
                     <link
-                        rel='preload'
+                        rel="preload"
                         href={`https://player-${player}.tv.pandavideo.com.br/embed/css/styles.css`}
-                        as='style'
+                        as="style"
                     />
                     <link
-                        rel='prerender'
+                        rel="prerender"
                         href={`https://player-${player}.tv.pandavideo.com.br/embed/?v=${video}`}
                     />
                     <link
-                        rel='preload'
+                        rel="preload"
                         href={`https://player-${player}.tv.pandavideo.com.br/embed/js/hls.js`}
-                        as='script'
+                        as="script"
                     />
                     <link
-                        rel='preload'
+                        rel="preload"
                         href={`https://player-${player}.tv.pandavideo.com.br/embed/js/plyr.polyfilled.min.js`}
-                        as='script'
+                        as="script"
                     />
                     <link
-                        rel='preload'
+                        rel="preload"
                         href={`https://config.tv.pandavideo.com.br/${player}/${video}.json`}
-                        as='fetch'
+                        as="fetch"
                     />
                     <link
-                        rel='preload'
+                        rel="preload"
                         href={`https://config.tv.pandavideo.com.br/${player}/config.json`}
-                        as='fetch'
+                        as="fetch"
                     />
                     <link
-                        rel='preload'
+                        rel="preload"
                         href={`https://b-${player}.tv.pandavideo.com.br/${video}/playlist.m3u8`}
-                        as='fetch'
+                        as="fetch"
                     />
                     <link
-                        rel='dns-prefetch'
+                        rel="dns-prefetch"
                         href={`https://b-${player}.tv.pandavideo.com.br`}
                     />
                     <link
-                        rel='dns-prefetch'
+                        rel="dns-prefetch"
                         href={`https://player-${player}.tv.pandavideo.com.br`}
                     />
                     <link
-                        rel='dns-prefetch'
+                        rel="dns-prefetch"
                         href={`https://${player}.b-cdn.net" /`}
                     />
                 </Head>
             ) : (
                 <Head>
                     <link
-                        rel='preload'
+                        rel="preload"
                         href={`https://scripts.converteai.net/${video}/players/${player}/player.js`}
-                        as='script'
+                        as="script"
                     />
                     <link
-                        rel='preload'
-                        href={'https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js'}
-                        as='script'
+                        rel="preload"
+                        href={
+                            'https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js'
+                        }
+                        as="script"
                     />
                     <link
-                        rel='preload'
-                        href={`https://images.converteai.net/${video}/${abTest ? 'ab-test' : 'players'}/${player}/thumbnail.jpg`}
-                        as='image'
+                        rel="preload"
+                        href={`https://images.converteai.net/${video}/${
+                            abTest ? 'ab-test' : 'players'
+                        }/${player}/thumbnail.jpg`}
+                        as="image"
                     />
                     <link
-                        rel='preload'
+                        rel="preload"
                         href={`https://cdn.converteai.net/${video}/${player}/main.m3u8`}
-                        as='fetch'
+                        as="fetch"
                     />
                     <link
-                        rel='dns-prefetch'
-                        href='https://cdn.converteai.net'
+                        rel="dns-prefetch"
+                        href="https://cdn.converteai.net"
                     />
                     <link
-                        rel='dns-prefetch'
-                        href='https://scripts.converteai.net'
+                        rel="dns-prefetch"
+                        href="https://scripts.converteai.net"
                     />
                     <link
-                        rel='dns-prefetch'
-                        href='https://images.converteai.net'
+                        rel="dns-prefetch"
+                        href="https://images.converteai.net"
                     />
                     <link
-                        rel='dns-prefetch'
-                        href='https://api.vturb.com.br'
+                        rel="dns-prefetch"
+                        href="https://api.vturb.com.br"
                     ></link>
                 </Head>
             )}
 
-            <section
-                className='flex justify-center pb-12 bg-gradient-to-tl from-gray-700 via-gray-900 to-black text-white min-h-screen'>
+            <section className="flex justify-center min-h-screen pb-12 text-white bg-gradient-to-tl from-gray-700 via-gray-900 to-black">
                 <Blur />
 
-                <div className='container max-w-5xl px-6 md:mt-6'>
+                <div className="container max-w-5xl px-6 md:mt-6">
                     {showTimer && display && (
-                        <div className='w-fit rounded-lg mx-auto bg-error text-white py-2 px-6'>
+                        <div className="px-6 py-2 mx-auto text-white rounded-lg w-fit bg-error">
                             {/* gerar cronometro de 10 minutos retrocedendo o tempo */}
-                            <div className='flex flex-col gap-8 text-center'>
-                                <h2 className='font-bold text-sm md:text-2xl'>
-                                    {expired
-                                        ? 'Oferta encerrada'
-                                        : (
-                                            <div className='flex'>
-                                                Essa oferta se encerra em{' '}
-                                                <Countdown style='text' />
-                                            </div>
-                                        )}
+                            <div className="flex flex-col gap-8 text-center">
+                                <h2 className="text-sm font-bold md:text-2xl">
+                                    {expired ? (
+                                        'Oferta encerrada'
+                                    ) : (
+                                        <div className="flex">
+                                            Essa oferta se encerra em{' '}
+                                            <Countdown style="text" />
+                                        </div>
+                                    )}
                                 </h2>
                             </div>
                         </div>
                     )}
 
-                    {/*<div className='mt-6 flex w-fit mx-auto items-center gap-1'>*/}
+                    {/*<div className='flex items-center gap-1 mx-auto mt-6 w-fit'>*/}
                     {/*    /!*<span className="mr-2">⚠️</span>*!/*/}
-                    {/*    <h2 className='animate-pulse p-2 bg-warning text-black text-center text-xs md:text-lg leading-normal max-w-xs rounded-lg'>*/}
+                    {/*    <h2 className='max-w-xs p-2 text-xs leading-normal text-center text-black rounded-lg animate-pulse bg-warning md:text-lg'>*/}
                     {/*        VÍDEO ABAIXO REVELA*/}
                     {/*    </h2>*/}
                     {/*    /!*<span className="ml-2">⚠️</span>*!/*/}
                     {/*</div>*/}
 
-                    <h1 className='text-center uppercase my-6 rounded-md text-xl md:text-3xl md:leading-snug font-bold inline-block'
-                    >
-                        Entenda como lucrar de <br className='sm:hidden' /><span
-                        className='text-white bg-gradient font-bold rounded-lg px-4'>10 a 30 mil reais
-                        por mês</span> {' '}<br className='sm:hidden' /> com sua agência home office!
-                    </h1>
-                    <div className='my-8 w-full max-w-5xl flex mx-auto relative'>
+                    {head ? (
+                        head
+                    ) : (
+                        <h1 className="inline-block my-6 text-xl font-bold text-center uppercase rounded-md md:text-3xl md:leading-snug">
+                            Entenda como lucrar de <br className="sm:hidden" />
+                            <span className="px-4 font-bold text-white rounded-lg bg-gradient">
+                                10 a 30 mil reais por mês
+                            </span>{' '}
+                            <br className="sm:hidden" /> com sua agência home
+                            office!
+                        </h1>
+                    )}
+                    <div className="relative flex w-full max-w-5xl mx-auto my-8">
                         <div
-                            id='overlay'
-                            className='absolute w-full h-0 pb-[56.25%] rounded-xl overflow-hidden box-red-glow'
+                            id="overlay"
+                            className="absolute w-full h-0 pb-[56.25%] rounded-xl overflow-hidden box-red-glow"
                         ></div>
 
                         <button
                             onClick={handleClose}
-                            id='close'
-                            className='hidden btn-circle btn btn-sm fixed -mt-8 right-0 bottom-[230px] z-10'
+                            id="close"
+                            className="hidden btn-circle btn btn-sm fixed -mt-8 right-0 bottom-[230px] z-10"
                         >
                             <svg
-                                xmlns='http://www.w3.org/2000/svg'
-                                fill='none'
-                                viewBox='0 0 24 24'
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
                                 strokeWidth={1.5}
-                                stroke='currentColor'
-                                className='w-6 h-6'
+                                stroke="currentColor"
+                                className="w-6 h-6"
                             >
                                 <path
-                                    strokeLinecap='round'
-                                    strokeLinejoin='round'
-                                    d='M6 18L18 6M6 6l12 12'
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M6 18L18 6M6 6l12 12"
                                 />
                             </svg>
                         </button>
                         {/*<div*/}
-                        {/*    className='w-full flex justify-center z-20'*/}
+                        {/*    className='z-20 flex justify-center w-full'*/}
                         {/*    id='vsl'*/}
                         {/*>*/}
-                        <div id='vsl' className='w-full flex justify-center z-20'>
-                            <VTurb player={player} video={video} abTest={abTest} />
+                        <div
+                            id="vsl"
+                            className="z-20 flex justify-center w-full"
+                        >
+                            <VTurb
+                                player={player}
+                                video={video}
+                                abTest={abTest}
+                            />
                         </div>
                     </div>
 
@@ -289,7 +304,7 @@ export default function Vsl({
                     {/*    Assista até o final, tem 2 presentes 🎁 para você lá!*/}
                     {/*</div>*/}
 
-                    {/*<div className='mt-2 text-center relative flex justify-center w-full'>*/}
+                    {/*<div className='relative flex justify-center w-full mt-2 text-center'>*/}
                     {/*    <svg*/}
                     {/*        xmlns='http://www.w3.org/2000/svg'*/}
                     {/*        fill='none'*/}

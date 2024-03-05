@@ -12,13 +12,17 @@ interface OfferContextData {
     setCheckoutLink: React.Dispatch<React.SetStateAction<string>>
     pagina: string
     setPagina: React.Dispatch<React.SetStateAction<string>>
-    eventId: string,
-    showElements: boolean,
-    setShowElements: React.Dispatch<React.SetStateAction<boolean>>,
-    value: number,
+    eventId: string
+    showElements: boolean
+    setShowElements: React.Dispatch<React.SetStateAction<boolean>>
+    value: number
     setValue: React.Dispatch<React.SetStateAction<number>>
     clint: string
     setClint: React.Dispatch<React.SetStateAction<string>>
+    instagram: string
+    setInstagram: React.Dispatch<React.SetStateAction<string>>
+    renda: string
+    setRenda: React.Dispatch<React.SetStateAction<string>>
 }
 
 interface OfferProviderProps {
@@ -26,7 +30,7 @@ interface OfferProviderProps {
 }
 
 export const OfferContext = createContext<OfferContextData>(
-    {} as OfferContextData,
+    {} as OfferContextData
 )
 
 export function OfferProvider({ children }: OfferProviderProps) {
@@ -40,8 +44,12 @@ export function OfferProvider({ children }: OfferProviderProps) {
     const [showElements, setShowElements] = useState(false)
     const [value, setValue] = useState(0)
     const [clint, setClint] = useState('')
+    const [instagram, setInstagram] = useState('')
+    const [renda, setRenda] = useState('')
 
-    const eventId = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
+    const eventId =
+        Math.random().toString(36).substring(2, 15) +
+        Math.random().toString(36).substring(2, 15)
 
     return (
         <OfferContext.Provider
@@ -63,6 +71,10 @@ export function OfferProvider({ children }: OfferProviderProps) {
                 setValue,
                 clint,
                 setClint,
+                instagram,
+                setInstagram,
+                renda,
+                setRenda,
             }}
         >
             {children}

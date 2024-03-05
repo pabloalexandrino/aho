@@ -36,7 +36,7 @@ export default function Vsl04(): JSX.Element {
     useEffect(() => {
         if (eventId) {
             if (process.env.NODE_ENV === 'production') {
-                fb('PageView', 'PageView' + eventId).then(r => r)
+                fb('PageView', 'PageView' + eventId).then((r) => r)
             }
         }
     }, [eventId])
@@ -65,7 +65,7 @@ export default function Vsl04(): JSX.Element {
             .required('Por favor, informe o seu número de telefone.')
             .matches(
                 /^\(\d{2}\) \d{5}-\d{4}$/,
-                'Por favor, informe um número de telefone válido (exemplo: (99) 99999-9999).',
+                'Por favor, informe um número de telefone válido (exemplo: (99) 99999-9999).'
             ),
     })
 
@@ -76,13 +76,25 @@ export default function Vsl04(): JSX.Element {
     }
 
     function redirectTo() {
-
         if (process.env.NODE_ENV === 'production') {
-            fb('Lead', 'Lead' + eventId, nameLead2, emailLead2, whatsappLead2).then(r => r)
+            fb(
+                'Lead',
+                'Lead' + eventId,
+                nameLead2,
+                emailLead2,
+                whatsappLead2
+            ).then((r) => r)
         }
         //redirect to /wpp-youtube-obrigado
 
-        window.location.href = checkoutLink + '?FNAME=' + nameLead2 + '&EMAIL=' + emailLead2 + '&PHONE=55' + whatsappLead2
+        window.location.href =
+            checkoutLink +
+            '?FNAME=' +
+            nameLead2 +
+            '&EMAIL=' +
+            emailLead2 +
+            '&PHONE=55' +
+            whatsappLead2
         setLoading2(false)
     }
 
@@ -93,7 +105,7 @@ export default function Vsl04(): JSX.Element {
             // Validação dos dados do formulário
             await schema2.validate(
                 { nameLead2, emailLead2, whatsappLead2 },
-                { abortEarly: false },
+                { abortEarly: false }
             )
 
             const url = clint ?? process.env.NEXT_PUBLIC_CLINT_LEAD
@@ -102,7 +114,7 @@ export default function Vsl04(): JSX.Element {
                 name: nameLead2,
                 email: emailLead2,
                 whatsapp: whatsappLead2,
-                pagina,
+                pagina: `${pagina}, source:${utmObj.utm_source}, medium:${utmObj.utm_medium}, campaign:${utmObj.utm_campaign}, term:${utmObj.utm_term}, content:${utmObj.utm_content}`,
                 valor: value.toString(),
             }
             await fetch(url + '?' + new URLSearchParams(data))
@@ -122,7 +134,7 @@ export default function Vsl04(): JSX.Element {
         } catch (error) {
             if (error instanceof yup.ValidationError) {
                 const validationErrors = error.inner.map(
-                    (error) => error.message,
+                    (error) => error.message
                 )
                 validationErrors.forEach((message) => {
                     toast.error(message)
@@ -137,17 +149,28 @@ export default function Vsl04(): JSX.Element {
     }
 
     return (
-        <div className='min-h-screen bg-left-top bg-[length:100vw_100vh] bg-fixed bg-[url(/bg-white.webp)]'
-             data-theme={'dark'}>
+        <div
+            className="min-h-screen bg-left-top bg-[length:100vw_100vh] bg-fixed bg-[url(/bg-white.webp)]"
+            data-theme={'dark'}
+        >
             <Head>
-                <title>Agência Home Office - Sua agência de viagens online</title>
+                <title>
+                    Agência Home Office - Sua agência de viagens online
+                </title>
             </Head>
             {process.env.NODE_ENV === 'production' && (
                 <>
-                    <Script id='facebook-pixel-page' strategy='afterInteractive'>
+                    <Script
+                        id="facebook-pixel-page"
+                        strategy="afterInteractive"
+                    >
                         {`
-                            fbq('init', '${process.env.NEXT_PUBLIC_FB_PIXEL_ID}');
-                            fbq('track', 'PageView', {}, {eventID: '${'PageView' + eventId}'});
+                            fbq('init', '${
+                                process.env.NEXT_PUBLIC_FB_PIXEL_ID
+                            }');
+                            fbq('track', 'PageView', {}, {eventID: '${
+                                'PageView' + eventId
+                            }'});
                         `}
                     </Script>
                 </>
@@ -155,47 +178,50 @@ export default function Vsl04(): JSX.Element {
 
             <ParallaxProvider>
                 <Geo />
-                <Navbar leadRedirect={checkoutLink} logo={false} className='hidden' />
+                <Navbar
+                    leadRedirect={checkoutLink}
+                    logo={false}
+                    className="hidden"
+                />
                 <Vsl
                     playerComponent={'vturb'}
                     player={'65c3c69d028b2500081ac77f'}
                     video={'99583553-0c7c-40d5-b819-534dcd7867b9'}
                     abTest
                 >
-
-                    <HiddenElements seconds='230'>
+                    <HiddenElements seconds="230">
                         {/*<iframe*/}
                         {/*    src='https://bot.funnelhub.io/aho-vsl'*/}
                         {/*    className='border-0 w-full h-[666px]'*/}
                         {/*></iframe>*/}
-                        <div className='max-w-md md:max-w-3xl mx-auto px-6 mt-12 z-10 text-center'>
-                            <h1 className='text-white contents mb-4 md:mb-8 rounded-md text-xl md:text-3xl w-fit px-2'>
+                        <div className="z-10 max-w-md px-6 mx-auto mt-12 text-center md:max-w-3xl">
+                            <h1 className="px-2 mb-4 text-xl text-white rounded-md contents md:mb-8 md:text-3xl w-fit">
                                 Preencha seus dados abaixo e agende a sua
-                                <span className='rounded-lg px-2 mx-2 bg-gradient'>
+                                <span className="px-2 mx-2 rounded-lg bg-gradient">
                                     consultoria estratégica individual gratuita
                                 </span>
                             </h1>
 
                             <form
-                                id='formLead2'
-                                className='py-4 grid gap-2 mt-8'
+                                id="formLead2"
+                                className="grid gap-2 py-4 mt-8"
                                 onSubmit={handleSubmitLead}
                             >
                                 <input
-                                    type='text'
-                                    name='name_lead2'
-                                    placeholder='Nome Completo'
-                                    className='input input-bordered input-primary w-full bg-white text-black'
+                                    type="text"
+                                    name="name_lead2"
+                                    placeholder="Nome Completo"
+                                    className="w-full text-black bg-white input input-bordered input-primary"
                                     value={nameLead2}
                                     onChange={(event) =>
                                         setNameLead2(event.target.value)
                                     }
                                 />
                                 <input
-                                    type='email'
-                                    name='email_lead2'
-                                    placeholder='E-mail'
-                                    className='input input-bordered input-primary w-full bg-white text-black'
+                                    type="email"
+                                    name="email_lead2"
+                                    placeholder="E-mail"
+                                    className="w-full text-black bg-white input input-bordered input-primary"
                                     value={emailLead2}
                                     onChange={(event) =>
                                         setEmailLead2(event.target.value)
@@ -203,45 +229,44 @@ export default function Vsl04(): JSX.Element {
                                 />
 
                                 <InputMask
-                                    mask='(__) _____-____'
+                                    mask="(__) _____-____"
                                     replacement={{ _: /\d/ }}
                                     value={whatsappLead2}
-                                    name='whatsapp_lead2'
+                                    name="whatsapp_lead2"
                                     onChange={handleInputChangeLead}
-                                    className='input input-bordered input-primary w-full bg-white text-black'
-                                    placeholder='(XX) 9XXXX-XXXX'
+                                    className="w-full text-black bg-white input input-bordered input-primary"
+                                    placeholder="(XX) 9XXXX-XXXX"
                                 />
                             </form>
 
                             <button
-                                form='formLead2'
-                                type='submit'
-                                className='btn rounded-md btn-block btn-primary bg-[#38EA99] border-0 font-light'
+                                form="formLead2"
+                                type="submit"
+                                className="btn rounded-md btn-block btn-primary bg-[#38EA99] border-0 font-light"
                                 disabled={loading2}
                             >
                                 {loading2 && (
                                     <svg
-                                        className='animate-spin -ml-1 mr-3 h-5 w-5 text-white'
-                                        xmlns='http://www.w3.org/2000/svg'
-                                        fill='none'
-                                        viewBox='0 0 24 24'
+                                        className="w-5 h-5 mr-3 -ml-1 text-white animate-spin"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        fill="none"
+                                        viewBox="0 0 24 24"
                                     >
                                         <circle
-                                            className='opacity-25'
-                                            cx='12'
-                                            cy='12'
-                                            r='10'
-                                            stroke='currentColor'
-                                            strokeWidth='4'
+                                            className="opacity-25"
+                                            cx="12"
+                                            cy="12"
+                                            r="10"
+                                            stroke="currentColor"
+                                            strokeWidth="4"
                                         ></circle>
                                         <path
-                                            className='opacity-75'
-                                            fill='currentColor'
-                                            d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
+                                            className="opacity-75"
+                                            fill="currentColor"
+                                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                                         ></path>
                                     </svg>
                                 )}
-
                                 Fazer inscrição gratuitamente
                             </button>
                         </div>
