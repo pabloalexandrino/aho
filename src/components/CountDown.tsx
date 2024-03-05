@@ -7,9 +7,8 @@ interface ICountdown {
 
 export default function Countdown({ style = 'blocks' }: ICountdown) {
     const { targetDate, setExpired, expired } = useContext(OfferContext)
-
     const [remainingTime, setRemainingTime] = useState(
-        parseInt(targetDate) - new Date().getTime(),
+        parseInt(targetDate) - new Date().getTime()
     )
 
     useEffect(() => {
@@ -28,49 +27,52 @@ export default function Countdown({ style = 'blocks' }: ICountdown) {
     const minutes = Math.floor((remainingTime / (1000 * 60)) % 60)
     const seconds = Math.floor((remainingTime / 1000) % 60)
 
-    return (
-        style === 'blocks' ? (
-            <div className='grid grid-flow-col gap-5 text-center auto-cols-max text-white'>
-                <div
-                    className={`flex flex-col p-2 rounded-box ${
-                        minutes <= 0 && seconds <= 0
-                            ? 'bg-error text-white'
-                            : 'bg-neutral'
-                    }`}
-                >
-                <span className='countdown font-mono text-5xl'>
+    return style === 'blocks' ? (
+        <div className="grid grid-flow-col gap-5 text-center text-white auto-cols-max">
+            <div
+                className={`flex flex-col p-2 rounded-box ${
+                    minutes <= 0 && seconds <= 0
+                        ? 'bg-error text-white'
+                        : 'bg-neutral'
+                }`}
+            >
+                <span className="font-mono text-5xl countdown">
                     <span
                         style={{
                             ['--value' as any]: minutes < 0 ? '0' : minutes,
                         }}
                     ></span>
                 </span>
-                    min
-                </div>
-                <div
-                    className={`flex flex-col p-2 rounded-box ${
-                        minutes <= 0 && seconds <= 0
-                            ? 'bg-error text-white'
-                            : 'bg-neutral'
-                    }`}
-                >
-                <span className='countdown font-mono text-5xl'>
+                min
+            </div>
+            <div
+                className={`flex flex-col p-2 rounded-box ${
+                    minutes <= 0 && seconds <= 0
+                        ? 'bg-error text-white'
+                        : 'bg-neutral'
+                }`}
+            >
+                <span className="font-mono text-5xl countdown">
                     <span
                         style={{
                             ['--value' as any]: seconds < 0 ? '0' : seconds,
                         }}
                     ></span>
                 </span>
-                    seg
-                </div>
+                seg
             </div>
-        ) : (
-            <Suspense fallback={<div>Carregando...</div>}>
-                <div className='ml-2'>
-                    {minutes && minutes < 0 ? '00' : String(minutes).padStart(2, '0')}
-                    : {seconds && seconds < 0 ? '00' : String(seconds).padStart(2, '0')}
-                </div>
-            </Suspense>
-        )
+        </div>
+    ) : (
+        <Suspense fallback={<div>Carregando...</div>}>
+            <div className="ml-2">
+                {minutes && minutes < 0
+                    ? '00'
+                    : String(minutes).padStart(2, '0')}
+                :{' '}
+                {seconds && seconds < 0
+                    ? '00'
+                    : String(seconds).padStart(2, '0')}
+            </div>
+        </Suspense>
     )
 }

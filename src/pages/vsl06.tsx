@@ -5,7 +5,7 @@ import Vsl from '../components/Vsl'
 import { OfferContext } from '../providers/Offer'
 import fb from '../utils/fb'
 import Script from 'next/script'
-import { HiddenElements } from '../components/Player/VTurb'
+import VTurb, { HiddenElements } from '../components/Player/VTurb'
 import Geo from '../components/Geo'
 import { ParallaxProvider } from 'react-scroll-parallax'
 import { InputMask } from '@react-input/mask'
@@ -401,56 +401,25 @@ export default function Vsl05(): JSX.Element {
                             </span>{' '}
                             estão na nossa consultoria gratuita
                         </h1>
-
-                        <div className="grid gap-4 mt-12 md:grid-cols-3">
-                            <div className="relative hover:z-10 h-[580px] box-red-glow rounded-xl">
-                                <BlurImage
-                                    src="/testimonials/1.webp"
-                                    alt="Depoimento 1"
-                                    layout="fill"
-                                    className="object-cover shadow-lg rounded-xl"
-                                />
-                            </div>
-                            <div className="relative hover:z-10 h-[580px] box-red-glow rounded-xl">
-                                <BlurImage
-                                    src="/testimonials/2.webp"
-                                    alt="Depoimento 2"
-                                    layout="fill"
-                                    className="object-cover shadow-lg rounded-xl"
-                                />
-                            </div>
-                            <div className="relative hover:z-10 h-[580px] box-red-glow rounded-xl">
-                                <BlurImage
-                                    src="/testimonials/3.webp"
-                                    alt="Depoimento 3"
-                                    layout="fill"
-                                    className="object-cover shadow-lg rounded-xl"
-                                />
-                            </div>
-                            <div className="relative hover:z-10 h-[580px] box-red-glow rounded-xl">
-                                <BlurImage
-                                    src="/testimonials/4.webp"
-                                    alt="Depoimento 4"
-                                    layout="fill"
-                                    className="object-cover shadow-lg rounded-xl"
-                                />
-                            </div>
-                            <div className="relative hover:z-10 h-[580px] box-red-glow rounded-xl">
-                                <BlurImage
-                                    src="/testimonials/5.webp"
-                                    alt="Depoimento 5"
-                                    layout="fill"
-                                    className="object-cover shadow-lg rounded-xl"
-                                />
-                            </div>
-                            <div className="relative hover:z-10 h-[580px] box-red-glow rounded-xl">
-                                <BlurImage
-                                    src="/testimonials/6.webp"
-                                    alt="Depoimento 6"
-                                    layout="fill"
-                                    className="object-cover shadow-lg rounded-xl"
-                                />
-                            </div>
+                        <div className="grid gap-8 mt-12 sm:grid-cols-3">
+                            <VTurb
+                                player="64b751480373240009920668"
+                                video="99583553-0c7c-40d5-b819-534dcd7867b9"
+                                vertical
+                                iframe
+                            />
+                            <VTurb
+                                player="64b75144e891af000a1d8a7b"
+                                video="99583553-0c7c-40d5-b819-534dcd7867b9"
+                                vertical
+                                iframe
+                            />
+                            <VTurb
+                                player="64b7513fd66489000873f167"
+                                video="99583553-0c7c-40d5-b819-534dcd7867b9"
+                                vertical
+                                iframe
+                            />
                         </div>
                         <a
                             href="#formLead2"
@@ -503,24 +472,6 @@ export default function Vsl05(): JSX.Element {
                                 </p>
                             </div>
                         </div>
-                    </div>
-
-                    <div
-                        className={
-                            'mt-12 flex flex-col text-center justify-center items-center align-center gap-6'
-                        }
-                    >
-                        <h2 className={'text-3xl font-semibold text-white'}>
-                            Onde estamos localizados
-                        </h2>
-
-                        <iframe
-                            title="Localização do evento"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.0915328689694!2d-50.44190532321177!3d-21.228218630118455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x949643d13c228045%3A0xa83ad5b94402124!2sAv.%20Bras%C3%ADlia%2C%202121%20-%20Conjunto%20412-B%20-%20Jardim%20Nova%20Yorque%2C%20Ara%C3%A7atuba%20-%20SP%2C%2016015-460!5e0!3m2!1spt-BR!2sbr!4v1705921632821!5m2!1spt-BR!2sbr"
-                            className={
-                                'w-full h-96 rounded border-primary border-2'
-                            }
-                        ></iframe>
                     </div>
 
                     <Footer />

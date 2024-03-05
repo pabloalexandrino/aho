@@ -216,7 +216,7 @@ export default function Vsl({
                 </Head>
             )}
 
-            <section className="flex justify-center min-h-screen pb-12 text-white bg-gradient-to-tl from-gray-700 via-gray-900 to-black">
+            <section className="flex justify-center pb-12 text-white bg-gradient-to-tl from-gray-700 via-gray-900 to-black">
                 <Blur />
 
                 <div className="container max-w-5xl px-6 md:mt-6">

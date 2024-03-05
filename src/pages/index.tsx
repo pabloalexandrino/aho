@@ -84,7 +84,7 @@ export default function Index(): JSX.Element {
                     playerComponent={'vturb'}
                     player={'6552e7f9156f08000920a96b'}
                     video={'99583553-0c7c-40d5-b819-534dcd7867b9'}
-                    showTimer={true}
+                    // showTimer={true}
                 />
 
                 <HiddenElements seconds="0">

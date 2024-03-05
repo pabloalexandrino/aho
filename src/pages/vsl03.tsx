@@ -22,7 +22,9 @@ export default function Vsl03(): JSX.Element {
     } = useContext(OfferContext)
 
     useEffect(() => {
-        setCheckoutLink('https://go.rendacommilhas.com.br/form/9a9f6afa-e926-4e59-bcb1-37dd2d5fcf42')
+        setCheckoutLink(
+            'https://go.rendacommilhas.com.br/form/9a9f6afa-e926-4e59-bcb1-37dd2d5fcf42'
+        )
         setClint('https://andrinno.com/api/redirect/queue/76')
         setPagina('vsl03 - AHO')
         setValue(3997)
@@ -31,23 +33,34 @@ export default function Vsl03(): JSX.Element {
     useEffect(() => {
         if (eventId) {
             if (process.env.NODE_ENV === 'production') {
-                fb('PageView', 'PageView' + eventId).then(r => r)
+                fb('PageView', 'PageView' + eventId).then((r) => r)
             }
         }
     }, [eventId])
 
     return (
-        <div className='min-h-screen bg-left-top bg-[length:100vw_100vh] bg-fixed bg-[url(/bg-white.webp)]'
-             data-theme={'dark'}>
+        <div
+            className="min-h-screen bg-left-top bg-[length:100vw_100vh] bg-fixed bg-[url(/bg-white.webp)]"
+            data-theme={'dark'}
+        >
             <Head>
-                <title>Agência Home Office - Sua agência de viagens online</title>
+                <title>
+                    Agência Home Office - Sua agência de viagens online
+                </title>
             </Head>
             {process.env.NODE_ENV === 'production' && (
                 <>
-                    <Script id='facebook-pixel-page' strategy='afterInteractive'>
+                    <Script
+                        id="facebook-pixel-page"
+                        strategy="afterInteractive"
+                    >
                         {`
-                            fbq('init', '${process.env.NEXT_PUBLIC_FB_PIXEL_ID}');
-                            fbq('track', 'PageView', {}, {eventID: '${'PageView' + eventId}'});
+                            fbq('init', '${
+                                process.env.NEXT_PUBLIC_FB_PIXEL_ID
+                            }');
+                            fbq('track', 'PageView', {}, {eventID: '${
+                                'PageView' + eventId
+                            }'});
                         `}
                     </Script>
                 </>
@@ -55,20 +68,23 @@ export default function Vsl03(): JSX.Element {
 
             <ParallaxProvider>
                 <Geo />
-                <Navbar leadRedirect={checkoutLink} logo={false} className='hidden' />
-                <Vsl showButton={showElements} playerComponent={'vturb'}
-                     player={'6552e7f9156f08000920a96b'}
-                     video={'99583553-0c7c-40d5-b819-534dcd7867b9'} showTimer={true} />
+                <Navbar
+                    leadRedirect={checkoutLink}
+                    logo={false}
+                    className="hidden"
+                />
+                <Vsl
+                    showButton={showElements}
+                    playerComponent={'vturb'}
+                    player={'6552e7f9156f08000920a96b'}
+                    video={'99583553-0c7c-40d5-b819-534dcd7867b9'}
+                    // showTimer={true}
+                />
 
                 {/*436*/}
-                <HiddenElements seconds='436'>
-                    <BlockedPage
-                        url={checkoutLink}
-                        show={showElements}
-                    />
+                <HiddenElements seconds="436">
+                    <BlockedPage url={checkoutLink} show={showElements} />
                 </HiddenElements>
-
-
             </ParallaxProvider>
         </div>
     )
