@@ -195,7 +195,6 @@ export default function Vsl05(): JSX.Element {
                     playerComponent={'vturb'}
                     player={'65f0f845c30b6200081effc8'}
                     video={'99583553-0c7c-40d5-b819-534dcd7867b9'}
-                    abTest
                     head={
                         <h1 className='block my-6 text-lg font-bold text-center uppercase rounded-md md:text-3xl md:leading-snug'>
                             TUTORIAL ENSINA COMO <br />
@@ -332,49 +331,49 @@ export default function Vsl05(): JSX.Element {
                         </h1>
 
                         <div className='grid gap-4 mt-12 md:grid-cols-3'>
-                            <div className='relative hover:z-10 h-[580px] box-red-glow rounded-xl'>
+                            <div className='relative hover:z-10 h-[400px] box-red-glow rounded-xl'>
                                 <BlurImage
-                                    src='/testimonials/1.webp'
+                                    src='/placas/1.webp'
                                     alt='Depoimento 1'
                                     layout='fill'
                                     className='object-cover shadow-lg rounded-xl'
                                 />
                             </div>
-                            <div className='relative hover:z-10 h-[580px] box-red-glow rounded-xl'>
+                            <div className='relative hover:z-10 h-[400px] box-red-glow rounded-xl'>
                                 <BlurImage
-                                    src='/testimonials/2.webp'
+                                    src='/placas/2.webp'
                                     alt='Depoimento 2'
                                     layout='fill'
                                     className='object-cover shadow-lg rounded-xl'
                                 />
                             </div>
-                            <div className='relative hover:z-10 h-[580px] box-red-glow rounded-xl'>
+                            <div className='relative hover:z-10 h-[400px] box-red-glow rounded-xl'>
                                 <BlurImage
-                                    src='/testimonials/3.webp'
+                                    src='/placas/3.webp'
                                     alt='Depoimento 3'
                                     layout='fill'
                                     className='object-cover shadow-lg rounded-xl'
                                 />
                             </div>
-                            <div className='relative hover:z-10 h-[580px] box-red-glow rounded-xl'>
+                            <div className='relative hover:z-10 h-[400px] box-red-glow rounded-xl'>
                                 <BlurImage
-                                    src='/testimonials/4.webp'
+                                    src='/placas/4.webp'
                                     alt='Depoimento 4'
                                     layout='fill'
                                     className='object-cover shadow-lg rounded-xl'
                                 />
                             </div>
-                            <div className='relative hover:z-10 h-[580px] box-red-glow rounded-xl'>
+                            <div className='relative hover:z-10 h-[400px] box-red-glow rounded-xl'>
                                 <BlurImage
-                                    src='/testimonials/5.webp'
+                                    src='/placas/5.webp'
                                     alt='Depoimento 5'
                                     layout='fill'
                                     className='object-cover shadow-lg rounded-xl'
                                 />
                             </div>
-                            <div className='relative hover:z-10 h-[580px] box-red-glow rounded-xl'>
+                            <div className='relative hover:z-10 h-[400px] box-red-glow rounded-xl'>
                                 <BlurImage
-                                    src='/testimonials/6.webp'
+                                    src='/placas/6.webp'
                                     alt='Depoimento 6'
                                     layout='fill'
                                     className='object-cover shadow-lg rounded-xl'

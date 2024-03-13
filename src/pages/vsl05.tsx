@@ -35,14 +35,6 @@ export default function Vsl04(): JSX.Element {
         setValue(5997)
     }, [setCheckoutLink, setClint, setPagina, setValue])
 
-    useEffect(() => {
-        if (eventId) {
-            if (process.env.NODE_ENV === 'production') {
-                fb('PageView', 'PageView' + eventId).then((r) => r)
-            }
-        }
-    }, [eventId])
-
     const [utmObj, setUtmObj] = useState({
         utm_source: '',
         utm_medium: '',
@@ -50,6 +42,23 @@ export default function Vsl04(): JSX.Element {
         utm_term: '',
         utm_content: '',
     })
+
+    useEffect(() => {
+        if (eventId) {
+            if (process.env.NODE_ENV === 'production') {
+                fb('PageView', 'PageView' + eventId).then((r) => r)
+            }
+        }
+
+        const urlParams = new URLSearchParams(window.location.search)
+        setUtmObj({
+            utm_source: urlParams.get('utm_source') || '',
+            utm_medium: urlParams.get('utm_medium') || '',
+            utm_campaign: urlParams.get('utm_campaign') || '',
+            utm_term: urlParams.get('utm_term') || '',
+            utm_content: urlParams.get('utm_content') || '',
+        })
+    }, [eventId])
 
     const [nameLead2, setNameLead2] = useState('')
     const [emailLead2, setEmailLead2] = useState('')
@@ -195,7 +204,6 @@ export default function Vsl04(): JSX.Element {
                     playerComponent={'vturb'}
                     player={'65f0f845c30b6200081effc8'}
                     video={'99583553-0c7c-40d5-b819-534dcd7867b9'}
-                    abTest
                     head={
                         <h1 className='block my-6 text-lg font-bold text-center uppercase rounded-md md:text-3xl md:leading-snug'>
                             TUTORIAL ENSINA COMO <br />
