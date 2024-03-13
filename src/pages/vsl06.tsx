@@ -41,14 +41,6 @@ export default function Vsl05(): JSX.Element {
         setValue(3997)
     }, [setCheckoutLink, setClint, setPagina, setValue])
 
-    useEffect(() => {
-        if (eventId) {
-            if (process.env.NODE_ENV === 'production') {
-                fb('PageView', 'PageView' + eventId).then((r) => r)
-            }
-        }
-    }, [eventId])
-
     const [utmObj, setUtmObj] = useState({
         utm_source: '',
         utm_medium: '',
@@ -56,6 +48,23 @@ export default function Vsl05(): JSX.Element {
         utm_term: '',
         utm_content: '',
     })
+    
+    useEffect(() => {
+        if (eventId) {
+            if (process.env.NODE_ENV === 'production') {
+                fb('PageView', 'PageView' + eventId).then((r) => r)
+            }
+        }
+
+        const urlParams = new URLSearchParams(window.location.search)
+        setUtmObj({
+            utm_source: urlParams.get('utm_source') || '',
+            utm_medium: urlParams.get('utm_medium') || '',
+            utm_campaign: urlParams.get('utm_campaign') || '',
+            utm_term: urlParams.get('utm_term') || '',
+            utm_content: urlParams.get('utm_content') || '',
+        })
+    }, [eventId])
 
     const [nameLead2, setNameLead2] = useState('')
     const [emailLead2, setEmailLead2] = useState('')
