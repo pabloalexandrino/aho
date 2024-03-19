@@ -207,15 +207,21 @@ export default function Vsl04(): JSX.Element {
                         player={'65f0f845c30b6200081effc8'}
                         video={'99583553-0c7c-40d5-b819-534dcd7867b9'}
                         head={
-                            <h1 className="inline-block my-6 text-xl font-bold text-center uppercase rounded-md md:text-3xl md:leading-snug">
-                                Tutorial ensina como lucrar de{' '}
-                                <br className="sm:hidden" />
-                                <span className="px-4 font-bold text-white rounded-lg bg-gradient">
-                                    10 a 30 mil reais por mês
-                                </span>{' '}
-                                <br className="sm:hidden" /> (ou mais) com sua
-                                Agência fr Viagens Home Office!
-                            </h1>
+                            <>
+                                <h1 className="inline-block my-6 text-xl font-bold text-center uppercase rounded-md md:text-3xl md:leading-snug">
+                                    Tutorial ensina como lucrar de{' '}
+                                    <br className="sm:hidden" />
+                                    <span className="px-4 font-bold text-white rounded-lg bg-gradient">
+                                        10 a 30 mil reais por mês
+                                    </span>{' '}
+                                    <br className="sm:hidden" /> (ou mais) com
+                                    sua Agência de Viagens Home Office!
+                                </h1>
+                                <div className="text-lg text-center text-white">
+                                    Assista até o final e garanta sua
+                                    consultoria gratuita.
+                                </div>
+                            </>
                         }
                     >
                         <HiddenElements seconds={690}>
