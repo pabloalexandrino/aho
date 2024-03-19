@@ -1,16 +1,15 @@
 export default function Footer() {
     return (
-        <footer className='footer py-8 px-6 max-w-4xl mx-auto pb-12 text-white'>
-            <div className='container mx-auto'>
-
-                <p className='text-[11px] md:text-base text-center mx-auto'>
+        <footer className="max-w-4xl px-6 py-8 pb-12 mx-auto text-white footer">
+            <div className="container mx-auto">
+                <p className="text-[11px] md:text-base text-center mx-auto">
                     Todos os direitos reservados - Agência Home Office® - 2023
                 </p>
-                <p className='text-[11px] md:text-base text-center mx-auto'>
-                    Fly Launch Ltda. CNPJ: 46.333.828/0001-62
+                <p className="text-[11px] md:text-base text-center mx-auto">
+                    Fly Educacional LTDA. CNPJ: 46.333.828/0001-62
                 </p>
 
-                <p className='text-[9px] md:text-[12px] leading-normal text-center mt-6'>
+                <p className="text-[9px] md:text-[12px] leading-normal text-center mt-6">
                     Nenhuma informação contida neste deve ser interpretada como
                     uma afirmação da obtenção de resultados. Qualquer referência
                     ao desempenho passado ou potencial de uma estratégia
