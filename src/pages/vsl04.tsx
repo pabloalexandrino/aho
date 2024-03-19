@@ -177,7 +177,7 @@ export default function Vsl04(): JSX.Element {
             )}
 
             <ParallaxProvider>
-                <Geo />
+                <Geo text={'SEU NEGÓCIO ONLINE ESTÁ NO TUTORIAL ABAIXO 👇'} />
                 <Navbar
                     leadRedirect={checkoutLink}
                     logo={false}
@@ -187,6 +187,17 @@ export default function Vsl04(): JSX.Element {
                     playerComponent={'vturb'}
                     player={'65c3c69d028b2500081ac77f'}
                     video={'99583553-0c7c-40d5-b819-534dcd7867b9'}
+                    head={
+                        <h1 className="inline-block my-6 text-xl font-bold text-center uppercase rounded-md md:text-3xl md:leading-snug">
+                            Tutorial ensina como lucrar de{' '}
+                            <br className="sm:hidden" />
+                            <span className="px-4 font-bold text-white rounded-lg bg-gradient">
+                                10 a 30 mil reais por mês
+                            </span>{' '}
+                            <br className="sm:hidden" /> (ou mais) com sua
+                            Agência fr Viagens Home Office!
+                        </h1>
+                    }
                     abTest
                 >
                     <HiddenElements seconds="230">
