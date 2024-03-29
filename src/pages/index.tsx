@@ -6,7 +6,6 @@ import { OfferContext } from '../providers/Offer'
 import fb from '../utils/fb'
 import Script from 'next/script'
 import BlockedPage from '../components/BlockedPage'
-import { HiddenElements } from '../components/Player/VTurb'
 import Geo from '../components/Geo'
 import { ParallaxProvider } from 'react-scroll-parallax'
 
@@ -24,14 +23,14 @@ export default function Index(): JSX.Element {
         const urlParams = new URLSearchParams(window.location.search)
         const utmParams = urlParams.get('utm_source')
             ? `?utm_source=${urlParams.get(
-                  'utm_source'
-              )}&utm_medium=${urlParams.get(
-                  'utm_medium'
-              )}&utm_campaign=${urlParams.get(
-                  'utm_campaign'
-              )}&utm_term=${urlParams.get(
-                  'utm_term'
-              )}&utm_content=${urlParams.get('utm_content')}`
+                'utm_source',
+            )}&utm_medium=${urlParams.get(
+                'utm_medium',
+            )}&utm_campaign=${urlParams.get(
+                'utm_campaign',
+            )}&utm_term=${urlParams.get(
+                'utm_term',
+            )}&utm_content=${urlParams.get('utm_content')}`
             : ''
         const url = 'https://empreendaclub.typeform.com/aho-vsl02' + utmParams
 
@@ -50,7 +49,7 @@ export default function Index(): JSX.Element {
 
     return (
         <div
-            className="min-h-screen bg-left-top bg-[length:100vw_100vh] bg-fixed bg-[url(/bg-white.webp)]"
+            className='min-h-screen bg-left-top bg-[length:100vw_100vh] bg-fixed bg-[url(/bg-white.webp)]'
             data-theme={'dark'}
         >
             <Head>
@@ -61,16 +60,16 @@ export default function Index(): JSX.Element {
             {process.env.NODE_ENV === 'production' && (
                 <>
                     <Script
-                        id="facebook-pixel-page"
-                        strategy="afterInteractive"
+                        id='facebook-pixel-page'
+                        strategy='afterInteractive'
                     >
                         {`
                             fbq('init', '${
-                                process.env.NEXT_PUBLIC_FB_PIXEL_ID
-                            }');
+                            process.env.NEXT_PUBLIC_FB_PIXEL_ID
+                        }');
                             fbq('track', 'PageView', {}, {eventID: '${
-                                'PageView' + eventId
-                            }'});
+                            'PageView' + eventId
+                        }'});
                         `}
                     </Script>
                 </>
@@ -87,9 +86,9 @@ export default function Index(): JSX.Element {
                     // showTimer={true}
                 />
 
-                <HiddenElements seconds="0">
-                    <BlockedPage url={checkoutLink} show={showElements} />
-                </HiddenElements>
+                {/*<HiddenElements seconds="0">*/}
+                <BlockedPage url={checkoutLink} />
+                {/*</HiddenElements>*/}
             </ParallaxProvider>
         </div>
     )
