@@ -76,14 +76,33 @@ export default function Index(): JSX.Element {
             )}
 
             <ParallaxProvider>
-                <Geo />
+                <Geo
+                    text={'SEU NEGÓCIO ONLINE ESTÁ NO TUTORIAL ABAIXO 👇'}
+                    marquee
+                />
                 <Navbar leadRedirect={checkoutLink} logo={false} />
                 <Vsl
                     showButton={showElements}
                     playerComponent={'vturb'}
-                    player={'6552e7f9156f08000920a96b'}
+                    player={'65f0f845c30b6200081effc8'}
                     video={'99583553-0c7c-40d5-b819-534dcd7867b9'}
-                    // showTimer={true}
+                    head={
+                        <>
+                            <h1 className='inline-block my-6 text-xl font-bold text-center uppercase rounded-md md:text-3xl md:leading-snug'>
+                                Tutorial ensina como lucrar de{' '}
+                                <br className='sm:hidden' />
+                                <span className='px-4 font-bold text-white rounded-lg bg-gradient'>
+                                        10 a 30 mil reais por mês
+                                    </span>{' '}
+                                <br className='sm:hidden' /> (ou mais) com
+                                sua Agência de Viagens Home Office!
+                            </h1>
+                            <div className='text-lg text-center text-white'>
+                                Assista até o final e garanta sua
+                                consultoria gratuita.
+                            </div>
+                        </>
+                    }
                 />
 
                 {/*<HiddenElements seconds="0">*/}
