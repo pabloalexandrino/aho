@@ -92,7 +92,7 @@ export default function Index(): JSX.Element {
                                 Tutorial ensina como lucrar de{' '}
                                 <br className='sm:hidden' />
                                 <span className='px-4 font-bold text-white rounded-lg bg-gradient'>
-                                        10 a 30 mil reais por mês
+                                        10 a 50 mil reais por mês
                                     </span>{' '}
                                 <br className='sm:hidden' /> (ou mais) com
                                 sua Agência de Viagens Home Office!
