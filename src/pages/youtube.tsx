@@ -162,112 +162,122 @@ export default function Youtube() {
 
     return (
         <div className='bg-black'>
-            <Geo text={'🎁 VOCÊ GANHOU UMA CONSULTORIA 1 HORA + 3 MESES DE VIAJA FLUX GRÁTIS! 🎁'} marquee />
-            <div
-                className='grid relative bg-black bg-no-repeat bg-contain bg-[url(/luiz.webp)] bg-fixed bg-right-top w-full pt-8'>
-                <div className='flex relative py-2'>
-                    <div className='h-12 ml-2 w-[280px] sm:w-[220px]'>
-                        <BlurImage
-                            layout={'fill'}
-                            src='/logo-youtube.svg'
-                            alt='Youtube'
-                            className='object-contain object-left-top'
-                        />
-                    </div>
-                    <div className='h-12 mr-4 w-[1px] bg-white/20'></div>
-                    <div className='relative h-12 w-full'>
-                        <BlurImage
-                            layout={'fill'}
-                            src='/logo.webp'
-                            alt='AHO'
-                            className='object-contain object-left-top'
-                        />
-                    </div>
-                </div>
+            <Geo text={'🎁 VOCÊ GANHOU UMA CONSULTORIA 1 HORA + 3 MESES DE VIAJAFLUX GRÁTIS! 🎁'} marquee />
+            <div style={{ backgroundPositionY: '100px' }}
+                 className='grid relative bg-black bg-no-repeat bg-contain bg-[url(/luiz.webp)] bg-fixed bg-right-top w-full pt-8'>
                 <ToastContainer />
-                <div className='max-w-md md:max-w-2xl px-6 mt-64 md:pl-24 sm:mt-32 z-10 mb-12'>
-                    <h1 className='text-white contents uppercase mb-4 md:mb-8 rounded-md text-xl md:text-3xl w-fit px-2'>
-                        ENTENDA COMO LUCRAR
-                        <span className='rounded-lg px-2 mx-2 bg-gradient'>
-                        DE 20 A 50 MIL REAIS POR MÊS
-                    </span>COM UMA AGÊNCIA DE VIAGENS ONLINE.
-                    </h1>
-                    <h2 className='font-light text-white mt-8'>
-                        Liberamos 1h de consultoria gratuita para você entender cada detalhe da Agência Home Office,
-                        levando 3 meses do Sistema ViajaFlux Grátis.
-                    </h2>
-                    <div className='card card-compact border w-full h-fit rounded-lg my-4 md:my-12'>
-                        <div className='card-body'>
-                            <div className='card-title text-error'>Inscreva-se</div>
-
-                            <form
-                                id='formLead'
-                                className='py-4 grid gap-2'
-                                onSubmit={handleSubmitLead}
-                            >
-                                <input
-                                    type='text'
-                                    name='name_lead'
-                                    placeholder='Nome Completo'
-                                    className='input input-bordered w-full bg-white text-black'
-                                    value={nameLead2}
-                                    onChange={(event) =>
-                                        setNameLead2(event.target.value)
-                                    }
+                <div className='w-full max-w-6xl text-left justify-start flex flex-col mx-auto'>
+                    <div className='max-w-6xl grid relative py-2 px-6 mx-auto sm:mx-0'>
+                        <span className='text-xs ml-3 mb-4'>
+                            Presente 🎁 exclusivo para você que veio do Youtube!
+                        </span>
+                        <div className='flex relative'>
+                            <div className='h-14 w-1/2 sm:w-[150px] grid'>
+                                <BlurImage
+                                    layout={'responsive'}
+                                    src='/logo-youtube.svg'
+                                    alt='Youtube'
+                                    width='200'
+                                    height='100'
                                 />
-
-                                <input
-                                    type='email'
-                                    name='email'
-                                    placeholder='E-mail'
-                                    className='w-full text-black bg-white input input-bordered input-primary'
-                                    value={emailLead2}
-                                    onChange={(event) => setEmailLead2(event.target.value)}
+                            </div>
+                            <div className='h-12 mr-4 w-[1px] bg-white/20'></div>
+                            <div className='relative h-12 w-1/2 sm:w-[120px]'>
+                                <BlurImage
+                                    layout={'responsive'}
+                                    src='/logo.webp'
+                                    alt='AHO'
+                                    width='200'
+                                    height='80'
                                 />
-
-                                <InputMask
-                                    mask='(__) _____-____'
-                                    replacement={{ _: /\d/ }}
-                                    value={whatsappLead2}
-                                    name='whatsapp_lead'
-                                    onChange={handleInputChangeLead}
-                                    className='input input-bordered w-full bg-white text-black'
-                                    placeholder='(XX) 9XXXX-XXXX'
-                                />
-                            </form>
+                            </div>
                         </div>
                     </div>
-                    <button
-                        form='formLead'
-                        type='submit'
-                        className='btn rounded-md btn-block btn-error border-0 animation animate-pulse hover:bg-white hover:text-error box-red-glow'
-                        disabled={loading2}
-                    >
-                        {loading2 && (
-                            <svg
-                                className='animate-spin -ml-1 mr-3 h-5 w-5 text-white'
-                                xmlns='http://www.w3.org/2000/svg'
-                                fill='none'
-                                viewBox='0 0 24 24'
-                            >
-                                <circle
-                                    className='opacity-25'
-                                    cx='12'
-                                    cy='12'
-                                    r='10'
-                                    stroke='currentColor'
-                                    strokeWidth='4'
-                                ></circle>
-                                <path
-                                    className='opacity-75'
-                                    fill='currentColor'
-                                    d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
-                                ></path>
-                            </svg>
-                        )}
 
-                        Fazer inscrição gratuitamente
-                    </button>
+                    <div className='max-w-md md:max-w-2xl px-6 mt-64 sm:mt-32 z-10 mb-12'>
+                        <h1 className='text-white contents uppercase mb-4 md:mb-8 rounded-md text-xl md:text-3xl w-fit px-2'>
+                            ENTENDA COMO LUCRAR
+                            <span className='rounded-lg px-2 mx-2 bg-gradient'>
+                        DE 20 A 50 MIL REAIS POR MÊS
+                    </span>COM UMA AGÊNCIA DE VIAGENS ONLINE.
+                        </h1>
+                        <h2 className='font-light text-white mt-8'>
+                            Liberamos 1h de consultoria gratuita para você entender cada detalhe da Agência Home Office,
+                            levando 3 meses do Sistema ViajaFlux Grátis.
+                        </h2>
+                        <div className='card card-compact border w-full h-fit rounded-lg my-4 md:my-12'>
+                            <div className='card-body'>
+                                <div className='card-title text-error'>Inscreva-se</div>
+
+                                <form
+                                    id='formLead'
+                                    className='py-4 grid gap-2'
+                                    onSubmit={handleSubmitLead}
+                                >
+                                    <input
+                                        type='text'
+                                        name='name_lead'
+                                        placeholder='Nome Completo'
+                                        className='input input-bordered w-full bg-white text-black'
+                                        value={nameLead2}
+                                        onChange={(event) =>
+                                            setNameLead2(event.target.value)
+                                        }
+                                    />
+
+                                    <input
+                                        type='email'
+                                        name='email'
+                                        placeholder='E-mail'
+                                        className='w-full text-black bg-white input input-bordered input-primary'
+                                        value={emailLead2}
+                                        onChange={(event) => setEmailLead2(event.target.value)}
+                                    />
+
+                                    <InputMask
+                                        mask='(__) _____-____'
+                                        replacement={{ _: /\d/ }}
+                                        value={whatsappLead2}
+                                        name='whatsapp_lead'
+                                        onChange={handleInputChangeLead}
+                                        className='input input-bordered w-full bg-white text-black'
+                                        placeholder='(XX) 9XXXX-XXXX'
+                                    />
+                                </form>
+                            </div>
+                        </div>
+                        <button
+                            form='formLead'
+                            type='submit'
+                            className='btn rounded-md btn-block btn-error border-0 animation animate-pulse hover:bg-white hover:text-error box-red-glow'
+                            disabled={loading2}
+                        >
+                            {loading2 && (
+                                <svg
+                                    className='animate-spin -ml-1 mr-3 h-5 w-5 text-white'
+                                    xmlns='http://www.w3.org/2000/svg'
+                                    fill='none'
+                                    viewBox='0 0 24 24'
+                                >
+                                    <circle
+                                        className='opacity-25'
+                                        cx='12'
+                                        cy='12'
+                                        r='10'
+                                        stroke='currentColor'
+                                        strokeWidth='4'
+                                    ></circle>
+                                    <path
+                                        className='opacity-75'
+                                        fill='currentColor'
+                                        d='M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z'
+                                    ></path>
+                                </svg>
+                            )}
+
+                            Fazer inscrição gratuitamente
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -276,7 +286,7 @@ export default function Youtube() {
                     Veja um pouco dos resultados de alguns agentes
                 </h2>
 
-                <div className='grid gap-8 sm:grid-cols-4 mx-auto w-full max-w-6xl my-8'>
+                <div className='grid gap-8 sm:grid-cols-4 mx-auto w-full max-w-6xl my-8 px-6'>
                     <VTurb player='661d732f6828fe00083e5f3d'
                            video='99583553-0c7c-40d5-b819-534dcd7867b9'
                            vertical
