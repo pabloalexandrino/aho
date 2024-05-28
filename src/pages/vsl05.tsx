@@ -23,10 +23,6 @@ export default function Vsl04(): JSX.Element {
         clint,
         pagina,
         value,
-        instagram,
-        setInstagram,
-        renda,
-        setRenda,
     } = useContext(OfferContext)
 
     useEffect(() => {
@@ -79,7 +75,7 @@ export default function Vsl04(): JSX.Element {
                 /^\(\d{2}\) \d{5}-\d{4}$/,
                 'Por favor, informe um número de telefone válido (exemplo: (99) 99999-9999).',
             ),
-        renda: yup.string().required('Por favor, informe a sua renda mensal.'),
+        // renda: yup.string().required('Por favor, informe a sua renda mensal.'),
     })
 
     function handleInputChangeLead(event: {
@@ -117,7 +113,7 @@ export default function Vsl04(): JSX.Element {
         try {
             // Validação dos dados do formulário
             await schema2.validate(
-                { nameLead2, emailLead2, whatsappLead2, renda },
+                { nameLead2, emailLead2, whatsappLead2 },
                 { abortEarly: false },
             )
 
@@ -127,7 +123,7 @@ export default function Vsl04(): JSX.Element {
                 name: nameLead2,
                 email: emailLead2,
                 whatsapp: whatsappLead2,
-                pagina: `${pagina}, source:${utmObj.utm_source}, medium:${utmObj.utm_medium}, campaign:${utmObj.utm_campaign}, term:${utmObj.utm_term}, content:${utmObj.utm_content}, renda:${renda}, insta:${instagram}`,
+                pagina: `${pagina}, source:${utmObj.utm_source}, medium:${utmObj.utm_medium}, campaign:${utmObj.utm_campaign}, term:${utmObj.utm_term}, content:${utmObj.utm_content}`,
                 valor: value.toString(),
             }
             await fetch(url + '?' + new URLSearchParams(data))
@@ -270,41 +266,41 @@ export default function Vsl04(): JSX.Element {
                                         placeholder='(XX) 9XXXX-XXXX'
                                     />
 
-                                    <input
-                                        type='text'
-                                        name='instagram'
-                                        placeholder='@seu.instagram'
-                                        className='w-full text-black bg-white input input-bordered input-primary'
-                                        value={instagram}
-                                        onChange={(event) =>
-                                            setInstagram(event.target.value)
-                                        }
-                                    />
+                                    {/*<input*/}
+                                    {/*    type='text'*/}
+                                    {/*    name='instagram'*/}
+                                    {/*    placeholder='@seu.instagram'*/}
+                                    {/*    className='w-full text-black bg-white input input-bordered input-primary'*/}
+                                    {/*    value={instagram}*/}
+                                    {/*    onChange={(event) =>*/}
+                                    {/*        setInstagram(event.target.value)*/}
+                                    {/*    }*/}
+                                    {/*/>*/}
 
-                                    <select
-                                        name='renda'
-                                        className='w-full text-black bg-white select select-bordered select-primary'
-                                        onChange={(event) =>
-                                            setRenda(event.target.value)
-                                        }
-                                    >
-                                        <option value='' selected disabled>
-                                            Qual sua renda mensal ou
-                                            faturamento?
-                                        </option>
-                                        <option value='Até 5k'>
-                                            Até R$5.000,00
-                                        </option>
-                                        <option value='De 5k a 10k'>
-                                            De R$5.000,00 a R$10.000,00
-                                        </option>
-                                        <option value='De 10k a 25k'>
-                                            De R$10.000,00 a R$25.000,00
-                                        </option>
-                                        <option value='Acima de 25k'>
-                                            Acima de R$25.000,00
-                                        </option>
-                                    </select>
+                                    {/*<select*/}
+                                    {/*    name='renda'*/}
+                                    {/*    className='w-full text-black bg-white select select-bordered select-primary'*/}
+                                    {/*    onChange={(event) =>*/}
+                                    {/*        setRenda(event.target.value)*/}
+                                    {/*    }*/}
+                                    {/*>*/}
+                                    {/*    <option value='' selected disabled>*/}
+                                    {/*        Qual sua renda mensal ou*/}
+                                    {/*        faturamento?*/}
+                                    {/*    </option>*/}
+                                    {/*    <option value='Até 5k'>*/}
+                                    {/*        Até R$5.000,00*/}
+                                    {/*    </option>*/}
+                                    {/*    <option value='De 5k a 10k'>*/}
+                                    {/*        De R$5.000,00 a R$10.000,00*/}
+                                    {/*    </option>*/}
+                                    {/*    <option value='De 10k a 25k'>*/}
+                                    {/*        De R$10.000,00 a R$25.000,00*/}
+                                    {/*    </option>*/}
+                                    {/*    <option value='Acima de 25k'>*/}
+                                    {/*        Acima de R$25.000,00*/}
+                                    {/*    </option>*/}
+                                    {/*</select>*/}
                                 </form>
 
                                 <button
