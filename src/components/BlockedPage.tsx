@@ -4,12 +4,12 @@ import { OfferContext } from '../providers/Offer'
 import { setCookies } from '../utils/useCookies'
 import Blur from './Blur'
 import BlurImage from './BlurImage'
-import CallToAction2 from './CallToAction2'
 import FloatBlocks from './FloatBlocks'
 import Footer from './Footer'
 import Warranty from './Warranty'
 import VTurb from './Player/VTurb'
 import Countdown from './CountDown'
+import CallToAction from './CallToAction'
 
 interface BlockedProps {
     show?: boolean
@@ -99,7 +99,7 @@ export default function BlockedPage({ show = true, url, offer }: BlockedProps) {
                     liberdade!
                 </h3>
 
-                <div className='mt-8'>{<CallToAction2 url={url} />}</div>
+                <div className='mt-8'>{<CallToAction />}</div>
             </section>
 
             <section
@@ -133,7 +133,7 @@ export default function BlockedPage({ show = true, url, offer }: BlockedProps) {
                         Espero que você seja o próximo a me envia vídeos como esses.
                     </p>
 
-                    <div className='mt-8'>{<CallToAction2 url={url} />}</div>
+                    <div className='mt-8'>{<CallToAction />}</div>
 
                     <p className='max-w-xl text-xl mx-auto mt-12 mb-6 text-center font-bold'>
                         Dê uma olhada nos resultados dos agentes:
@@ -190,7 +190,7 @@ export default function BlockedPage({ show = true, url, offer }: BlockedProps) {
                         </div>
                     </div>
                 </div>
-                {<CallToAction2 url={url} />}
+                {<CallToAction />}
             </section>
 
 
@@ -216,7 +216,7 @@ export default function BlockedPage({ show = true, url, offer }: BlockedProps) {
                         <strong>SEU RISCO AQUI É ZERO</strong>
                     </div>
                 </div>
-                {<CallToAction2 url={url} />}
+                {<CallToAction />}
 
                 <div className='w-full border-b-4 my-10 border-dashed border-black'></div>
 
@@ -254,7 +254,7 @@ export default function BlockedPage({ show = true, url, offer }: BlockedProps) {
                     negócio
                 </div>
 
-                {<CallToAction2 url={url} />}
+                {<CallToAction />}
             </section>
             {/*<section className='relative w-full bg-zinc-900 px-6 py-12'>*/}
             {/*    <Blur direction='right' />*/}
@@ -737,7 +737,7 @@ export default function BlockedPage({ show = true, url, offer }: BlockedProps) {
                         </div>
                     </div>
                 </div>
-                {<CallToAction2 url={url} />}
+                {<CallToAction />}
             </section>
 
             <section className='relative w-full bg-gradient px-6 py-12'>
@@ -948,7 +948,7 @@ export default function BlockedPage({ show = true, url, offer }: BlockedProps) {
                         </>
                     )}
 
-                    {<CallToAction2 url={url} />}
+                    {<CallToAction />}
 
                 </div>
             </section>

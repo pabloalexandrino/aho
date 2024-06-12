@@ -12,7 +12,7 @@ import { toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { HiddenElements } from '../components/Player/VTurb'
 
-export default function Vsl05(): JSX.Element {
+export default function Tutorial(): JSX.Element {
     const {
         setCheckoutLink,
         setPagina,
@@ -28,7 +28,7 @@ export default function Vsl05(): JSX.Element {
     useEffect(() => {
         setCheckoutLink('https://luizgregatti.youcanbook.me/')
         setClint('https://andrinno.com/api/redirect/queue/76')
-        setPagina('vsl05 - AHO')
+        setPagina('aho-tutorial')
         setValue(5997)
     }, [setCheckoutLink, setClint, setPagina, setValue])
 
