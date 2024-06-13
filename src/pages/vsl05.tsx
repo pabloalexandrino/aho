@@ -233,8 +233,7 @@ export default function Vsl05(): JSX.Element {
                             </>
                         }
                     >
-                        {/*<HiddenElements seconds={690}>*/}
-                        <HiddenElements seconds={1}>
+                        <HiddenElements seconds={690}>
                             <div className='z-10 max-w-md px-6 mx-auto mt-12 text-center md:max-w-3xl'>
                                 <h1 className='px-2 mb-4 text-xl text-white rounded-md contents md:mb-8 md:text-3xl w-fit'>
                                     Preencha seus dados abaixo e agende a sua
