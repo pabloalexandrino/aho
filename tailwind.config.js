@@ -34,6 +34,9 @@ module.exports = {
                         'box-shadow': '0 0 40px #B30000, 0 0 20px #B30000',
                     },
                     '.bg-gradient': {
+                        'background-image': 'linear-gradient(90deg,#6AD70E 0%, #2DCD46 100%)',
+                    },
+                    '.bg-red-gradient': {
                         'background-image': 'linear-gradient(90deg,#560911 0%, #9A2C3B 100%)',
                     },
                     '.bg-gold-gradient': { 'background': 'linear-gradient(90deg, #AA821D 3.29%, rgba(248, 249, 194, 0.874851) 53.01%, rgba(223, 189, 105, 0.65) 98.63%);' },

@@ -172,42 +172,41 @@ export default function Youtube() {
 
     return (
         <div className='bg-black'>
-            <Geo text={'🎁 VOCÊ GANHOU UMA CONSULTORIA 1 HORA 100% GRATUITA! 🎁'} marquee />
+            <Geo text={'EXCLUSIVO PARA QUEM QUER EMPREENDER NO TURISMO'} marquee />
             <div style={{ backgroundPositionY: '100px' }}
-                 className='grid relative bg-black bg-no-repeat bg-contain bg-[url(/luiz.webp)] bg-fixed bg-right-top w-full pt-8'>
+                 className='grid relative bg-black bg-no-repeat bg-contain bg-[url(/luiz-green.webp)] bg-fixed bg-right-top w-full pt-8'>
                 <ToastContainer />
                 <div className='w-full max-w-6xl text-left justify-start flex flex-col mx-auto'>
-                    <div className='max-w-6xl grid relative py-2 px-6 mx-auto sm:mx-0'>
-                        <span className='text-xs ml-3 mb-4'>
-                            Presente 🎁 exclusivo para você que se cadastrar ainda hoje!
-                        </span>
-                        <div className='flex relative'>
-                            <div className='h-12 mr-4 w-[1px] bg-white/20'></div>
-                            <div className='relative h-12 w-1/2 sm:w-[120px]'>
-                                <BlurImage
-                                    layout={'responsive'}
-                                    src='/logo.webp'
-                                    alt='AHO'
-                                    width='200'
-                                    height='80'
-                                />
-                            </div>
-                        </div>
-                    </div>
+                    {/*<div className='max-w-6xl grid relative py-2 px-6 mx-auto sm:mx-0'>*/}
+                        {/*<span className='text-xs ml-3 mb-4'>*/}
+                        {/*    Presente 🎁 exclusivo para você que se cadastrar ainda hoje!*/}
+                        {/*</span>*/}
+                        {/*<div className='flex relative'>*/}
+                        {/*    <div className='h-12 mr-4 w-[1px] bg-white/20'></div>*/}
+                        {/*    <div className='relative h-12 w-1/2 sm:w-[120px]'>*/}
+                        {/*        <BlurImage*/}
+                        {/*            layout={'responsive'}*/}
+                        {/*            src='/logo.webp'*/}
+                        {/*            alt='AHO'*/}
+                        {/*            width='200'*/}
+                        {/*            height='80'*/}
+                        {/*        />*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
 
-                    <div className='max-w-md md:max-w-2xl px-6 mt-64 sm:mt-32 z-10 mb-12'>
+                    <div className='max-w-md md:max-w-2xl px-6 sm:mt-32 z-10 mb-12'>
                         <h1 className='text-white contents uppercase mb-4 md:mb-8 rounded-md text-xl md:text-3xl w-fit px-2'>
-                            TUTORIAL ENSINA COMO LUCRAR DE
-                            <span className='rounded-lg px-2 mx-2 bg-gradient'>10 A 50 MIL REAIS POR MÊS
-                    </span> (OU MAIS) COM SUA AGÊNCIA DE VIAGENS HOME OFFICE!
+                            VAMOS TE EXPLICAR COMO VOCÊ PODE TER UMA AGÊNCIA DE VIAGENS ONLINE E LUCRAR DE
+                            <span className='rounded-lg px-2 mx-2 bg-gradient text-black'>10 A 50 MIL REAIS POR MÊS
+                    </span>
                         </h1>
-                        <h2 className='font-light text-white mt-8'>
-                            Liberamos 1h de consultoria gratuita para você entender cada detalhe da Agência Home Office,
-                            levando 3 meses do Sistema ViajaFlux Grátis.
+                        <h2 className='font-light text-white mt-4 text-xs sm:text-base'>
+                            Preencha seus dados abaixo e agende sua consultoria individual
                         </h2>
                         <div className='card card-compact border w-full h-fit rounded-lg my-4 md:my-12'>
                             <div className='card-body'>
-                                <div className='card-title text-error'>Inscreva-se</div>
+                                <div className='card-title text-primary'>Inscreva-se</div>
 
                                 <form
                                     id='formLead'
@@ -260,7 +259,7 @@ export default function Youtube() {
                         <button
                             form='formLead'
                             type='submit'
-                            className='btn rounded-md btn-block btn-error border-0 animation animate-pulse hover:bg-white hover:text-error box-red-glow'
+                            className='btn rounded-md btn-block btn-primary border-0 animation animate-pulse hover:bg-white hover:text-primary box-glow'
                             disabled={loading2}
                         >
                             {loading2 && (
