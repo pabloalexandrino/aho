@@ -74,7 +74,7 @@ class MyDocument extends Document {
                         `}
                     </Script>
                 </Head>
-                <body className='bg-base-100 overflow-x-hidden'>
+                <body className='overflow-x-hidden'>
                 <Main />
                 <NextScript />
                 </body>

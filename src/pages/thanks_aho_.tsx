@@ -53,7 +53,7 @@ export default function Home(): JSX.Element {
     }, [fetchPrice])
 
     return (
-        <div data-theme={'light'}>
+        <div data-theme={'light'} className='bg-base-100'>
             <Head>
                 <title>Obrigado - Não Feche</title>
                 <meta name='robots' content='noindex' />

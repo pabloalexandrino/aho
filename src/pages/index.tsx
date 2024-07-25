@@ -160,7 +160,7 @@ export default function Index(): JSX.Element {
 
     return (
         <div
-            className='min-h-screen bg-left-top bg-[length:100vw_100vh] bg-fixed bg-[url(/bg-white.webp)]'
+            className='min-h-screen bg-left-top bg-[length:100vw_100vh] bg-fixed bg-[url(/bg-white.webp)] bg-base-100'
             data-theme={'dark'}
         >
             <Head>
