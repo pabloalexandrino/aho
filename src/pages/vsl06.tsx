@@ -30,15 +30,15 @@ export default function Vsl05(): JSX.Element {
         clint,
         pagina,
         value,
-        instagram,
-        setInstagram,
+        // instagram,
+        // setInstagram,
     } = useContext(OfferContext)
 
     useEffect(() => {
-        setCheckoutLink('https://luizgregatti.youcanbook.me/')
+        setCheckoutLink('/thanks_aho_')
         setClint('https://andrinno.com/api/redirect/queue/76')
         setPagina('vsl06 - AHO')
-        setValue(5997)
+        setValue(4997)
     }, [setCheckoutLink, setClint, setPagina, setValue])
 
     const [utmObj, setUtmObj] = useState({
@@ -69,6 +69,7 @@ export default function Vsl05(): JSX.Element {
     const [nameLead2, setNameLead2] = useState('')
     const [emailLead2, setEmailLead2] = useState('')
     const [whatsappLead2, setWhatsappLead2] = useState('')
+    const [renda, setRenda] = useState('')
     const [loading2, setLoading2] = useState(false)
 
     const schema2 = yup.object().shape({
@@ -84,6 +85,7 @@ export default function Vsl05(): JSX.Element {
                 /^\(\d{2}\) \d{5}-\d{4}$/,
                 'Por favor, informe um número de telefone válido (exemplo: (99) 99999-9999).',
             ),
+        renda: yup.string().required('Por favor, informe a valor disposto a investir.'),
     })
 
     function handleInputChangeLead(event: {
@@ -121,7 +123,7 @@ export default function Vsl05(): JSX.Element {
         try {
             // Validação dos dados do formulário
             await schema2.validate(
-                { nameLead2, emailLead2, whatsappLead2 },
+                { nameLead2, emailLead2, whatsappLead2, renda },
                 { abortEarly: false },
             )
 
@@ -131,7 +133,7 @@ export default function Vsl05(): JSX.Element {
                 name: nameLead2,
                 email: emailLead2,
                 whatsapp: whatsappLead2,
-                pagina,
+                pagina: `${renda}, ${pagina}, source:${utmObj.utm_source}, medium:${utmObj.utm_medium}, campaign:${utmObj.utm_campaign}, term:${utmObj.utm_term}, content:${utmObj.utm_content}`,
                 valor: value.toString(),
             }
             await fetch(url + '?' + new URLSearchParams(data))
@@ -224,6 +226,9 @@ export default function Vsl05(): JSX.Element {
                         }
                     >
 
+                        {/*<iframe src='https://flyeducacional.typeform.com/to/tZP5WTL0'*/}
+                        {/*        className='w-full h-[500px]'></iframe>*/}
+
                         <div className='z-10 max-w-md px-6 mx-auto mt-12 text-center md:max-w-3xl'>
                             <h1 className='px-2 mb-4 text-xl text-white rounded-md contents md:mb-8 md:text-3xl w-fit'>
                                 Preencha seus dados abaixo e agende a sua
@@ -269,41 +274,49 @@ export default function Vsl05(): JSX.Element {
                                     placeholder='(XX) 9XXXX-XXXX'
                                 />
 
-                                <input
-                                    type='text'
-                                    name='instagram'
-                                    placeholder='@seu.instagram'
-                                    className='w-full text-black bg-white input input-bordered input-primary'
-                                    value={instagram}
-                                    onChange={(event) =>
-                                        setInstagram(event.target.value)
-                                    }
-                                />
-
-                                {/*<select*/}
-                                {/*    name='renda'*/}
-                                {/*    className='w-full text-black bg-white select select-bordered select-primary'*/}
+                                {/*<input*/}
+                                {/*    type='text'*/}
+                                {/*    name='instagram'*/}
+                                {/*    placeholder='@seu.instagram'*/}
+                                {/*    className='w-full text-black bg-white input input-bordered input-primary'*/}
+                                {/*    value={instagram}*/}
                                 {/*    onChange={(event) =>*/}
-                                {/*        setRenda(event.target.value)*/}
+                                {/*        setInstagram(event.target.value)*/}
                                 {/*    }*/}
-                                {/*>*/}
-                                {/*    <option value='' selected disabled>*/}
-                                {/*        Qual sua renda mensal ou*/}
-                                {/*        faturamento?*/}
-                                {/*    </option>*/}
-                                {/*    <option value='Até R$5.000,00'>*/}
-                                {/*        Até R$5.000,00*/}
-                                {/*    </option>*/}
-                                {/*    <option value='De R$5.000,00 a R$10.000,00'>*/}
-                                {/*        De R$5.000,00 a R$10.000,00*/}
-                                {/*    </option>*/}
-                                {/*    <option value='De R$10.000,00 a R$25.000,00'>*/}
-                                {/*        De R$10.000,00 a R$25.000,00*/}
-                                {/*    </option>*/}
-                                {/*    <option value='Acima de R$25.000,00'>*/}
-                                {/*        Acima de R$25.000,00*/}
-                                {/*    </option>*/}
-                                {/*</select>*/}
+                                {/*/>*/}
+
+                                <div className='text-sm leading-4 text-white py-4 text-left'>
+                                    Dentro da Agência Home Office você tem acesso completo a um ecossistema para
+                                    criação da sua Agência de Viagens Online, contando com sistema de gestão próprio
+                                    e acompanhamento personalizado.<br /><br />
+                                    Já somos mais de 1.200 agências em todo Brasil que somam mais de 50 milhões de
+                                    faturamento.<br /><br />
+                                    Considerando a entrega proposta, qual valor você tem para investir em sua
+                                    agência?
+                                </div>
+                                <select
+                                    name='renda'
+                                    className='w-full text-black bg-white select select-bordered select-primary'
+                                    onChange={(event) =>
+                                        setRenda(event.target.value)
+                                    }
+                                >
+                                    <option value='' selected disabled>
+                                        Valor disponível para investimento
+                                    </option>
+                                    <option value='Até 5k'>
+                                        de R$ 3.000 a R$5.000,00
+                                    </option>
+                                    <option value='De 5k a 8k'>
+                                        De R$5.000,00 a R$8.000,00
+                                    </option>
+                                    <option value='De 8k a 12k'>
+                                        De R$8.000,00 a R$12.000,00
+                                    </option>
+                                    <option value='Acima de 12k'>
+                                        Acima de R$12.000,00
+                                    </option>
+                                </select>
                             </form>
 
                             <button

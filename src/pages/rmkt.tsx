@@ -32,10 +32,11 @@ export default function Youtube() {
     } = useContext(OfferContext)
 
     useEffect(() => {
-        setCheckoutLink('https://luizgregatti.youcanbook.me/')
+        // setCheckoutLink('https://luizgregatti.youcanbook.me/')
+        setCheckoutLink('/thanks_aho_')
         setClint('https://andrinno.com/api/redirect/queue/76')
         setPagina('AHO-RMKT')
-        setValue(5997)
+        setValue(4997)
     }, [setCheckoutLink, setClint, setPagina, setValue])
 
     useEffect(() => {
@@ -58,7 +59,8 @@ export default function Youtube() {
     const [nameLead2, setNameLead2] = useState('')
     const [emailLead2, setEmailLead2] = useState('')
     const [whatsappLead2, setWhatsappLead2] = useState('')
-    const [instagram2, setInstagram2] = useState('')
+    // const [instagram2, setInstagram2] = useState('')
+    const [renda, setRenda] = useState('')
     const [loading2, setLoading2] = useState(false)
 
     const schema = yup.object().shape({
@@ -74,15 +76,16 @@ export default function Youtube() {
                 /^\(\d{2}\) \d{5}-\d{4}$/,
                 'Por favor, informe um número de telefone válido (exemplo: (99) 99999-9999).',
             ),
-        instagram2: yup
-            .string()
-            .test('no-at-symbol', 'O instagram não pode conter o caractere "@"', (value) => {
-                return !value!.includes('@')
-            })
-            .test('no-space', 'O instagram não pode conter espaços', (value) => {
-                return !value!.includes(' ')
-            })
-            .required('Por favor, informe o seu Instagram.'),
+        // instagram2: yup
+        //     .string()
+        //     .test('no-at-symbol', 'O instagram não pode conter o caractere "@"', (value) => {
+        //         return !value!.includes('@')
+        //     })
+        //     .test('no-space', 'O instagram não pode conter espaços', (value) => {
+        //         return !value!.includes(' ')
+        //     })
+        //     .required('Por favor, informe o seu Instagram.'),
+        renda: yup.string().required('Por favor, informe a valor disposto a investir.'),
     })
 
     function handleInputChangeLead(event: {
@@ -114,7 +117,7 @@ export default function Youtube() {
         try {
             // Validação dos dados do formulário
             await schema.validate(
-                { nameLead2, emailLead2, whatsappLead2, instagram2 },
+                { nameLead2, emailLead2, whatsappLead2, renda },
                 { abortEarly: false },
             )
 
@@ -124,7 +127,7 @@ export default function Youtube() {
                 name: nameLead2,
                 email: emailLead2,
                 whatsapp: whatsappLead2,
-                pagina: `@${instagram2}, ${pagina}, source:${utmObj.utm_source}, medium:${utmObj.utm_medium}, campaign:${utmObj.utm_campaign}, term:${utmObj.utm_term}, content:${utmObj.utm_content}`,
+                pagina: `${renda}, ${pagina}, source:${utmObj.utm_source}, medium:${utmObj.utm_medium}, campaign:${utmObj.utm_campaign}, term:${utmObj.utm_term}, content:${utmObj.utm_content}`,
                 valor: value.toString(),
             }
             await fetch(url + '?' + new URLSearchParams(data))
@@ -138,18 +141,6 @@ export default function Youtube() {
                     email: emailLead2,
                     whatsapp: whatsappLead2,
                     pagina,
-                }),
-            })
-
-            //BREVO
-            await fetch('/api/mailingList', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: nameLead2,
-                    email: emailLead2,
-                    whatsapp: whatsappLead2,
-                    pagina: 'youtube',
                 }),
             })
             redirectTo()
@@ -178,31 +169,35 @@ export default function Youtube() {
                 <ToastContainer />
                 <div className='w-full max-w-6xl text-left justify-start flex flex-col mx-auto'>
                     {/*<div className='max-w-6xl grid relative py-2 px-6 mx-auto sm:mx-0'>*/}
-                        {/*<span className='text-xs ml-3 mb-4'>*/}
-                        {/*    Presente 🎁 exclusivo para você que se cadastrar ainda hoje!*/}
-                        {/*</span>*/}
-                        {/*<div className='flex relative'>*/}
-                        {/*    <div className='h-12 mr-4 w-[1px] bg-white/20'></div>*/}
-                        {/*    <div className='relative h-12 w-1/2 sm:w-[120px]'>*/}
-                        {/*        <BlurImage*/}
-                        {/*            layout={'responsive'}*/}
-                        {/*            src='/logo.webp'*/}
-                        {/*            alt='AHO'*/}
-                        {/*            width='200'*/}
-                        {/*            height='80'*/}
-                        {/*        />*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
+                    {/*<span className='text-xs ml-3 mb-4'>*/}
+                    {/*    Presente 🎁 exclusivo para você que se cadastrar ainda hoje!*/}
+                    {/*</span>*/}
+                    {/*<div className='flex relative'>*/}
+                    {/*    <div className='h-12 mr-4 w-[1px] bg-white/20'></div>*/}
+                    {/*    <div className='relative h-12 w-1/2 sm:w-[120px]'>*/}
+                    {/*        <BlurImage*/}
+                    {/*            layout={'responsive'}*/}
+                    {/*            src='/logo.webp'*/}
+                    {/*            alt='AHO'*/}
+                    {/*            width='200'*/}
+                    {/*            height='80'*/}
+                    {/*        />*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                     {/*</div>*/}
 
                     <div className='max-w-md md:max-w-2xl px-6 sm:mt-32 z-10 mb-12'>
                         <h1 className='text-white contents uppercase mb-4 md:mb-8 rounded-md text-xl md:text-3xl w-fit px-2'>
                             VAMOS TE EXPLICAR COMO VOCÊ PODE TER UMA AGÊNCIA DE VIAGENS ONLINE E LUCRAR DE
                             <span className='rounded-lg px-2 mx-2 bg-gradient text-black'>10 A 50 MIL REAIS POR MÊS
-                    </span>
+                            </span>
                         </h1>
+
+                        {/*<iframe src='https://flyeducacional.typeform.com/to/MQWE2ro4'*/}
+                        {/*        className='w-full h-[500px] mt-8'></iframe>*/}
                         <h2 className='font-light text-white mt-4 text-xs sm:text-base'>
-                            Preencha seus dados abaixo e agende sua consultoria individual
+                            Preencha seus dados abaixo para receber a apresentação completa da <span
+                            className='font-bold'>Agência de Viagens Home Office</span> ✌
                         </h2>
                         <div className='card card-compact border w-full h-fit rounded-lg my-4 md:my-12'>
                             <div className='card-body'>
@@ -243,16 +238,38 @@ export default function Youtube() {
                                         placeholder='(XX) 9XXXX-XXXX'
                                     />
 
-                                    <input
-                                        type='text'
-                                        name='instagram2'
-                                        placeholder='seu.instagram (sem @)'
-                                        className='w-full text-black bg-white input input-bordered input-primary'
-                                        value={instagram2}
+                                    <div className='text-sm leading-4 text-white py-4'>
+                                        Dentro da Agência Home Office você tem acesso completo a um ecossistema para
+                                        criação da sua Agência de Viagens Online, contando com sistema de gestão próprio
+                                        e acompanhamento personalizado.<br /><br />
+                                        Já somos mais de 1.200 agências em todo Brasil que somam mais de 50 milhões de
+                                        faturamento.<br /><br />
+                                        Considerando a entrega proposta, qual valor você tem para investir em sua
+                                        agência?
+                                    </div>
+                                    <select
+                                        name='renda'
+                                        className='w-full text-black bg-white select select-bordered select-primary'
                                         onChange={(event) =>
-                                            setInstagram2(event.target.value)
+                                            setRenda(event.target.value)
                                         }
-                                    />
+                                    >
+                                        <option value='' selected disabled>
+                                            Valor disponível para investimento
+                                        </option>
+                                        <option value='Até 5k'>
+                                            de R$ 3.000 a R$5.000,00
+                                        </option>
+                                        <option value='De 5k a 8k'>
+                                            De R$5.000,00 a R$8.000,00
+                                        </option>
+                                        <option value='De 8k a 12k'>
+                                            De R$8.000,00 a R$12.000,00
+                                        </option>
+                                        <option value='Acima de 12k'>
+                                            Acima de R$12.000,00
+                                        </option>
+                                    </select>
                                 </form>
                             </div>
                         </div>
@@ -285,7 +302,7 @@ export default function Youtube() {
                                 </svg>
                             )}
 
-                            Fazer inscrição gratuitamente
+                            Enviar
                         </button>
                     </div>
                 </div>

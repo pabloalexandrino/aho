@@ -26,10 +26,10 @@ export default function Vsl05(): JSX.Element {
     } = useContext(OfferContext)
 
     useEffect(() => {
-        setCheckoutLink('https://luizgregatti.youcanbook.me/')
+        setCheckoutLink('/thanks_aho_')
         setClint('https://andrinno.com/api/redirect/queue/76')
         setPagina('vsl05 - AHO')
-        setValue(5997)
+        setValue(4997)
     }, [setCheckoutLink, setClint, setPagina, setValue])
 
     const [utmObj, setUtmObj] = useState({
@@ -60,7 +60,8 @@ export default function Vsl05(): JSX.Element {
     const [nameLead2, setNameLead2] = useState('')
     const [emailLead2, setEmailLead2] = useState('')
     const [whatsappLead2, setWhatsappLead2] = useState('')
-    const [instagram2, setInstagram2] = useState('')
+    // const [instagram2, setInstagram2] = useState('')
+    const [renda, setRenda] = useState('')
     const [loading2, setLoading2] = useState(false)
 
     const schema2 = yup.object().shape({
@@ -80,16 +81,16 @@ export default function Vsl05(): JSX.Element {
                 /^\(\d{2}\) \d{5}-\d{4}$/,
                 'Por favor, informe um número de telefone válido (exemplo: (99) 99999-9999).',
             ),
-        instagram2: yup
-            .string()
-            .test('no-at-symbol', 'O instagram não pode conter o caractere "@"', (value) => {
-                return !value!.includes('@')
-            })
-            .test('no-space', 'O instagram não pode conter espaços', (value) => {
-                return !value!.includes(' ')
-            })
-            .required('Por favor, informe o seu Instagram.'),
-        // renda: yup.string().required('Por favor, informe a sua renda mensal.'),
+        // instagram2: yup
+        //     .string()
+        //     .test('no-at-symbol', 'O instagram não pode conter o caractere "@"', (value) => {
+        //         return !value!.includes('@')
+        //     })
+        //     .test('no-space', 'O instagram não pode conter espaços', (value) => {
+        //         return !value!.includes(' ')
+        //     })
+        //     .required('Por favor, informe o seu Instagram.'),
+        renda: yup.string().required('Por favor, informe a valor disposto a investir.'),
     })
 
     function handleInputChangeLead(event: {
@@ -126,7 +127,7 @@ export default function Vsl05(): JSX.Element {
         try {
             // Validação dos dados do formulário
             await schema2.validate(
-                { nameLead2, emailLead2, whatsappLead2, instagram2 },
+                { nameLead2, emailLead2, whatsappLead2, renda },
                 { abortEarly: false },
             )
 
@@ -136,7 +137,7 @@ export default function Vsl05(): JSX.Element {
                 name: nameLead2,
                 email: emailLead2,
                 whatsapp: whatsappLead2,
-                pagina: `@${instagram2}, ${pagina}, source:${utmObj.utm_source}, medium:${utmObj.utm_medium}, campaign:${utmObj.utm_campaign}, term:${utmObj.utm_term}, content:${utmObj.utm_content}`,
+                pagina: `${renda}, ${pagina}, source:${utmObj.utm_source}, medium:${utmObj.utm_medium}, campaign:${utmObj.utm_campaign}, term:${utmObj.utm_term}, content:${utmObj.utm_content}`,
                 valor: value.toString(),
             }
             await fetch(url + '?' + new URLSearchParams(data))
@@ -200,7 +201,7 @@ export default function Vsl05(): JSX.Element {
 
             <div>
                 <Geo
-                    text={'SEU NEGÓCIO ONLINE ESTÁ NO TUTORIAL ABAIXO 👇'}
+                    text={'EXCLUSIVO PARA QUEM QUER EMPREENDER NO TURISMO'}
                     marquee
                 />
 
@@ -218,22 +219,27 @@ export default function Vsl05(): JSX.Element {
                         head={
                             <>
                                 <h1 className='inline-block my-6 text-xl font-bold text-center uppercase rounded-md md:text-3xl md:leading-snug'>
-                                    Tutorial ensina como lucrar de{' '}
+                                    IMAGINE TER {' '}
                                     <br className='sm:hidden' />
                                     <span className='px-4 font-bold text-white rounded-lg bg-gradient'>
-                                        10 a 50 mil reais por mês
+                                        SUA AGÊNCIA DE VIAGENS
                                     </span>{' '}
-                                    <br className='sm:hidden' /> (ou mais) com
-                                    sua Agência de Viagens Home Office!
+                                    <br className='sm:hidden' /> ONLINE {' '}
+                                    <span className='px-4 font-bold text-white rounded-lg bg-gradient'>
+                                    LUCRANDO DE 10 A 50 MIL
+                                    </span>{' '}
+                                    REAIS POR MÊS
                                 </h1>
                                 <div className='text-lg text-center text-white'>
-                                    Assista até o final e garanta sua
-                                    consultoria gratuita.
+                                    Assista o vídeo abaixo e garanta uma <strong>consultoria individual</strong>
+                                    de até 1h com nosso melhor especialista
                                 </div>
                             </>
                         }
                     >
                         <HiddenElements seconds={690}>
+                            {/*<iframe src='https://flyeducacional.typeform.com/to/uOCZ94IN'*/}
+                            {/*        className='w-full h-[500px]'></iframe>*/}
                             <div className='z-10 max-w-md px-6 mx-auto mt-12 text-center md:max-w-3xl'>
                                 <h1 className='px-2 mb-4 text-xl text-white rounded-md contents md:mb-8 md:text-3xl w-fit'>
                                     Preencha seus dados abaixo e agende a sua
@@ -279,41 +285,49 @@ export default function Vsl05(): JSX.Element {
                                         placeholder='(XX) 9XXXX-XXXX'
                                     />
 
-                                    <input
-                                        type='text'
-                                        name='instagram2'
-                                        placeholder='seu.instagram (sem @)'
-                                        className='w-full text-black bg-white input input-bordered input-primary'
-                                        value={instagram2}
-                                        onChange={(event) =>
-                                            setInstagram2(event.target.value)
-                                        }
-                                    />
-
-                                    {/*<select*/}
-                                    {/*    name='renda'*/}
-                                    {/*    className='w-full text-black bg-white select select-bordered select-primary'*/}
+                                    {/*<input*/}
+                                    {/*    type='text'*/}
+                                    {/*    name='instagram2'*/}
+                                    {/*    placeholder='seu.instagram (sem @)'*/}
+                                    {/*    className='w-full text-black bg-white input input-bordered input-primary'*/}
+                                    {/*    value={instagram2}*/}
                                     {/*    onChange={(event) =>*/}
-                                    {/*        setRenda(event.target.value)*/}
+                                    {/*        setInstagram2(event.target.value)*/}
                                     {/*    }*/}
-                                    {/*>*/}
-                                    {/*    <option value='' selected disabled>*/}
-                                    {/*        Qual sua renda mensal ou*/}
-                                    {/*        faturamento?*/}
-                                    {/*    </option>*/}
-                                    {/*    <option value='Até 5k'>*/}
-                                    {/*        Até R$5.000,00*/}
-                                    {/*    </option>*/}
-                                    {/*    <option value='De 5k a 10k'>*/}
-                                    {/*        De R$5.000,00 a R$10.000,00*/}
-                                    {/*    </option>*/}
-                                    {/*    <option value='De 10k a 25k'>*/}
-                                    {/*        De R$10.000,00 a R$25.000,00*/}
-                                    {/*    </option>*/}
-                                    {/*    <option value='Acima de 25k'>*/}
-                                    {/*        Acima de R$25.000,00*/}
-                                    {/*    </option>*/}
-                                    {/*</select>*/}
+                                    {/*/>*/}
+
+                                    <div className='text-sm leading-4 text-white py-4 text-left'>
+                                        Dentro da Agência Home Office você tem acesso completo a um ecossistema para
+                                        criação da sua Agência de Viagens Online, contando com sistema de gestão próprio
+                                        e acompanhamento personalizado.<br /><br />
+                                        Já somos mais de 1.200 agências em todo Brasil que somam mais de 50 milhões de
+                                        faturamento.<br /><br />
+                                        Considerando a entrega proposta, qual valor você tem para investir em sua
+                                        agência?
+                                    </div>
+                                    <select
+                                        name='renda'
+                                        className='w-full text-black bg-white select select-bordered select-primary'
+                                        onChange={(event) =>
+                                            setRenda(event.target.value)
+                                        }
+                                    >
+                                        <option value='' selected disabled>
+                                            Valor disponível para investimento
+                                        </option>
+                                        <option value='Até 5k'>
+                                            de R$ 3.000 a R$5.000,00
+                                        </option>
+                                        <option value='De 5k a 8k'>
+                                            De R$5.000,00 a R$8.000,00
+                                        </option>
+                                        <option value='De 8k a 12k'>
+                                            De R$8.000,00 a R$12.000,00
+                                        </option>
+                                        <option value='Acima de 12k'>
+                                            Acima de R$12.000,00
+                                        </option>
+                                    </select>
                                 </form>
 
                                 <button
@@ -344,7 +358,7 @@ export default function Vsl05(): JSX.Element {
                                             ></path>
                                         </svg>
                                     )}
-                                    Fazer inscrição gratuitamente
+                                    Enviar
                                 </button>
                             </div>
                         </HiddenElements>
