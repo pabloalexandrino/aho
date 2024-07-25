@@ -129,6 +129,7 @@ export default function Youtube() {
                 whatsapp: whatsappLead2,
                 pagina: `${renda}, ${pagina}, source:${utmObj.utm_source}, medium:${utmObj.utm_medium}, campaign:${utmObj.utm_campaign}, term:${utmObj.utm_term}, content:${utmObj.utm_content}`,
                 valor: value.toString(),
+                investimento: renda
             }
             await fetch(url + '?' + new URLSearchParams(data))
 

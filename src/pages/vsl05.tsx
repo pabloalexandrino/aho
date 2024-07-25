@@ -139,6 +139,7 @@ export default function Vsl05(): JSX.Element {
                 whatsapp: whatsappLead2,
                 pagina: `${renda}, ${pagina}, source:${utmObj.utm_source}, medium:${utmObj.utm_medium}, campaign:${utmObj.utm_campaign}, term:${utmObj.utm_term}, content:${utmObj.utm_content}`,
                 valor: value.toString(),
+                investimento: renda,
             }
             await fetch(url + '?' + new URLSearchParams(data))
 
@@ -237,7 +238,7 @@ export default function Vsl05(): JSX.Element {
                             </>
                         }
                     >
-                        <HiddenElements seconds={690}>
+                        <HiddenElements seconds={605}>
                             {/*<iframe src='https://flyeducacional.typeform.com/to/uOCZ94IN'*/}
                             {/*        className='w-full h-[500px]'></iframe>*/}
                             <div className='z-10 max-w-md px-6 mx-auto mt-12 text-center md:max-w-3xl'>

@@ -135,6 +135,7 @@ export default function Vsl05(): JSX.Element {
                 whatsapp: whatsappLead2,
                 pagina: `${renda}, ${pagina}, source:${utmObj.utm_source}, medium:${utmObj.utm_medium}, campaign:${utmObj.utm_campaign}, term:${utmObj.utm_term}, content:${utmObj.utm_content}`,
                 valor: value.toString(),
+                investimento: renda,
             }
             await fetch(url + '?' + new URLSearchParams(data))
 
@@ -196,7 +197,7 @@ export default function Vsl05(): JSX.Element {
             )}
 
             <ParallaxProvider>
-                <Geo text={'SEU NEGÓCIO ONLINE ESTÁ NO TUTORIAL ABAIXO 👇'} />
+                <Geo text={'EXCLUSIVO PARA QUEM QUER EMPREENDER NO TURISMO'} />
                 <Navbar
                     leadRedirect={checkoutLink}
                     logo={false}
@@ -210,17 +211,20 @@ export default function Vsl05(): JSX.Element {
                         head={
                             <>
                                 <h1 className='inline-block my-6 text-xl font-bold text-center uppercase rounded-md md:text-3xl md:leading-snug'>
-                                    Tutorial ensina como lucrar de{' '}
+                                    IMAGINE TER {' '}
                                     <br className='sm:hidden' />
                                     <span className='px-4 font-bold text-white rounded-lg bg-gradient'>
-                                        10 a 50 mil reais por mês
+                                        SUA AGÊNCIA DE VIAGENS
                                     </span>{' '}
-                                    <br className='sm:hidden' /> (ou mais) com
-                                    sua Agência de Viagens Home Office!
+                                    <br className='sm:hidden' /> ONLINE {' '}
+                                    <span className='px-4 font-bold text-white rounded-lg bg-gradient'>
+                                    LUCRANDO DE 10 A 50 MIL
+                                    </span>{' '}
+                                    REAIS POR MÊS
                                 </h1>
                                 <div className='text-lg text-center text-white'>
-                                    Assista até o final e garanta sua
-                                    consultoria gratuita.
+                                    Assista o vídeo abaixo e garanta uma <strong>consultoria individual</strong>
+                                    de até 1h com nosso melhor especialista
                                 </div>
                             </>
                         }
