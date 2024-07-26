@@ -258,7 +258,7 @@ export default function Youtube() {
                                         <option value='' selected disabled>
                                             Valor disponível para investimento
                                         </option>
-                                        <option value='Até 5k'>
+                                        <option value='de 3k a 5k'>
                                             de R$ 3.000 a R$5.000,00
                                         </option>
                                         <option value='De 5k a 8k'>

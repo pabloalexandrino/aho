@@ -302,7 +302,7 @@ export default function Tutorial(): JSX.Element {
                                     {/*        Qual sua renda mensal ou*/}
                                     {/*        faturamento?*/}
                                     {/*    </option>*/}
-                                    {/*    <option value='Até 5k'>*/}
+                                    {/*    <option value='de 3k a 5k'>*/}
                                     {/*        Até R$5.000,00*/}
                                     {/*    </option>*/}
                                     {/*    <option value='De 5k a 10k'>*/}
